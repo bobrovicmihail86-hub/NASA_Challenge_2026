@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Space Mission Design — build calculator v1.5</title>
+<style>
+  :root{
+    --bg:#0a1220; --panel:#101c2e; --panel2:#16263c; --line:#1f3b5c;
+    --cyan:#4fd1e0; --cyan2:#2a9db0; --amber:#f2b544; --red:#e8695b; --green:#5dd39e;
+    --text:#dce8f5; --muted:#8aa4bf;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:
+      radial-gradient(1200px 600px at 15% -10%, #14304d 0%, transparent 60%),
+      radial-gradient(900px 500px at 110% 10%, #12283f 0%, transparent 55%),
+      var(--bg);
+    color:var(--text);font:14px/1.45 "Segoe UI",Roboto,Arial,sans-serif;min-height:100vh}
+  header{display:flex;align-items:baseline;gap:14px;padding:16px 22px;border-bottom:1px solid var(--line);
+    background:linear-gradient(90deg,rgba(20,48,77,.75),rgba(10,18,32,.2));flex-wrap:wrap}
+  h1{font-size:19px;margin:0;letter-spacing:.5px}
+  h1 span{color:var(--cyan)}
+  .tag{font-size:11px;color:var(--muted);border:1px solid var(--line);border-radius:10px;padding:2px 8px}
+  main{display:grid;grid-template-columns:minmax(360px,1fr) minmax(420px,1.15fr);gap:16px;padding:16px 22px 40px;max-width:1500px;margin:0 auto}
+  section{background:linear-gradient(180deg,rgba(22,38,60,.9),rgba(16,28,46,.9));border:1px solid var(--line);
+    border-radius:12px;padding:14px 16px;box-shadow:0 10px 30px rgba(0,0,0,.25)}
+  section h2{font-size:13px;text-transform:uppercase;letter-spacing:1.4px;color:var(--cyan);margin:0 0 10px}
+  label{display:block;font-size:12px;color:var(--muted);margin:8px 0 3px}
+  select,input[type=number]{width:100%;background:#0c1726;color:var(--text);border:1px solid var(--line);
+    border-radius:8px;padding:7px 9px;font-size:13px}
+  input[type=number]{width:64px}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:0 12px}
+  .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:0 12px}
+  .inst{display:grid;grid-template-columns:1fr 64px;gap:8px;align-items:center;margin:4px 0}
+  .inst span{font-size:13px}
+  .inst small{color:var(--muted);font-size:11px}
+  .chk{display:flex;align-items:center;gap:8px;margin:8px 0;font-size:13px;color:var(--text)}
+  .chk input{width:16px;height:16px;accent-color:var(--cyan)}
+  .traj{border:1px solid var(--line);border-radius:9px;padding:8px 10px;margin:6px 0;cursor:pointer;background:#0c1726}
+  .traj.on{border-color:var(--cyan);background:#0f2233;box-shadow:inset 0 0 0 1px rgba(79,209,224,.25)}
+  .traj.off{opacity:.45;cursor:not-allowed}
+  .traj b{font-size:13px}
+  .traj .meta{font-size:11.5px;color:var(--muted);margin-top:2px}
+  .pill{display:inline-block;border-radius:999px;padding:1px 7px;font-size:10.5px;margin-left:6px;
+    border:1px solid var(--line);color:var(--muted)}
+  .pill.ok{color:var(--green);border-color:rgba(93,211,158,.4)}
+  .pill.bad{color:var(--red);border-color:rgba(232,105,91,.4)}
+  .verdict{font-size:17px;font-weight:600;margin:2px 0 10px}
+  .verdict.full,.verdict.success{color:var(--green)}
+  .verdict.partial{color:var(--amber)}
+  .verdict.fail,.verdict.infeasible{color:var(--red)}
+  table{width:100%;border-collapse:collapse;font-size:12.5px}
+  th,td{text-align:left;padding:5px 6px;border-bottom:1px solid rgba(31,59,92,.6)}
+  th{color:var(--muted);font-weight:500;font-size:11px;text-transform:uppercase;letter-spacing:.6px}
+  td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
+  .ok{color:var(--green)} .mid{color:var(--amber)} .bad{color:var(--red)}
+  .kpi{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:10px}
+  .kpi div{background:#0c1726;border:1px solid var(--line);border-radius:9px;padding:7px 9px}
+  .kpi b{display:block;font-size:16px;color:var(--cyan)}
+  .kpi small{color:var(--muted);font-size:10.5px;text-transform:uppercase;letter-spacing:.7px}
+  .bar{height:6px;border-radius:4px;background:#0a1522;overflow:hidden;margin-top:5px}
+  .bar i{display:block;height:100%;background:linear-gradient(90deg,var(--cyan2),var(--cyan))}
+  button{background:linear-gradient(180deg,#1c3a59,#14283e);color:var(--text);border:1px solid var(--line);
+    border-radius:9px;padding:9px 14px;font-size:13px;cursor:pointer}
+  button:hover{border-color:var(--cyan);color:#fff}
+  button.primary{background:linear-gradient(180deg,#1f6f7d,#155a68);border-color:var(--cyan2)}
+  .row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+  .muted{color:var(--muted)}
+  .small{font-size:11.5px}
+  .scroll{max-height:320px;overflow:auto}
+  footer{padding:0 22px 30px;color:var(--muted);font-size:11.5px;max-width:1500px;margin:0 auto}
+  code{background:#0c1726;border:1px solid var(--line);border-radius:5px;padding:1px 5px;font-size:11.5px}
+  @media(max-width:1000px){main{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header>
+  <h1>Space Mission <span>Design</span> — build calculator</h1>
+  <span class="tag" id="verTag">v1.5</span>
+  <span class="tag">variant B: payload to the target</span>
+  <span class="tag">build · check · launch</span>
+  <a class="tag" href="campaign.html" style="text-decoration:none">campaign v1.5 →</a>
+</header>
+
+<main>
+  <div>
+    <section>
+      <h2>1. Mission and trajectory</h2>
+      <label for="mission">Mission card</label>
+      <select id="mission"></select>
+      <div class="grid3">
+        <div><label for="unique">Uniqueness</label>
+          <select id="unique">
+            <option value="1.5">first flight ×1.5</option>
+            <option value="0.8">repeat ×0.8</option>
+            <option value="1">no multiplier ×1</option>
+          </select></div>
+        <div><label for="school">School</label>
+          <select id="school">
+            <option value="0">0 — none</option>
+            <option value="1">1 — institute</option>
+            <option value="2">2 — upgrade</option>
+            <option value="3">3 — campus</option>
+            <option value="4">4 — mega complex</option>
+          </select></div>
+        <div><label for="money">Money, $</label>
+          <input type="number" id="money" value="1200" step="50" style="width:100%"></div>
+      </div>
+      <div id="trajList" style="margin-top:10px"></div>
+    </section>
+
+    <section style="margin-top:14px">
+      <h2>2. Assembly</h2>
+      <div class="grid2">
+        <div><label for="rocket">Upper stage</label><select id="rocket"></select></div>
+        <div><label for="res">Reservation unit</label><select id="res"></select></div>
+        <div><label for="control">Flight control system</label><select id="control"></select></div>
+        <div><label for="antenna">Antenna</label><select id="antenna"></select></div>
+        <div><label for="power">Power</label><select id="power"></select></div>
+        <div><label for="buffer">Buffer</label><select id="buffer"></select></div>
+      </div>
+      <label>Instruments (pcs)</label>
+      <div id="instruments"></div>
+      <label>Physical modules</label>
+      <div id="physical"></div>
+      <div class="chk"><input type="checkbox" id="antennaDup"><span>Antenna duplication module (price ×1.6)</span></div>
+      <div class="chk"><input type="checkbox" id="moduleBuild"><span>Modular build: min(p)·0.95<sup>n−1</sup></span></div>
+    </section>
+  </div>
+
+  <div>
+    <section>
+      <h2>3. Checks and result</h2>
+      <div class="kpi">
+        <div><small>P success</small><b id="kP">—</b></div>
+        <div><small>Mass to the target</small><b id="kM">—</b></div>
+        <div><small>D_ratio (soft)</small><b id="kD">—</b></div>
+        <div><small>Price</small><b id="kC">—</b></div>
+      </div>
+      <div class="verdict" id="verdict">—</div>
+      <div class="small muted" id="probLine" style="margin-bottom:8px"></div>
+      <table>
+        <thead><tr><th>Check</th><th>Value</th><th class="num">Result</th></tr></thead>
+        <tbody id="checks"></tbody>
+      </table>
+      <table style="margin-top:10px"><tbody id="scoreRows"></tbody></table>
+      <div class="bar"><i id="pBar" style="width:0%"></i></div>
+    </section>
+
+    <section style="margin-top:14px">
+      <h2>4. Reference builds (§12)</h2>
+      <table>
+        <thead><tr><th>Build</th><th class="num">P</th><th class="num">Δ to target</th></tr></thead>
+        <tbody id="refRows"></tbody>
+      </table>
+      <p class="small muted" style="margin:8px 0 0">
+        Platform duplication (through the FCS) is weaker than per-instrument duplication: 0.77 against 0.88.
+        A modular build brings it back to 0.84 — that is a deliberate choice for the player.
+      </p>
+    </section>
+
+    <section style="margin-top:14px">
+      <h2>5. Monte Carlo validator (§25)</h2>
+      <div class="row">
+        <label for="games" style="margin:0">games</label>
+        <input type="number" id="games" value="60" min="5" max="500" step="5">
+        <button class="primary" id="run">Run</button>
+        <button id="csv">CSV of games</button>
+        <span class="small muted" id="mcStatus"></span>
+      </div>
+      <div class="scroll"><table style="margin-top:10px">
+        <thead><tr><th>Metric</th><th class="num">Value</th><th class="num">Target</th><th class="num">Result</th></tr></thead>
+        <tbody id="mcRows"><tr><td colspan="4" class="muted">Press “Run”</td></tr></tbody>
+      </table></div>
+      <p class="small muted" style="margin:8px 0 0">
+        Bot policy: minimum P 0.60 and S<sub>det</sub> ≥ 0.7·target, purchase cap 1.35·advance,
+        copies of launchers/reservations/FCS are consumed. Hiring and facility economics are not modelled.
+      </p>
+    </section>
+  </div>
+</main>
+
+<footer>
+  Every number comes from <code>data/config.js</code>. The formulas are in <code>docs/RULES_V15.md</code> §1–§13.
+  Data and reference-build checks: <code>node tools/check.mjs</code>.
+</footer>
+
+<script src="../data/config.js"></script>
+<script src="../data/cards.js"></script>
+<script src="../data/missions.js"></script>
+<script src="../data/engine.js"></script>
+<script>
+const $ = (id) => document.getElementById(id);
+const fmt = (x, d) => (x == null || isNaN(x)) ? '—' : Number(x).toFixed(d == null ? 2 : d);
+const pct = (x) => Math.round(x * 100) + '%';
+
+const S = {
+  missionId: 'm_hubble',
+  trajId: null,
+  unique: 1.5,
+  school: 0,
+  money: 1200,
+  rocketId: 'rocket_light',
+  reservationId: 'res_single',
+  controlId: 'ctrl_basic',
+  antennaId: 'ant_small',
+  powerId: 'pwr_solar_small',
+  bufferId: '',
+  instruments: { ins_camera: 1 },
+  physical: [],
+  antennaDup: false,
+  moduleBuild: false
+};
+
+function fillSelect(el, items, label, value) {
+  el.innerHTML = items.map((it) => {
+    const v = typeof value === 'function' ? value(it) : it.id;
+    return '<option value="' + v + '">' + label(it) + '</option>';
+  }).join('');
+}
+
+function mission() { return MISSIONS.find((m) => m.id === S.missionId) || MISSIONS[0]; }
+
+function currentSel() {
+  return {
+    rocketId: S.rocketId, reservationId: S.reservationId, controlId: S.controlId,
+    antennaId: S.antennaId, powerId: S.powerId, bufferId: S.bufferId || null,
+    instruments: Object.keys(S.instruments)
+      .filter((id) => S.instruments[id] > 0)
+      .map((id) => ({ id: id, count: S.instruments[id] })),
+    physical: S.physical.slice(),
+    antennaDup: S.antennaDup,
+    moduleBuild: S.moduleBuild,
+    schoolLevel: S.school
+  };
+}
+
+/* ---------- control initialisation ---------- */
+fillSelect($('mission'), MISSIONS, (m) => m.name + ' · ' + CONFIG.points[m.point].name + ' · ' + m.year);
+$('mission').value = S.missionId;
+$('mission').onchange = () => { S.missionId = $('mission').value; S.trajId = null; renderTrajectories(); update(); };
+
+fillSelect($('rocket'), CARDS.rockets, (c) => c.name + ' — ' + c.payload + ' t, p ' + c.p + ', ' + c.price + '$' + (c.copies ? ' ×' + c.copies : ''));
+fillSelect($('res'), CARDS.reservations, (c) => c.name + ' — ' + c.priceFactor + '× price');
+fillSelect($('control'), CARDS.control, (c) => c.name + ' — ' + c.slots + ' slots');
+fillSelect($('antenna'), CARDS.antennas, (c) => c.name + ' — ' + c.bw + ' Mbit/s');
+fillSelect($('power'), CARDS.power, (c) => c.name + ' — ' + c.watts + ' W');
+$('buffer').innerHTML = '<option value="">no buffer</option>' +
+  CARDS.buffers.map((c) => '<option value="' + c.id + '">' + c.name + ' — ' + c.price + '$</option>').join('');
+
+$('rocket').value = S.rocketId; $('res').value = S.reservationId;
+$('control').value = S.controlId; $('antenna').value = S.antennaId;
+$('power').value = S.powerId; $('buffer').value = S.bufferId;
+
+[['rocket', 'rocketId'], ['res', 'reservationId'], ['control', 'controlId'],
+ ['antenna', 'antennaId'], ['power', 'powerId'], ['buffer', 'bufferId']].forEach(([el, key]) => {
+  $(el).onchange = () => { S[key] = $(el).value; update(); };
+});
+$('unique').onchange = () => { S.unique = Number($('unique').value); update(); };
+$('school').onchange = () => { S.school = Number($('school').value); update(); };
+$('money').oninput = () => { S.money = Number($('money').value) || 0; update(); };
+$('antennaDup').onchange = () => { S.antennaDup = $('antennaDup').checked; update(); };
+$('moduleBuild').onchange = () => { S.moduleBuild = $('moduleBuild').checked; update(); };
+
+/* instruments */
+$('instruments').innerHTML = CARDS.instruments.map((c) =>
+  '<div class="inst"><span>' + c.name + '<br><small>' + c.bw + ' Mbit/s · ' + c.watts + ' W · ' +
+  c.mass + ' kg · p ' + c.p + ' · value ' + c.value + ' · ' + c.price + '$</small></span>' +
+  '<input type="number" min="0" max="3" step="1" value="' + (S.instruments[c.id] || 0) + '" data-ins="' + c.id + '"></div>'
+).join('');
+document.querySelectorAll('[data-ins]').forEach((el) => {
+  el.oninput = () => { S.instruments[el.dataset.ins] = Math.max(0, Math.min(3, Number(el.value) || 0)); update(); };
+});
+
+/* physical modules */
+$('physical').innerHTML = CARDS.physical.map((c) =>
+  '<div class="chk"><input type="checkbox" data-phy="' + c.id + '"><span>' + c.name +
+  ' <small class="muted">(' + c.mass + ' kg, ' + c.price + ' $, p ' + c.p + ')</small></span></div>'
+).join('');
+document.querySelectorAll('[data-phy]').forEach((el) => {
+  el.onchange = () => {
+    S.physical = Array.from(document.querySelectorAll('[data-phy]:checked')).map((x) => x.dataset.phy);
+    update();
+  };
+});
+
+/* trajectories */
+function renderTrajectories() {
+  const m = mission();
+  const list = ENGINE.trajectoriesFor(currentSel(), m);
+  const avail = list.filter((t) => t.available);
+  if (!S.trajId || !list.some((t) => t.id === S.trajId)) {
+    const best = avail.slice().sort((a, b) => (b.window - b.k / 20) - (a.window - a.k / 20))[0];
+    S.trajId = (best || list[0]).id;
+  }
+  $('trajList').innerHTML = list.map((t) => {
+    const cls = 'traj' + (t.id === S.trajId ? ' on' : '') + (t.available ? '' : ' off');
+    const pill = t.available ? '<span class="pill ok">available</span>' : '<span class="pill bad">no</span>';
+    const miss = t.missing.length ? ' · missing: ' + t.missing.join(', ') : '';
+    return '<div class="' + cls + '" data-traj="' + t.id + '"><b>' + t.name + '</b>' + pill +
+      '<div class="meta">k ' + fmt(t.k, 2) + ' · payload ' + fmt(t.capacityKg / 1000, 3) + ' t · deadline ' +
+      t.deadline + ' · window ' + fmt(t.window, 2) + miss + '</div></div>';
+  }).join('');
+  document.querySelectorAll('[data-traj]').forEach((el) => {
+    el.onclick = () => {
+      const t = list.find((x) => x.id === el.dataset.traj);
+      if (!t || !t.available) return;
+      S.trajId = t.id; renderTrajectories(); update();
+    };
+  });
+}
+/* ---------- computation and output ---------- */
+function row(label, value, cls) {
+  return '<tr><td class="muted">' + label + '</td><td' + (cls ? ' class="' + cls + '"' : '') + '>' + value + '</td></tr>';
+}
+
+let last = null;
+
+function update() {
+  const m = mission();
+  renderTrajectories();
+  const c = ENGINE.compute(currentSel(), m, S.trajId, { unique: S.unique, money: S.money });
+  last = c;
+
+  $('kP').textContent = pct(c.pSuccess);
+  $('kM').textContent = fmt(c.massKg / 1000, 3) + ' / ' + fmt(c.capacityKg / 1000, 3);
+  $('kD').textContent = fmt(c.data.ratio, 2);
+  $('kC').textContent = c.price + ' $';
+  $('pBar').style.width = Math.min(100, c.pSuccess * 100) + '%';
+
+  const v = $('verdict');
+  v.textContent = c.verdict + ' · ' + c.trajectory.name;
+  v.className = 'verdict ' + c.verdictKey;
+
+  $('probLine').innerHTML =
+    'P = p<sub>launch</sub> ' + fmt(c.pLaunch, 3) + ' × p<sub>build</sub> ' + fmt(c.pCollect, 3) +
+    ' × p<sub>channel</sub> ' + fmt(c.pChannel, 3) + ' = <b>' + fmt(c.pSuccess, 3) + '</b>' +
+    ' · channel ' + fmt(c.channel.bandwidth, 1) + ' Mbit/s · D<sub>gen</sub> ' + Math.round(c.data.dGen) +
+    ' / D<sub>tx</sub> ' + Math.round(c.data.dTx) + ' Mbit';
+
+  $('checks').innerHTML = c.checks.map((ch) => {
+    const cls = ch.ok ? 'ok' : (ch.soft ? 'mid' : 'bad');
+    const mark = ch.ok ? '✓' : (ch.soft ? '◇' : '✗');
+    return '<tr><td>' + ch.label + '</td><td class="muted">' + ch.detail + '</td>' +
+      '<td class="num ' + cls + '">' + mark + '</td></tr>';
+  }).join('');
+
+  $('scoreRows').innerHTML =
+    row('Scientific result S (on success)', fmt(c.sDet, 1) + ' / target ' + c.target + ' (expected S ' + fmt(c.s, 1) + ')') +
+    row('Δrating / ΔVChK', '<b>' + (c.dRating > 0 ? '+' : '') + c.dRating + '</b> / <b>' + (c.dVchk > 0 ? '+' : '') + c.dVchk + '</b>') +
+    row('Role points (eng / sci / mgr)', c.roles.eng + ' / ' + c.roles.sci + ' / ' + c.roles.man) +
+    row('Contract: advance / bonus', c.advance + ' $ / ' + c.bonus + ' $') +
+    row('Purchase cap', Math.round(c.advance * CONFIG.contractReward.capFactor) + ' $ (1.35·advance)') +
+    row('PM and cycles', c.pm + ' PM · ' + c.cycles + ' cycle(s) · deadline ' + c.deadline) +
+    row('FCS slots', c.slots.used + ' / ' + c.slots.total) +
+    row('Payload mass / capacity to target', fmt(c.massKg / 1000, 3) + ' t / ' + fmt(c.capacityKg / 1000, 3) + ' t (k = ' + fmt(c.k, 2) + ')') +
+    row('Power: available / required', Math.round(c.power.available) + ' W / ' + Math.round(c.power.required) + ' W') +
+    (c.missingMission.length ? row('Mission modules missing (S ×0.5 each)', c.missingMission.join(', '), 'bad') : '') +
+    (!c.data.typeMatch ? row('Mission data type not covered by the instruments', 'S ×0.5', 'bad') : '');
+}
+
+/* ---------- reference builds ---------- */
+$('refRows').innerHTML = ENGINE.referenceBuilds().map((r) => {
+  const d = (r.delta > 0 ? '+' : '') + r.delta.toFixed(3);
+  const cls = Math.abs(r.delta) <= 0.02 ? 'ok' : 'bad';
+  return '<tr><td>' + r.label + '</td><td class="num">' + r.computed.toFixed(3) +
+    '</td><td class="num ' + cls + '">' + d + '</td></tr>';
+}).join('');
+
+/* ---------- Monte Carlo ---------- */
+let mcResult = null;
+
+$('run').onclick = () => {
+  const n = Math.max(5, Math.min(300, Number($('games').value) || 60));
+  $('mcStatus').textContent = 'running ' + n + ' games…';
+  $('run').disabled = true;
+  setTimeout(() => {
+    const t0 = performance.now();
+    mcResult = ENGINE.runMonteCarlo(n, 20250101);
+    renderMC(mcResult);
+    $('mcStatus').textContent = 'done in ' + Math.round(performance.now() - t0) + ' ms';
+    $('run').disabled = false;
+  }, 30);
+};
+
+function renderMC(mc) {
+  const r = (label, value, target, ok) =>
+    '<tr><td>' + label + '</td><td class="num">' + value + '</td><td class="num muted">' + target + '</td>' +
+    '<td class="num ' + (ok == null ? '' : (ok ? 'ok' : 'bad')) + '">' + (ok == null ? '—' : (ok ? '✓' : '✗')) + '</td></tr>';
+  $('mcRows').innerHTML =
+    r('Average rating per game', mc.avgRating, '> 40', mc.avgRating > 40) +
+    r('Average VChK', mc.avgVchk, '—') +
+    r('Success / partial / failure', mc.successRate + '% / ' + mc.partialRate + '% / ' + mc.failRate + '%', '15–35% failure', mc.failOk) +
+    r('Launcher duplication', mc.dupRocketRate + '%', '< 40%', mc.dupRocketRate < 40) +
+    r('FCS duplication', mc.dupCtrlRate + '%', '< 40%', mc.dupCtrlRate < 40) +
+    r('Experimental launcher / instrument', mc.expRate + '%', '< 20%', mc.expRate < 20) +
+    r('Experimental subsystems', mc.expSubsystemRate + '%', 'for reference') +
+    r('pwr_exp', mc.powerExpRate + '%', 'for reference') +
+    r('Salvage missions', mc.salvageRate + '%', '—') +
+    r('Average P_success of the builds', mc.avgPSuccess, '0.68–0.72', mc.avgPSuccess >= 0.68 && mc.avgPSuccess <= 0.72) +
+    r('Failure stages: launch / build / channel / physics', mc.stages.launch + '% / ' + mc.stages.collect + '% / ' + mc.stages.channel + '% / ' + mc.stages.physical + '%', '—') +
+    r('Missions per game', mc.avgMissions, '≥ 9.5', mc.avgMissions >= 9.5) +
+    r('Skipped (no build within budget)', mc.skipRate + '%', '< 10%', mc.skipRate < 10) +
+    r('Average build price', mc.avgPrice + ' $', '—') +
+    r('Money left', mc.avgMoney + ' $', '—') +
+    r('Role points eng / sci / mgr', mc.avgRoles.eng + ' / ' + mc.avgRoles.sci + ' / ' + mc.avgRoles.man, '—');
+}
+
+$('csv').onclick = () => {
+  if (!mcResult) { $('mcStatus').textContent = 'run the games first'; return; }
+  const head = 'game,rating,vchk,money,missions,success,partial,fail,skipped,avgP,spent';
+  const rows = mcResult.gamesArr.map((g, i) =>
+    [i + 1, g.rating.toFixed(2), g.vchk.toFixed(2), g.money, g.missions, g.succ, g.partial, g.fail, g.skipped,
+     (g.pSum / Math.max(1, g.missions)).toFixed(3), g.spent].join(','));
+  const blob = new Blob([head + '\n' + rows.join('\n')], { type: 'text/csv;charset=utf-8' });
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'monte-carlo-' + mcResult.games + '.csv';
+  a.click();
+  URL.revokeObjectURL(a.href);
+};
+
+/* ---------- start ---------- */
+$('verTag').textContent = CONFIG.version;
+renderTrajectories();
+update();
+
+
+</script>

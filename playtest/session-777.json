@@ -1,0 +1,136 @@
+{
+ "version": "v1.4",
+ "seed": 777,
+ "maxSteps": 15,
+ "rng": 250010749,
+ "actionsLeft": 2,
+ "finished": false,
+ "journal": [
+  {
+   "step": 3,
+   "mission": "m_newhorizons",
+   "name": "Новые горизонты",
+   "point": "deep",
+   "traj": "direct",
+   "p": 0.7472648252857749,
+   "sAct": 0,
+   "verdict": "fail",
+   "stage": "channel",
+   "price": 1340,
+   "advance": 1210,
+   "dRating": 3.875,
+   "dVchk": -1.125,
+   "dMoney": 0
+  }
+ ],
+ "state": {
+  "seed": 777,
+  "step": 3,
+  "maxSteps": 15,
+  "money": 900,
+  "np": 30,
+  "vchk": 10.875,
+  "rating": 4.875,
+  "groundFund": 71,
+  "mcsLevel": 0,
+  "mcsPenalty": 0,
+  "managers": 2,
+  "factory": 0,
+  "school": 1,
+  "staff": {
+   "1": 4,
+   "2": 3,
+   "3": 1
+  },
+  "tech": {
+   "rocket": {
+    "light": 1,
+    "medium": 1,
+    "heavy": 1,
+    "superheavy": 1,
+    "exp": 1
+   },
+   "instrument": {
+    "camera": 1,
+    "spectrometer": 1,
+    "radiometer": 1,
+    "magnetometer": 1,
+    "exp": 1
+   }
+  },
+  "ip": {
+   "rocket": {
+    "light": 0,
+    "medium": 0,
+    "heavy": 0,
+    "superheavy": 0,
+    "exp": 0
+   },
+   "instrument": {
+    "camera": 0,
+    "spectrometer": 0,
+    "radiometer": 0,
+    "magnetometer": 0,
+    "exp": 0
+   }
+  },
+  "visited": {
+   "deep": true
+  },
+  "standardized": {},
+  "expSeen": {},
+  "offers": [
+   "m_insight",
+   "m_osirisrex",
+   "m_viking1"
+  ],
+  "production": [],
+  "ready": [],
+  "pmPrepUsed": 0,
+  "testUsed": false,
+  "tookMission": false,
+  "stats": {
+   "accepted": 1,
+   "missions": 1,
+   "success": 0,
+   "partial": 0,
+   "fail": 1,
+   "launches": 1,
+   "expired": 0,
+   "rescues": 1,
+   "testLaunches": 0,
+   "cmlUps": 0,
+   "mcsUps": 0,
+   "factoryUps": 0,
+   "schoolUps": 1,
+   "managersHired": 0,
+   "prepSteps": 0,
+   "prActions": 1,
+   "standardized": 0,
+   "groundContracts": 0,
+   "failStreak": 1,
+   "maxFailStreak": 1,
+   "failStreakPenalties": 0,
+   "advances": 1210,
+   "bonuses": 0,
+   "spent": 1340,
+   "salaries": 70,
+   "upkeep": 0,
+   "mcsSpent": 0,
+   "factorySpent": 0,
+   "schoolSpent": 200,
+   "techSpent": 0,
+   "testSpent": 0,
+   "pSum": 0.7472648252857749,
+   "priceSum": 1340,
+   "launchesByMcs": 1
+  },
+  "log": [
+   "шаг 1: принята Новые горизонты (1210 $, 11 ПМ/шаг, 2 шаг.)",
+   "шаг 1: PR (+2 ВЧК)",
+   "шаг 2: школа → 1 (200 $, 25 ПМ)",
+   "шаг 3: Новые горизонты → fail[channel] (P=0.75, S=0, +3.9 РК)"
+  ],
+  "hadMissionLast": false
+ }
+}

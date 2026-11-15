@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<title>Space Mission Design — tokens</title>
+<style>
+  @page { size: A4 portrait; margin: 8mm; }
+  body { margin:0; background:#e9edf2; color:#0b1626; font:12px/1.35 "Segoe UI",Arial,sans-serif; }
+  .bar { background:#0d1b2b; color:#d8e8f6; padding:8px 16px; display:flex; gap:10px; align-items:center; }
+  .bar b { color:#54d6e6; letter-spacing:.06em; }
+  .bar button { background:#17304a; color:#d8e8f6; border:1px solid #2a4a6b; border-radius:6px; padding:4px 10px; cursor:pointer; }
+  .wrap { padding:6mm; }
+  h2 { font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:#3a5b78; margin:6mm 0 3mm; }
+  .grid { display:flex; flex-wrap:wrap; gap:3mm; }
+  .tok { width:20mm; height:20mm; border-radius:50%; border:.35mm dashed #7d93a8;
+    display:flex; flex-direction:column; align-items:center; justify-content:center;
+    font-size:8pt; font-weight:700; color:#12293f; background:#fff; text-align:center; line-height:1.1; }
+  .tok small { font-size:5.6pt; font-weight:600; text-transform:uppercase; letter-spacing:.08em; color:#5b7488; }
+  .money { background:#f7e9c4; border-color:#a98a3f; }
+  .np { background:#d9ecf6; border-color:#4b8aa8; }
+  .pm { background:#dfe6f2; border-color:#5a7290; }
+  .vchk { background:#e3f2e6; border-color:#4f8a63; }
+  .rk { background:#f6e0dc; border-color:#a86a5f; }
+  .def { background:#efe2f5; border-color:#7a5a90; }
+  .ok { background:#dff5e8; border-color:#3f8a5f; }
+  .mid { background:#fbf0d5; border-color:#a8823a; }
+  .bad { background:#f8dedb; border-color:#a8524a; }
+  .note { font-size:10px; color:#5b7488; margin-top:2mm; }
+  @media print { body { background:#fff; } .bar { display:none; } .wrap { padding:0; } }
+</style>
+</head>
+<body>
+<div class="bar">
+  <b>TOKENS</b>
+  <button onclick="window.print()">Print</button>
+  <span style="margin-left:auto;font-size:11px;opacity:.75">cut along the dotted lines · 200–300 g/m² card</span>
+</div>
+<div class="wrap">
+  <h2>Money</h2>
+  <div class="grid" id="money"></div>
+  <h2>Research potential (NP)</h2>
+  <div class="grid" id="np"></div>
+  <h2>Production capacity (PM)</h2>
+  <div class="grid" id="pm"></div>
+  <h2>Internal human capital (VChK)</h2>
+  <div class="grid" id="vchk"></div>
+  <h2>Team rating</h2>
+  <div class="grid" id="rk"></div>
+  <h2>Managers (1–5)</h2>
+  <div class="grid" id="def"></div>
+  <h2>Mission statuses</h2>
+  <div class="grid" id="status"></div>
+  <p class="note">
+    Recommendation: 40 cubes of $1, 10 of $5, 5 of $10; 30 NP tokens, 30 PM, 20 VChK, 20 rating;
+    5 manager tokens; statuses — one per mission in the play.
+  </p>
+</div>
+<script>
+const tok = (cls, big, small) => '<div class="tok ' + cls + '">' + big + '<small>' + small + '</small></div>';
+const fill = (id, html) => { document.getElementById(id).innerHTML = html; };
+
+fill('money', Array.from({ length: 40 }, () => tok('money', '1 $', 'money')).join('') +
+  Array.from({ length: 10 }, () => tok('money', '5 $', 'money')).join('') +
+  Array.from({ length: 5 }, () => tok('money', '10 $', 'money')).join(''));
+fill('np', Array.from({ length: 30 }, () => tok('np', 'NP', 'science')).join(''));
+fill('pm', Array.from({ length: 30 }, (_, i) => tok('pm', (i + 1) * 5, 'PM')).join(''));
+fill('vchk', Array.from({ length: 20 }, (_, i) => tok('vchk', (i + 1) * 2, 'VChK')).join(''));
+fill('rk', Array.from({ length: 20 }, (_, i) => tok('rk', (i + 1) * 5, 'rating')).join(''));
+fill('def', ['1','2','3','4','5'].map((n) => tok('def', n, 'mgr')).join(''));
+fill('status', tok('ok', '✓', 'full') + tok('ok', '✓', 'success') +
+  tok('mid', '½', 'partial') + tok('bad', '✗', 'failure') +
+  tok('mid', 'P<0.5', 'risk') + tok('np', '1st', 'arrival ×1.5') + tok('pm', '×0.8', 'repeat'));
+</script>
+</body>
+</html>

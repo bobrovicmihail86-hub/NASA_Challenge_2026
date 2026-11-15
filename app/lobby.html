@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Space Mission Design — Mission Control Online</title>
+<link rel="stylesheet" href="lobby.css">
+</head>
+<body>
+<header class="top">
+  <div class="brand">
+    <span class="logo">🚀</span>
+    <div>
+      <h1>Space Mission Design</h1>
+      <p>Multiplayer mission control · server-authoritative rooms</p>
+    </div>
+  </div>
+  <div class="session" id="session">
+    <span id="sessionText">Not signed in</span>
+    <button id="signOut" class="ghost hidden" type="button"
+      data-tip="Forget this browser session on this device." data-tip-side="down">Sign out</button>
+  </div>
+</header>
+
+<main>
+  <section id="loginCard" class="card">
+    <h2>Sign in</h2>
+    <p class="hint">No password: your e-mail is the identity inside a team. It is never shown to other players —
+      they only see <b>a***@domain</b>.</p>
+    <form id="loginForm" class="row">
+      <label class="field grow" data-tip="Any address works: it is your key inside a team, not a password.">
+        <span>E-mail</span>
+        <input id="email" type="email" required placeholder="captain@example.org" autocomplete="email">
+      </label>
+      <button type="submit" class="primary" data-tip="Sign in or create the identity on the spot.">Sign in</button>
+    </form>
+  </section>
+
+  <div id="app" class="hidden">
+    <section class="grid">
+      <div class="card">
+        <h2>Create a team</h2>
+        <form id="createForm">
+          <label class="field" data-tip="Shown to every player in the lobby and at the top of the room.">
+            <span>Team name</span>
+            <input id="teamName" maxlength="40" required placeholder="Aurora">
+          </label>
+          <label class="field" data-tip="Optional: a direct image link or a data: URL with the picture inside.">
+            <span>Emblem URL (optional)</span>
+            <input id="teamLogo" placeholder="https://… or data:image/png;base64,…">
+          </label>
+          <div class="row">
+            <label class="field grow" data-tip="The seed decides the campaign: the same seed replays the same missions.">
+              <span>Campaign seed</span>
+              <input id="teamSeed" type="number" min="1" max="99999999" value="20260101">
+            </label>
+            <label class="field grow" data-tip="How long the campaign runs: from 6 to 24 steps.">
+              <span>Steps</span>
+              <input id="teamSteps" type="number" min="6" max="24" value="15">
+            </label>
+          </div>
+          <fieldset class="roster">
+            <legend>Roster</legend>
+            <div class="row">
+              <label class="field grow" data-tip="The name the other players see in the roster and in the log.">
+                <span>Your display name</span>
+                <input id="selfName" maxlength="40" placeholder="Captain">
+              </label>
+              <div class="field">
+                <span>Your roles</span>
+                <div class="roles" id="selfRoles">
+                  <label data-tip="Manager: signs contracts, hires the crew and approves experiments.">
+                    <input type="checkbox" value="manager" checked> manager</label>
+                  <label data-tip="Engineer: launcher, mission modules, trajectory and factory work.">
+                    <input type="checkbox" value="engineer" checked> engineer</label>
+                  <label data-tip="Scientist: control, instruments, power and the science school.">
+                    <input type="checkbox" value="scientist"> scientist</label>
+                  <label data-tip="Ops: launches flights, runs link sessions and closes the step.">
+                    <input type="checkbox" value="ops"> ops</label>
+                </div>
+              </div>
+            </div>
+            <p class="hint">You become the captain. Add the rest of the crew from “My teams” after the team exists
+              (or let them join from the open-games list). At least one manager is required.</p>
+          </fieldset>
+          <button class="primary" type="submit"
+            data-tip="You become the captain; at least one manager must be ticked.">Create team</button>
+        </form>
+      </div>
+
+      <div class="card">
+        <h2>My teams</h2>
+        <div id="myTeams" class="list"><p class="hint">Sign in to see your teams.</p></div>
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="row between">
+        <h2>Open games</h2>
+        <button id="refresh" class="ghost" type="button"
+          data-tip="Reload your teams, the open games and the hall of fame.">Refresh</button>
+      </div>
+      <div id="openGames" class="list"></div>
+    </section>
+
+    <section class="card">
+      <div class="row between">
+        <h2>Hall of fame</h2>
+        <span class="hint" id="resultsUpdated"></span>
+      </div>
+      <div id="results" class="list"></div>
+    </section>
+  </div>
+</main>
+
+<div id="dialog" class="dialog hidden">
+  <div class="dialog-body">
+    <div class="row between">
+      <h2 id="dialogTitle">Archive</h2>
+      <button id="dialogClose" class="ghost" type="button"
+        data-tip="Close the campaign archive.">Close</button>
+    </div>
+    <div id="dialogContent"></div>
+  </div>
+</div>
+
+<div id="toast" class="toast hidden"></div>
+<script src="lobby.js"></script>
+</body>
+</html>

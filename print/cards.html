@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Space Mission Design — card printing (63×88 mm)</title>
+<style>
+  @page { size: A4 portrait; margin: 7mm; }
+  :root { --ink:#0b1626; --ink2:#0f2033; --line:#2a4a6b; --cyan:#54d6e6; --amber:#f3b545; }
+  * { box-sizing: border-box; }
+  body { margin:0; background:#e9edf2; color:#0b1626; font:13px/1.4 "Segoe UI",Arial,sans-serif; }
+  .toolbar { position:sticky; top:0; z-index:10; background:#0e1b2b; color:#dbe9f7; padding:10px 16px;
+    display:flex; gap:8px; align-items:center; flex-wrap:wrap; box-shadow:0 4px 14px rgba(0,0,0,.25); }
+  .toolbar b { color:var(--cyan); letter-spacing:.04em; }
+  .toolbar button { background:#17304a; color:#dbe9f7; border:1px solid #2a4a6b; border-radius:7px;
+    padding:5px 10px; font-size:12px; cursor:pointer; }
+  .toolbar button.on { background:#1f5f6d; border-color:var(--cyan); color:#fff; }
+  .toolbar label { font-size:12px; display:flex; align-items:center; gap:5px; }
+  .toolbar .sp { margin-left:auto; font-size:12px; opacity:.8; }
+  .sheet { display:grid; grid-template-columns:repeat(3,63mm); gap:3mm; justify-content:center;
+    padding:6mm 0; page-break-after:always; }
+  .card { width:63mm; height:88mm; border-radius:3.2mm; overflow:hidden; position:relative;
+    background:linear-gradient(165deg,#0e2033,#0a1522 70%); color:#e6f1fb;
+    border:.3mm solid #2a4a6b; display:flex; flex-direction:column; font-size:7pt; }
+  .card.mission { background:linear-gradient(165deg,#122a3f,#0b1927 70%); }
+  .card.facility { background:linear-gradient(165deg,#1a2436,#0d1522 70%); }
+  .card.event { background:linear-gradient(165deg,#2a2136,#151020 70%); }
+  .card.auxiliary { background:linear-gradient(165deg,#172430,#0c141d 70%); }
+  .card.mcs { background:linear-gradient(165deg,#12313f,#091c26 70%); }
+  .card.test { background:linear-gradient(165deg,#2b2a1c,#171608 70%); }
+  .card.groundContract { background:linear-gradient(165deg,#1d2b25,#0d1713 70%); }
+  .hdr { display:flex; justify-content:space-between; align-items:center; padding:1.6mm 2.4mm .8mm;
+    font-size:5.6pt; letter-spacing:.12em; text-transform:uppercase; color:#8fb3d1; }
+  .hdr .kind { color:var(--cyan); }
+  .art { position:relative; height:30mm; margin:0 2.4mm; border-radius:2mm; overflow:hidden;
+    background:radial-gradient(120% 90% at 50% 18%,#1a3550,#0b1a29 62%,#070d15 100%); border:.25mm solid #23445f; }
+  .art img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center;
+    display:block; z-index:1; }
+  .art .ph { position:absolute; inset:0; display:flex; align-items:center; justify-content:center; z-index:0;
+    font-size:16pt; color:#2f6f86; letter-spacing:.1em; }
+  .art .grid { position:absolute; inset:0; z-index:0; opacity:.2;
+    background-image:linear-gradient(#1d4055 1px,transparent 1px),linear-gradient(90deg,#1d4055 1px,transparent 1px);
+    background-size:5mm 5mm; }
+  .name { padding:1.6mm 2.4mm .6mm; font-size:8.6pt; font-weight:700; line-height:1.15; }
+  .sub { padding:0 2.4mm; font-size:6pt; color:#8fb3d1; }
+  .stats { display:grid; grid-template-columns:1fr 1fr; gap:.4mm 2mm; padding:1.2mm 2.4mm; font-size:6.2pt; }
+  .stats div { display:flex; justify-content:space-between; border-bottom:.2mm dotted #23445f; }
+  .stats span { color:#8fb3d1; }
+  .stats b { font-weight:600; color:#dff0ff; }
+  .txt { padding:.8mm 2.4mm 2.2mm; font-size:5.9pt; line-height:1.32; color:#b9d3e8; flex:1; overflow:hidden; }
+  .badge { position:absolute; top:1.2mm; right:1.2mm; font-size:5.4pt; padding:.3mm 1.2mm; border-radius:2mm;
+    background:#0a1522; border:.25mm solid #2a4a6b; color:#8fb3d1; }
+  .badge.ok { color:#6ee7b7; border-color:#2f7f5f; }
+  .badge.bad { color:#f2938a; border-color:#7f3b34; }
+  .badge.mid { color:var(--amber); border-color:#7f6428; }
+  .card.back { background:linear-gradient(165deg,#0c1826,#08101a 70%); }
+  .back .hdr { border-bottom:.2mm solid #1b3a52; padding-bottom:1.4mm; }
+  .back .body { padding:2mm 2.4mm; font-size:6.1pt; line-height:1.34; color:#c3d8ea; flex:1; }
+  .back .body h4 { margin:0 0 1mm; font-size:6.2pt; color:var(--cyan); letter-spacing:.08em; text-transform:uppercase; }
+  .back .foot { padding:1.4mm 2.4mm; font-size:5.4pt; color:#7fa0bd; border-top:.2mm solid #1b3a52; }
+  @media print {
+    body { background:#fff; }
+    .toolbar { display:none; }
+    .sheet { padding:0; page-break-after:always; }
+    .card { box-shadow:none; }
+  }
+</style>
+</head>
+<body>
+<div class="toolbar">
+  <b>CARD PRINTING</b>
+  <span id="deckBtns"></span>
+  <label><input type="checkbox" id="backs"> backs (second pass)</label>
+  <label><input type="checkbox" id="copies" checked> respect the print run</label>
+  <button id="doPrint">Print</button>
+  <span class="sp" id="counter"></span>
+</div>
+<div id="sheets"></div>
+
+<script src="../data/config.js"></script>
+<script src="../data/cards.js"></script>
+<script src="../data/missions.js"></script>
+<script>
+const $ = (id) => document.getElementById(id);
+const esc = (s) => String(s == null ? '' : s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+
+const DECKS = [
+  { key: 'all', label: 'all', cards: () => allCards() },
+  { key: 'missions', label: 'missions', cards: () => MISSIONS },
+  { key: 'salvage', label: 'salvage', cards: () => SALVAGE },
+  { key: 'rockets', label: 'launchers', cards: () => CARDS.rockets.concat(CARDS.standardRockets || [], CARDS.experimentalRockets || []) },
+  { key: 'reservations', label: 'reserve', cards: () => CARDS.reservations },
+  { key: 'control', label: 'FCS', cards: () => CARDS.control },
+  { key: 'instruments', label: 'instruments', cards: () => CARDS.instruments.concat(CARDS.standardInstruments || [], CARDS.experimentalInstruments || []) },
+  { key: 'antennas', label: 'antennas', cards: () => CARDS.antennas.concat(CARDS.antennaDup) },
+  { key: 'power', label: 'power', cards: () => CARDS.power.concat(CARDS.buffers) },
+  { key: 'physical', label: 'modules', cards: () => CARDS.physical },
+  { key: 'facilities', label: 'facilities', cards: () => CARDS.facilities },
+  { key: 'events', label: 'events', cards: () => CARDS.events },
+  { key: 'auxiliary', label: 'decor', cards: () => CARDS.auxiliary },
+  { key: 'campaignMcs', label: 'MCC', cards: () => CARDS.campaignMcs },
+  { key: 'campaignTests', label: 'tests', cards: () => CARDS.campaignTests },
+  { key: 'groundContracts', label: 'ground', cards: () => CARDS.groundContracts },
+  { key: 'opsEvents', label: 'flight events', cards: () => CARDS.opsEvents }
+];
+
+function allCards() {
+  return DECKS.filter((d) => ['all', 'missions', 'salvage',
+    'campaignMcs', 'campaignTests', 'groundContracts', 'opsEvents'].indexOf(d.key) === -1)
+    .reduce((a, d) => a.concat(d.cards()), []);
+}
+
+const ST = { deck: 'all', backs: false, copies: true };
+
+function copiesOf(c) {
+  if (!ST.copies) return 1;
+  return c.copies || (CONFIG.deckCopies || {})[c.id] || 1;
+}
+
+const KIND_LABEL = {
+  rocket: 'upper stage', reservation: 'reservation', control: 'flight control system',
+  instrument: 'instrument', antenna: 'antenna', antennaDup: 'module', power: 'power',
+  buffer: 'buffer', physical: 'physical module', facility: 'facility', event: 'event',
+  auxiliary: 'decor', mission: 'mission', salvage: 'salvage mission',
+  mcs: 'MCC', test: 'test', groundContract: 'ground contract',
+  opsEvent: 'flight event'
+};
+
+function stats(c) {
+  const S = [];
+  const push = (k, v) => { if (v != null) S.push([k, v]); };
+  if (c.kind === 'rocket') {
+    push('LEO payload', c.payload + ' t'); push('launch p', c.p); push('price', c.price + ' $');
+    push('cycles', c.cycles); push('PM', c.pm); push('NP', c.np);
+    push('bus', c.busPower + ' W'); push('channel', c.busChannel + ' Mbit/s');
+  } else if (c.kind === 'reservation') {
+    push('price', '×' + c.priceFactor); push('launcher mass', '×' + c.massFactor);
+    push('type', c.t === 'none' ? 'single' : c.t === 'double' ? 'double' : 'experimental');
+  } else if (c.kind === 'control') {
+    push('slots', c.slots); push('mass', c.mass + ' kg'); push('power', c.watts + ' W');
+    push('price', c.price + ' $'); push('NP', c.np); push('PM', c.pm);
+  } else if (c.kind === 'instrument') {
+    push('mass', c.mass + ' kg'); push('power', c.watts + ' W'); push('channel', c.bw + ' Mbit/s');
+    push('value', c.value); push('p', c.p); push('price', c.price + ' $');
+    push('NP', c.np); push('PM', c.pm);
+  } else if (c.kind === 'antenna') {
+    push('channel', c.bw + ' Mbit/s'); push('p', c.p); push('mass', c.mass + ' kg');
+    push('power', c.watts + ' W'); push('price', c.price + ' $'); push('NP', c.np);
+  } else if (c.kind === 'antennaDup') {
+    push('price', '×' + c.priceFactor); push('mass', '×' + c.massFactor); push('effect', '1−(1−p)²');
+  } else if (c.kind === 'power') {
+    push('output', c.watts + ' W');
+    push('type', c.source === 'reactor' ? 'RTG' : c.source === 'exp' ? 'experimental' : 'solar');
+    push('mass', c.mass + ' kg'); push('price', c.price + ' $'); push('NP', c.np);
+  } else if (c.kind === 'buffer') {
+    push('capacity', c.kwh + ' kWh'); push('mass', c.mass + ' kg'); push('price', c.price + ' $');
+  } else if (c.kind === 'physical') {
+    push('mass', c.mass + ' kg'); push('price', c.price + ' $'); push('stage p', c.p);
+    push('NP', c.np); push('PM', c.pm);
+  } else if (c.kind === 'facility') {
+    push('facility', c.obj === 'school' ? 'school' : 'factory'); push('stage', c.level);
+  } else if (c.kind === 'event') {
+    push('copies', c.copies);
+  } else if (c.kind === 'auxiliary') {
+    push('mass', '0 kg'); push('effect', 'decor');
+  } else if (c.kind === 'mcs') {
+    const lvl = c.level || 0;
+    push('level', lvl); push('launches', CONFIG.mcs.capacity[lvl]);
+    push('channel p', '+' + CONFIG.mcs.pChannel[lvl]);
+    push('S', '×' + CONFIG.mcs.sFactor[lvl]);
+    push('upkeep', CONFIG.mcs.upkeep[lvl] + ' $');
+    push('managers', CONFIG.mcs.managersRequired[lvl]);
+  } else if (c.kind === 'test') {
+    push('action', '1'); push('layer', 'campaign');
+  } else if (c.kind === 'groundContract') {
+    push('fund', '+' + c.fund + ' $');
+    if (c.npDelta) push('NP', (c.npDelta > 0 ? '+' : '') + c.npDelta);
+    if (c.vchkDelta) push('VChK', '+' + c.vchkDelta);
+    if (c.ipDelta) push('IP', '+' + c.ipDelta);
+    push('action', '1');
+  } else if (c.cost != null) {
+    push('price', c.cost + ' $'); push('p', c.p); push('data', '50%');
+  } else if (c.point) {
+    push('point', CONFIG.points[c.point].name);
+    push('complexity', c.complexity); push('S target', c.targetValue);
+    push('deadline', c.deadline); push('observation', c.observeTime);
+    push('duration', c.missionTime); push('flight', c.flight + ' step(s)');
+    push('data', (CONFIG.dataTypes[c.dataType] || {}).name || '—');
+  }
+  return S;
+}
+
+function artTag(c) {
+  const raw = c.art || ('assets/' + c.id + '.png');
+  const src = /^(https?:|data:|\.\.\/)/i.test(raw)
+    ? raw
+    : '../art/' + raw.replace(/^\/?art\//, '').replace(/^\.\//, '');
+  return '<div class="art"><div class="grid"></div><div class="ph">' +
+    esc((c.name || '?').slice(0, 2).toUpperCase()) +
+    '</div><img src="' + esc(src) + '" alt="" onerror="this.style.display=\'none\'"></div>';
+}
+
+function outcomeBadge(o) {
+  if (!o) return '';
+  const cls = /partial/.test(o) ? 'mid' : /fail/.test(o) ? 'bad' : /progress/.test(o) ? 'mid' : 'ok';
+  return '<span class="badge ' + cls + '">' + esc(o) + '</span>';
+}
+
+function front(c) {
+  const st = stats(c);
+  const isMission = !!c.point && !c.kind;
+  const isSalvage = isMission && c.cost != null && c.complexity == null;
+  const cls = 'card' + (isMission ? ' mission' : (c.kind ? ' ' + c.kind : ''));
+  const sub = isMission
+    ? esc([c.agency, c.year].filter((x) => x != null).join(' · ') || (c.cost != null ? 'salvage mission' : 'mission'))
+    : (KIND_LABEL[c.kind] || '') + ' · ' + esc(c.id);
+  let body = esc(c.text || '');
+  if (isMission && c.complexity != null) {
+    const traj = (c.trajectories || []).map((t) => CONFIG.trajectories[t].name).join(' / ');
+    const reqNames = (c.requires || []).map((k) => {
+      const mod = (CARDS.physical || []).find((p) => p.key === k);
+      return mod ? mod.name : k;
+    });
+    const req = reqNames.length ? ' · requires: ' + reqNames.join(', ') : '';
+    const dt = CONFIG.dataTypes[c.dataType] || {};
+    const insNames = (CARDS.instruments || [])
+      .concat(CARDS.standardInstruments || [], CARDS.experimentalInstruments || [])
+      .filter((x) => x.dataType === c.dataType).map((x) => x.name);
+    body = '<b>Trajectories:</b> ' + esc(traj) + esc(req) + (c.farSide ? ' · far side' : '') +
+      '<div><b>Data:</b> ' + esc(dt.name || '—') + ' — ' +
+      esc(insNames.length ? insNames.join(', ') : 'no instruments of this type') +
+      ' <span class="muted">(other type: S ×0.5)</span></div>';
+  }
+  return '<div class="' + cls + '">' +
+    '<div class="hdr"><span class="kind">' + (KIND_LABEL[c.kind] || (isSalvage ? 'salvage mission' : (isMission ? 'mission' : 'card'))) + '</span>' +
+    '<span>' + esc(c.id) + '</span></div>' +
+    artTag(c) +
+    '<div class="name">' + esc(c.name) + '</div>' +
+    '<div class="sub">' + sub + '</div>' +
+    '<div class="stats">' + st.map((kv) => '<div><span>' + kv[0] + '</span><b>' + esc(kv[1]) + '</b></div>').join('') + '</div>' +
+    '<div class="txt">' + body + '</div>' +
+    '</div>';
+}
+
+const NOTES = {
+  rocket: 'Spent on launch. Capacity to the target = LEO payload / (point k · trajectory k).',
+  reservation: 'Changes the launch p. Double: 1−(1−p)². Spent on launch.',
+  control: 'Instrument slots and build duplication. Spent on launch.',
+  instrument: 'The value feeds S. Data = channel · t_obs · type coeff.',
+  antenna: 'Channel = min(bw, launcher bus) · point ψ. Duplication module: 1−(1−p)².',
+  power: 'P_available = min(bus, P·point φ) ≥ 1.2·P_required.',
+  buffer: 'Without a buffer the transfer efficiency is 0.8, with a buffer 1.0.',
+  physical: 'Required by the mission or the trajectory. A stage failure cuts S by 40%.',
+  facility: 'Built once, upgraded along the 0→4 ladder.',
+  event: 'Draw at the end of the cycle if the condition holds.',
+  auxiliary: 'Decor: it does not affect the numbers.',
+  mission: 'S target = 20 + 10·complexity. Success: P ≥ 0.5 and S ≥ 0.7·target.',
+  mcs: 'MCC raises the launch limit, the channel p, S and VChK; upkeep is paid every step.',
+  test: 'A test gives IP for the CML. At most one test per step.',
+  groundContract: 'A ground contract tops up the ground-segment fund; it does not count as a mission.'
+};
+
+function back(c) {
+  const isMission = !!c.point && !c.kind;
+  const isSalvage = isMission && c.cost != null && c.complexity == null;
+  const head = isSalvage ? 'salvage mission' : (isMission ? 'historical note' : (KIND_LABEL[c.kind] || 'rules'));
+  let body;
+  if (isMission && !isSalvage) {
+    body = '<h4>' + esc(c.name) + (c.year != null ? ' · ' + esc(c.year) : '') + '</h4>' + esc(c.history || c.text) +
+      '<p style="margin:1.6mm 0 0"><b>Real outcome:</b> ' + esc(c.realOutcome || '—') + '. ' + esc(c.realNote || '') + '</p>';
+  } else {
+    body = '<h4>' + esc(c.name) + '</h4>' + esc(c.text) +
+      '<p style="margin:1.6mm 0 0">' + esc(NOTES[c.kind] || '') + '</p>';
+  }
+  return '<div class="card back">' +
+    '<div class="hdr"><span class="kind">' + head + '</span><span>' + esc(c.id) + '</span></div>' +
+    outcomeBadge(isMission ? c.realOutcome : null) +
+    '<div class="body">' + body + '</div>' +
+    '<div class="foot">Space Mission Design ' + CONFIG.version + ' · ' + esc(c.id) + '</div>' +
+    '</div>';
+}
+
+/* ---------- sheet assembly ---------- */
+function expand(cards) {
+  const out = [];
+  cards.forEach((c) => { for (let i = 0; i < copiesOf(c); i++) out.push(c); });
+  return out;
+}
+
+function render() {
+  const deck = DECKS.find((d) => d.key === ST.deck) || DECKS[0];
+  const cards = expand(deck.cards());
+  const per = 9;
+  const pages = Math.ceil(cards.length / per);
+  let html = '';
+  for (let p = 0; p < pages; p++) {
+    const slice = cards.slice(p * per, p * per + per);
+    let cells = slice.map((c) => (ST.backs ? back(c) : front(c)));
+    if (ST.backs) {
+      const mirrored = [];
+      for (let r = 0; r < 3; r++) {
+        const row = cells.slice(r * 3, r * 3 + 3);
+        while (row.length < 3) row.push('');
+        mirrored.push(row[2], row[1], row[0]);
+      }
+      cells = mirrored;
+    }
+    html += '<div class="sheet">' + cells.map((x) => x || '<div></div>').join('') + '</div>';
+  }
+  $('sheets').innerHTML = html;
+  $('counter').textContent = deck.label + ': ' + cards.length + ' cards · ' + pages + ' sheets · ' +
+    (ST.backs ? 'backs (mirrored order)' : 'faces');
+}
+
+$('deckBtns').innerHTML = DECKS.map((d) =>
+  '<button data-deck="' + d.key + '" class="' + (d.key === ST.deck ? 'on' : '') + '">' + d.label + '</button>'
+).join(' ');
+document.querySelectorAll('[data-deck]').forEach((b) => {
+  b.onclick = () => {
+    ST.deck = b.dataset.deck;
+    document.querySelectorAll('[data-deck]').forEach((x) => x.classList.toggle('on', x === b));
+    render();
+  };
+});
+$('backs').onchange = () => { ST.backs = $('backs').checked; render(); };
+$('copies').onchange = () => { ST.copies = $('copies').checked; render(); };
+$('doPrint').onclick = () => window.print();
+
+render();
+
+</script>
+</body>
+</html>

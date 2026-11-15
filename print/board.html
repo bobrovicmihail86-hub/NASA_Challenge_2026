@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<title>Space Mission Design — team board (A3)</title>
+<style>
+  @page { size: A3 landscape; margin: 6mm; }
+  :root { --ink:#08111c; --panel:#0f2032; --line:#27506f; --cyan:#54d6e6; --amber:#f3b545;
+          --green:#63d6a3; --red:#ea7a6c; --muted:#8fb0cb; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:#dfe6ee; color:#0a1420; font:11px/1.3 "Segoe UI",Arial,sans-serif; }
+  .bar { background:#0d1b2b; color:#d8e8f6; padding:7px 14px; display:flex; gap:10px; align-items:center; }
+  .bar b { color:var(--cyan); letter-spacing:.06em; }
+  .bar button { background:#17304a; color:#d8e8f6; border:1px solid #2a4a6b; border-radius:6px;
+    padding:4px 10px; font-size:11px; cursor:pointer; }
+  .bar .sp { margin-left:auto; font-size:11px; opacity:.75; }
+  .board { width:404mm; min-height:281mm; margin:6mm auto; background:linear-gradient(160deg,#0c1a29,#081019 70%);
+    color:#e4f0fa; padding:6mm; display:grid; grid-template-columns:78mm 1fr 92mm;
+    grid-template-rows:26mm 1fr 46mm; gap:5mm; border-radius:4mm; box-shadow:0 10px 40px rgba(0,0,0,.35); }
+  .box { background:rgba(19,35,53,.85); border:.3mm solid var(--line); border-radius:3mm; padding:3mm 3.4mm; }
+  .box h3 { margin:0 0 2mm; font-size:9.5pt; letter-spacing:.14em; text-transform:uppercase; color:var(--cyan); }
+  .box .hint { font-size:7pt; color:var(--muted); }
+  .head { grid-column:1 / -1; display:flex; align-items:center; gap:8mm; }
+  .head .team { font-size:17pt; font-weight:700; }
+  .head .team small { display:block; font-size:7.5pt; color:var(--muted); letter-spacing:.18em; text-transform:uppercase; }
+  .head .stat span { display:block; font-size:7pt; color:var(--muted); text-transform:uppercase; letter-spacing:.12em; }
+  .head .stat b { font-size:14pt; color:var(--amber); }
+  .head .line { flex:1; height:.4mm; background:linear-gradient(90deg,var(--line),transparent); }
+  .track { display:flex; align-items:center; gap:1.4mm; margin-bottom:1.6mm; }
+  .track .lbl { width:15mm; font-size:7.6pt; color:var(--muted); text-transform:uppercase; letter-spacing:.08em; }
+  .track .cells { display:flex; gap:.9mm; flex:1; }
+  .track .cells i { width:4.1mm; height:4.1mm; border:.25mm solid #24486a; border-radius:50%;
+    display:flex; align-items:center; justify-content:center; font-size:5.4pt; color:#5f86a6; font-style:normal; }
+  .track .val { width:12mm; text-align:right; font-size:9pt; font-weight:700; color:#f0f7ff; }
+  table { width:100%; border-collapse:collapse; font-size:7.6pt; }
+  th,td { text-align:left; padding:1.1mm 1.4mm; border-bottom:.2mm solid #1d3c57; }
+  th { color:var(--muted); font-weight:500; font-size:6.6pt; text-transform:uppercase; letter-spacing:.1em; }
+  td.num,th.num { text-align:right; font-variant-numeric:tabular-nums; }
+  .roles { display:grid; grid-template-columns:repeat(3,1fr); gap:2.4mm; }
+  .role { background:#0a1725; border:.25mm solid #1d3c57; border-radius:2.4mm; padding:2mm; }
+  .role h4 { margin:0 0 1.4mm; font-size:8pt; letter-spacing:.1em; text-transform:uppercase; color:var(--amber); }
+  .boxes { display:flex; gap:1mm; margin-bottom:1.4mm; }
+  .boxes i { flex:1; height:5.5mm; border:.25mm solid #24486a; border-radius:1mm; font-style:normal;
+    display:flex; align-items:center; justify-content:center; font-size:6pt; color:#5f86a6; }
+  .thr { font-size:6.4pt; color:var(--muted); }
+  .fac { display:grid; grid-template-columns:1fr 1fr; gap:2.4mm; margin-top:2.4mm; }
+  .st { background:#0a1725; border:.25mm solid #1d3c57; border-radius:2.4mm; padding:2mm; }
+  .st b { display:block; font-size:7.6pt; margin-bottom:1.2mm; color:#dff0ff; }
+  .st .row { display:flex; gap:1mm; }
+  .st .row i { flex:1; height:4.4mm; border:.25mm solid #24486a; border-radius:1mm; font-style:normal;
+    font-size:6pt; display:flex; align-items:center; justify-content:center; color:#5f86a6; }
+  .calc { margin-top:2.4mm; background:#0a1725; border:.25mm dashed #2a5f7a; border-radius:2.4mm; padding:2mm; }
+  .calc table { font-size:7pt; }
+  .calc th, .calc td { padding:.8mm 1mm; border-bottom:.2mm dotted #1d3c57; }
+  .vote { display:grid; grid-template-columns:repeat(4,1fr); gap:2mm; margin-top:2mm; }
+  .vote div { background:#0a1725; border:.25mm solid #1d3c57; border-radius:2mm; padding:1.6mm; text-align:center; }
+  .vote b { display:block; font-size:11pt; color:var(--cyan); }
+  .vote span { font-size:6.2pt; color:var(--muted); text-transform:uppercase; letter-spacing:.08em; }
+  .checks { display:grid; grid-template-columns:1fr 1fr; gap:1.2mm 4mm; font-size:7.2pt; margin-top:1mm; }
+  .checks div { color:#c9dcec; }
+  .checks i { color:var(--green); font-style:normal; margin-right:1mm; }
+  .log td { height:5.2mm; }
+  .notes { font-size:6.6pt; color:var(--muted); line-height:1.5; }
+  @media print { body { background:#fff; } .bar { display:none; } .board { margin:0; box-shadow:none; } }
+</style>
+</head>
+<body>
+<div class="bar">
+  <b>TEAM BOARD</b>
+  <button onclick="window.print()">Print A3 (landscape)</button>
+  <span class="sp">docs/RULES_V15.md §5–§11, §17, §32 · print without scaling</span>
+</div>
+
+<div class="board">
+  <div class="head">
+    <div class="team"><small>team</small>_______________________</div>
+    <div class="stat"><span>step</span><b>___</b></div>
+    <div class="stat"><span>missions</span><b>___</b></div>
+    <div class="stat"><span>rating</span><b>___</b></div>
+    <div class="stat"><span>VChK</span><b>___</b></div>
+    <div class="line"></div>
+  </div>
+
+  <div>
+    <div class="box">
+      <h3>Resources</h3>
+      <div class="track"><span class="lbl">Money</span><span class="cells" id="tMoney"></span><span class="val">___ $</span></div>
+      <div class="track"><span class="lbl">NP</span><span class="cells" id="tNP"></span><span class="val">___</span></div>
+      <div class="track"><span class="lbl">PM / step</span><span class="cells" id="tPM"></span><span class="val">___</span></div>
+      <div class="track"><span class="lbl">VChK</span><span class="cells" id="tVCHK"></span><span class="val">___</span></div>
+      <div class="track"><span class="lbl">Rating</span><span class="cells" id="tRK"></span><span class="val">___</span></div>
+      <div class="hint">Move the cubes along the track: “+” from missions and events, “−” from salaries and failures.</div>
+    </div>
+
+    <div class="box" style="margin-top:5mm">
+      <h3>Mission control (§17)</h3>
+      <table>
+        <thead><tr><th>Level</th><th class="num">0</th><th class="num">2</th><th class="num">4</th></tr></thead>
+        <tbody>
+          <tr><td>Launches / step</td><td class="num">1</td><td class="num">2</td><td class="num">3</td></tr>
+          <tr><td>Channel p</td><td class="num">+0.00</td><td class="num">+0.04</td><td class="num">+0.08</td></tr>
+          <tr><td>Managers</td><td class="num">0</td><td class="num">3</td><td class="num">5</td></tr>
+        </tbody>
+      </table>
+      <div class="hint" style="margin-top:1.6mm">Every two missing managers cost one level (minimum 0).</div>
+    </div>
+  </div>
+
+  <div>
+    <div class="box">
+      <h3>Role points (§10)</h3>
+      <div class="roles">
+        <div class="role"><h4>Engineer</h4>
+          <div class="boxes"><i>0</i><i>1</i><i>2</i><i>3</i><i>4</i><i>5</i><i>6</i><i>7</i><i>8</i><i>9</i></div>
+          <div class="thr">+2 / +2 / +1 / −2 / +1 — full / success / partial / launch fail / build fail</div></div>
+        <div class="role"><h4>Scientist</h4>
+          <div class="boxes"><i>0</i><i>1</i><i>2</i><i>3</i><i>4</i><i>5</i><i>6</i><i>7</i><i>8</i><i>9</i></div>
+          <div class="thr">+2 / +2 / +1 / 0 / −1 — the same five outcomes</div></div>
+        <div class="role"><h4>Manager</h4>
+          <div class="boxes"><i>0</i><i>1</i><i>2</i><i>3</i><i>4</i><i>5</i><i>6</i><i>7</i><i>8</i><i>9</i></div>
+          <div class="thr">+2 / +2 / +1 / −1 / 0 — the same five outcomes</div></div>
+      </div>
+
+      <div class="fac">
+        <div class="st"><b>Factory</b>
+          <div class="row"><i>0</i><i>1</i><i>2</i><i>3</i><i>4</i></div>
+          <div class="hint">+0 / 10 / 20 / 30 / 40 PM per step · stage 1 needs rating ≥ 60</div></div>
+        <div class="st"><b>Science school</b>
+          <div class="row"><i>0</i><i>1</i><i>2</i><i>3</i><i>4</i></div>
+          <div class="hint">instrument p +0 / 3 / 4 / 5 / 6% · MCC penalty −0 / 15 / 30 / 45 / 60% · stage 1 needs rating ≥ 60</div></div>
+      </div>
+
+      <div class="calc">
+        <h4 style="margin:0 0 1.4mm;font-size:7.6pt;letter-spacing:.1em;text-transform:uppercase;color:var(--cyan)">
+          Mini-calculator: P_launch × P_build × P_channel</h4>
+        <table>
+          <thead><tr><th>p build</th><th class="num">0.85</th><th class="num">0.88</th><th class="num">0.90</th><th class="num">0.92</th><th class="num">0.95</th></tr></thead>
+          <tbody id="gridP"></tbody>
+        </table>
+        <div class="hint">Columns are the channel p (§7, §17). Rows are P_build. Each cell holds the resulting P_success.</div>
+      </div>
+    </div>
+
+    <div class="box" style="margin-top:5mm">
+      <h3>Pre-launch checks</h3>
+      <div class="checks">
+        <div><i>✓</i>mass to the target: M·k ≤ launcher capacity</div>
+        <div><i>✓</i>power: P_available ≥ 1.2·P_required</div>
+        <div><i>✓</i>slots: instruments ≤ FCS slots</div>
+        <div><i>◇</i>data: D_ratio &lt; 0.5 forbids a full success only</div>
+        <div><i>✓</i>deadline: cycles ≤ mission duration</div>
+        <div><i>✓</i>PM: total ≤ 40·deadline</div>
+        <div><i>✓</i>trajectory modules on the table</div>
+        <div><i>✓</i>budget: price ≤ 1.35·advance</div>
+      </div>
+      <div class="notes" style="margin-top:2mm">
+        7 hard checks; <b>D_ratio</b> is soft. A failed hard check means the mission is “impossible”:
+        the cards come back, the advance is not spent, but the step is already gone.
+        P_success &lt; 0.5 is the player's risk decision, not a ban.
+        The advance arrives at the start of the mission; the bonus is 0.25·advance (half of it on a partial success).
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="box">
+      <h3>Mission log</h3>
+      <table class="log">
+        <thead><tr><th>#</th><th>Mission / point</th><th class="num">P</th><th class="num">S</th><th class="num">Outcome</th><th class="num">rating</th></tr></thead>
+        <tbody id="logBody"></tbody>
+      </table>
+    </div>
+
+    <div class="box" style="margin-top:5mm">
+      <h3>Experiment approval (§32)</h3>
+      <div class="vote">
+        <div><b>1</b><span>engineer</span></div>
+        <div><b>1</b><span>scientist</span></div>
+        <div><b>1</b><span>manager</span></div>
+        <div><b>3</b><span>signatures</span></div>
+      </div>
+      <div class="notes" style="margin-top:2mm">
+        A request appears when an experimental launch or test is attempted. A test approval is valid
+        only within the current step; a launch approval is consumed by the launch.
+      </div>
+    </div>
+
+    <div class="box" style="margin-top:5mm">
+      <h3>Score memo (§10–§11)</h3>
+      <table>
+        <tbody>
+          <tr><td>Full success</td><td class="num">+0.21·S·1.1</td></tr>
+          <tr><td>Success</td><td class="num">+0.21·S</td></tr>
+          <tr><td>Partial success</td><td class="num">+0.105·S</td></tr>
+          <tr><td>Failure</td><td class="num">−4 rating / −3 VChK</td></tr>
+          <tr><td>Bonus</td><td class="num">0.25·advance</td></tr>
+          <tr><td>Bonus on partial</td><td class="num">0.5 of the bonus</td></tr>
+          <tr><td>Bonus on failure</td><td class="num">0</td></tr>
+        </tbody>
+      </table>
+      <div class="notes" style="margin-top:1.6mm">
+        S_det = S_raw · uniqueness · D_ratio. Uniqueness: first arrival ×1.5, repeat ×0.8.
+        The 1.1 factor for a full success applies to rating only; ΔVChK = 0.05·S.
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+const cellTrack = (el, n, heavy) => {
+  let h = '';
+  for (let i = 1; i <= n; i++) h += '<i class="' + (heavy && i % 5 === 0 ? 'mark' : '') + '">' + i + '</i>';
+  document.getElementById(el).innerHTML = h;
+};
+cellTrack('tMoney', 40, true);
+cellTrack('tNP', 60, true);
+cellTrack('tPM', 60, true);
+cellTrack('tVCHK', 40, true);
+cellTrack('tRK', 60, true);
+
+const rows = [0.50, 0.55, 0.60, 0.636, 0.70, 0.75, 0.80, 0.86, 0.90];
+const cols = [0.85, 0.88, 0.90, 0.92, 0.95];
+document.getElementById('gridP').innerHTML = rows.map((r) =>
+  '<tr><td class="num">' + r.toFixed(3) + '</td>' +
+  cols.map((c) => '<td class="num">' + (r * c).toFixed(2) + '</td>').join('') + '</tr>'
+).join('');
+
+let log = '';
+for (let i = 1; i <= 10; i++) {
+  log += '<tr><td>' + i + '</td><td></td><td></td><td></td><td></td><td></td></tr>';
+}
+document.getElementById('logBody').innerHTML = log;
+</script>
+
+</body>
+</html>

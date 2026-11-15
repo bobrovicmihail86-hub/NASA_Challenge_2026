@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Space Mission Design — mission room</title>
+  <link rel="stylesheet" href="lobby.css">
+  <link rel="stylesheet" href="play.css">
+</head>
+<body class="play">
+  <header class="top">
+    <div class="brand">
+      <span class="logo" id="teamLogo">🛰</span>
+      <div>
+        <h1 id="teamName">Mission room</h1>
+        <p id="teamMeta">loading the campaign…</p>
+      </div>
+    </div>
+    <div class="session">
+      <label class="inline-field">
+        <span>Role</span>
+        <select id="roleSelect"></select>
+      </label>
+      <span class="net" id="netDot">●</span>
+      <a class="button ghost" href="lobby.html"
+        data-tip="Back to the lobby: teams, roles and the archive." data-tip-side="down">Lobby</a>
+      <button class="ghost" id="signOutBtn" hidden
+        data-tip="Forget this browser session on this device." data-tip-side="down">Sign out</button>
+    </div>
+  </header>
+
+  <section class="gate card" id="gate" hidden>
+    <h2 id="gateTitle">Sign in to play</h2>
+    <p class="muted" id="gateText">The mission room is available to team members only.</p>
+    <p><a class="button primary" href="lobby.html" id="gateLink"
+      data-tip="Sign in with your e-mail in the lobby, then open the room again.">Go to the lobby</a></p>
+  </section>
+
+  <main id="board" hidden>
+    <div class="meters" id="meters"></div>
+    <div class="finished-bar card" id="finishedBar" hidden></div>
+
+    <div class="board">
+      <section class="card col-2">
+        <div class="row between">
+          <h2>Mission offers</h2>
+          <span class="hint" id="offersMeta"></span>
+        </div>
+        <div class="list" id="offers"></div>
+      </section>
+
+      <section class="card">
+        <div class="row between">
+          <h2>Selected mission</h2>
+          <span class="hint" id="buildMeta"></span>
+        </div>
+        <div id="build"></div>
+      </section>
+
+      <section class="card">
+        <div class="row between">
+          <h2>Flight operations</h2>
+          <span class="hint" id="opsMeta"></span>
+        </div>
+        <div id="ops"></div>
+        <h3>Programme</h3>
+        <div class="chips" id="programme"></div>
+        <p class="hint" id="crew"
+          data-tip="Who else is connected to this room right now."></p>
+      </section>
+
+      <section class="card col-2">
+        <div class="row between">
+          <h2>Mission archive</h2>
+          <span class="hint" id="archiveMeta"></span>
+        </div>
+        <div class="list" id="archive"></div>
+      </section>
+
+      <section class="card">
+        <h2>Step log</h2>
+        <ol class="log" id="log"></ol>
+      </section>
+    </div>
+  </main>
+
+  <div class="statusbar">
+    <span id="status" data-tip="Connection state: the room reconnects on its own after a drop.">Connecting…</span>
+    <span class="grow"></span>
+    <span class="hint" id="revInfo"></span>
+  </div>
+
+  <div class="toast" id="toast" hidden></div>
+
+  <div class="dialog" id="dialog" hidden>
+    <div class="dialog-body">
+      <h2 id="dialogTitle">Please confirm</h2>
+      <div id="dialogText" class="muted"></div>
+      <div class="row between" style="margin-top:14px">
+        <button class="ghost" id="dialogCancel"
+          data-tip="Close the dialog and change nothing.">Cancel</button>
+        <button class="primary" id="dialogOk"
+          data-tip="Run the action you just confirmed.">Confirm</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="../data/config.js"></script>
+  <script src="../data/cards.js"></script>
+  <script src="../data/missions.js"></script>
+  <script src="../data/en.js"></script>
+  <script src="play.js"></script>
+</body>
+</html>

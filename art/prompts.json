@@ -1,0 +1,100 @@
+{
+  "version": "1.1",
+  "description": "Промпты для генерации арта карт. Z-Image через ComfyUI: полуреалистичный 3D, широкий кадр под окно карты.",
+  "style": "semi-realistic cinematic 3D product render, photorealistic PBR materials, realistic industrial spacecraft hardware, intricate panel lines, subtle wear, soft neutral studio key light, cool white rim light, tiny amber indicator lights only, high detail, sharp focus, centered composition, subject as large as possible while fully inside the frame, full object visible with eight percent margins, wide horizontal framing, completely blank unmarked hull, no text, no labels, no watermark, no logo",
+  "background": "unlit almost-black navy studio void, #070d15, subtle soft pool of light on the subject, background falls into deep shadow, seamless backdrop, no visible floor line, no grid, no horizon, no landscape, no sky, no stars, no blue glow, not beige, not brown, not gray",
+  "sceneStyle": "semi-realistic cinematic 3D scene, photorealistic PBR materials, realistic industrial and space hardware, intricate detail, dramatic but soft lighting, wide horizontal composition, clear focal subject, generous margins, completely blank unmarked surfaces, no text, no labels, no watermark, no logo",
+  "negative": "beige background, brown background, gray background, cream background, white background, blue background, blue haze, neon, colorful lighting, landscape, sky, sunset, sunrise, clouds, horizon, ground line, text, letters, numbers, words, typography, lettering, labels, decals, markings, insignia, flags, badges, signage, screens, displays, callouts, annotations, captions, titles, diagrams, schematic lines, blueprint grid, UI, HUD, watermark, signature, logo, people, hands, blurry, low contrast, cluttered background, distorted geometry, duplicate objects, cropped subject, frame border",
+  "negativeSpace": "overexposed, oversaturated, neon, text, letters, numbers, words, typography, lettering, labels, decals, markings, insignia, flags, badges, signage, screens, displays, callouts, annotations, captions, titles, diagrams, schematic lines, blueprint grid, UI, HUD, watermark, signature, logo, people, hands, blurry, low contrast, cluttered background, distorted geometry, duplicate objects, cropped subject, frame border",
+  "settings": {
+    "steps": 30,
+    "cfg": 5.0,
+    "sampler": "res_multistep",
+    "scheduler": "simple",
+    "shift": 3,
+    "denoise": 1.0,
+    "width": 1024,
+    "height": 528
+  },
+  "subjects": {
+    "rocket": "{clsEn} orbital launch vehicle with a completely unmarked hull, full rocket visible from nose cone to engine bells, standing vertically on a compact launch mount with a service tower, clean cutaway showing fuel tanks, engine bells and stage separation, {payload} tonnes to low Earth orbit, three-quarter view",
+    "reservation": "{resEn} redundancy avionics rack for a launch vehicle, wide rectangular form, two identical circuit boards in a shielded casing, clean cutaway, close-up product shot filling the frame",
+    "control": "a rectangular spacecraft flight computer chassis, front three-quarter view, {slots} instrument slots, redundant processing boards and connectors, clean cutaway, close-up product shot filling the frame",
+    "instrument": "{insEn} for a space probe, clean cutaway showing optics, sensor array and data bus",
+    "antenna": "{antEn} deep space communication dish, {bw} megabits per second, gimbal mount and waveguide, clean cutaway",
+    "antennaDup": "duplicated antenna feed module with two redundant waveguides and a coaxial switch, clean cutaway",
+    "power": "{pwrEn} spacecraft power module, {watts} watts, clean cutaway",
+    "buffer": "spacecraft battery buffer pack, {kwh} kilowatt-hour capacity, lithium cells in a pressure housing, clean cutaway",
+    "physical": "{phyEn}, {mass} kilograms, folded deployment mechanism, clean cutaway",
+    "facility": "{facEn} aerospace facility, wide isometric 3D view of the assembly building, cranes and clean rooms",
+    "event": "cinematic 3D mission control room with blank holographic displays and orbital tracks, dark interior",
+    "auxiliary": "small spacecraft structural part, 3D product render, studio turntable shot",
+    "mission": "{agencyEn} space mission to {pointEn}, year {year}, spacecraft on a trajectory arc, destination body in the background, cinematic 3D scene",
+    "salvage": "space salvage and recovery mission, destination: {pointEn}, a recovery spacecraft approaching an abandoned satellite, cinematic 3D scene"
+  },
+  "descriptors": {
+    "clsEn": {
+      "light": "a light-class", "medium": "a medium-lift", "heavy": "a heavy-lift",
+      "superheavy": "a super-heavy", "exp": "an experimental"
+    },
+    "resEn": {
+      "none": "a single-string", "double": "a dual-redundant", "plus": "an experimental uprated"
+    },
+    "insEn": {
+      "ins_camera": "a high-resolution video camera",
+      "ins_spectrometer": "an imaging spectrometer",
+      "ins_radiometer": "a multispectral radiometer",
+      "ins_magnetometer": "a tri-axial magnetometer",
+      "ins_exp": "an experimental camera array"
+    },
+    "antEn": {
+      "ant_small": "a small", "ant_medium": "a medium", "ant_large": "a large",
+      "ant_xl": "an extra-large", "ant_exp": "an experimental"
+    },
+    "pwrEn": {
+      "pwr_solar_small": "a small deployable solar array",
+      "pwr_solar_medium": "a medium deployable solar array",
+      "pwr_solar_large": "a large deployable solar array",
+      "pwr_reactor": "a radioisotope thermoelectric",
+      "pwr_exp": "an experimental high-output"
+    },
+    "phyEn": {
+      "capsule": "a sample return capsule",
+      "lander": "a soft-landing descent module",
+      "rover": "a six-wheeled planetary rover",
+      "manipulator": "a robotic sampling arm",
+      "relay": "a communications relay satellite"
+    },
+    "facEn": {
+      "fac_factory_0": "a modest assembly workshop",
+      "fac_factory_1": "an assembly hangar",
+      "fac_factory_2": "an upgraded launch vehicle factory",
+      "fac_factory_3": "an automated production line",
+      "fac_factory_4": "an orbital shipyard",
+      "fac_school_0": "a small research office",
+      "fac_school_1": "a space research institute",
+      "fac_school_2": "an expanded research campus",
+      "fac_school_3": "an observatory campus",
+      "fac_school_4": "a national science megacomplex"
+    },
+    "agencyEn": {
+      "СССР": "Soviet", "США": "American", "РФ": "Russian", "КНР": "Chinese",
+      "ESA": "European", "JAXA": "Japanese", "США/ESA": "NASA-ESA",
+      "США/ФРГ": "NASA-German", "США/ESA/CSA": "NASA-ESA-Canadian",
+      "РФ/ФРГ": "Russian-German", "ESA/JAXA": "European-Japanese"
+    },
+    "pointEn": {
+      "leo": "low Earth orbit", "geo": "geostationary orbit", "moon": "the Moon",
+      "deep": "deep space", "mars": "Mars", "belt": "the asteroid belt"
+    }
+  },
+  "pointScenes": {
+    "leo": "low Earth orbit with the blue limb of Earth and a satellite constellation",
+    "geo": "geostationary orbit high above Earth, full disk of the planet below",
+    "moon": "lunar surface with craters and a lander silhouette, Earth rising",
+    "deep": "deep space with a gas giant and stars, long antenna pointing home",
+    "mars": "rust-red Martian landscape with rocks and dust, distant hills",
+    "belt": "asteroid belt with irregular rocks and a small probe maneuvering"
+  },
+  "suffix": "color palette: almost-black navy #070d15, brushed titanium, warm amber indicator lights, off-white highlights"
+}

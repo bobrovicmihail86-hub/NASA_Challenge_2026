@@ -1,0 +1,996 @@
+{
+  "generatedAt": "2026-11-04T19:22:23.893Z",
+  "count": 99,
+  "items": [
+    {
+      "id": "rocket_light",
+      "kind": "rocket",
+      "name": "Разгонный блок «Лёгкий»",
+      "point": null,
+      "prompt": "a light-class orbital launch vehicle with a completely unmarked hull, full rocket visible from nose cone to engine bells, standing vertically on a compact launch mount with a service tower, clean cutaway showing fuel tanks, engine bells and stage separation, 2 tonnes to low Earth orbit, three-quarter view. unlit almost-black navy studio void, #070d15, subtle soft pool of light on the subject, background falls into deep shadow, seamless backdrop, no visible floor line, no grid, no horizon, no landscape, no sky, no stars, no blue glow, not beige, not brown, not gray. semi-realistic cinematic 3D product render, photorealistic PBR materials, realistic industrial spacecraft hardware, intricate panel lines, subtle wear, soft neutral studio key light, cool white rim light, tiny amber indicator lights only, high detail, sharp focus, centered composition, subject as large as possible while fully inside the frame, full object visible with eight percent margins, wide horizontal framing, completely blank unmarked hull, no text, no labels, no watermark, no logo. color palette: almost-black navy #070d15, brushed titanium, warm amber indicator lights, off-white highlights.",
+      "negative": "beige background, brown background, gray background, cream background, white background, blue background, blue haze, neon, colorful lighting, landscape, sky, sunset, sunrise, clouds, horizon, ground line, text, letters, numbers, words, typography, lettering, labels, decals, markings, insignia, flags, badges, signage, screens, displays, callouts, annotations, captions, titles, diagrams, schematic lines, blueprint grid, UI, HUD, watermark, signature, logo, people, hands, blurry, low contrast, cluttered background, distorted geometry, duplicate objects, cropped subject, frame border",
+      "file": "art/assets/rocket_light.png",
+      "status": "done"
+    },
+    {
+      "id": "rocket_medium",
+      "kind": "rocket",
+      "name": "Разгонный блок «Средний»",
+      "point": null,
+      "prompt": "a medium-lift orbital launch vehicle with a completely unmarked hull, full rocket visible from nose cone to engine bells, standing vertically on a compact launch mount with a service tower, clean cutaway showing fuel tanks, engine bells and stage separation, 6 tonnes to low Earth orbit, three-quarter view. unlit almost-black navy studio void, #070d15, subtle soft pool of light on the subject, background falls into deep shadow, seamless backdrop, no visible floor line, no grid, no horizon, no landscape, no sky, no stars, no blue glow, not beige, not brown, not gray. semi-realistic cinematic 3D product render, photorealistic PBR materials, realistic industrial spacecraft hardware, intricate panel lines, subtle wear, soft neutral studio key light, cool white rim light, tiny amber indicator lights only, high detail, sharp focus, centered composition, subject as large as possible while fully inside the frame, full object visible with eight percent margins, wide horizontal framing, completely blank unmarked hull, no text, no labels, no watermark, no logo. color palette: almost-black navy #070d15, brushed titanium, warm amber indicator lights, off-white highlights.",
+      "negative": "beige background, brown background, gray background, cream background, white background, blue background, blue haze, neon, colorful lighting, landscape, sky, sunset, sunrise, clouds, horizon, ground line, text, letters, numbers, words, typography, lettering, labels, decals, markings, insignia, flags, badges, signage, screens, displays, callouts, annotations, captions, titles, diagrams, schematic lines, blueprint grid, UI, HUD, watermark, signature, logo, people, hands, blurry, low contrast, cluttered background, distorted geometry, duplicate objects, cropped subject, frame border",
+      "file": "art/assets/rocket_medium.png",
+      "status": "done"
+    },
+    {
+      "id": "rocket_heavy",
+      "kind": "rocket",
+      "name": "Разгонный блок «Тяжёлый»",
+      "point": null,
+      "prompt": "a heavy-lift orbital launch vehicle with a completely unmarked hull, full rocket visible from nose cone to engine bells, standing vertically on a compact launch mount with a service tower, clean cutaway showing fuel tanks, engine bells and stage separation, 15 tonnes to low Earth orbit, three-quarter view. unlit almost-black navy studio void, #070d15, subtle soft pool of light on the subject, background falls into deep shadow, seamless backdrop, no visible floor line, no grid, no horizon, no landscape, no sky, no stars, no blue glow, not beige, not brown, not gray. semi-realistic cinematic 3D product render, photorealistic PBR materials, realistic industrial spacecraft hardware, intricate panel lines, subtle wear, soft neutral studio key light, cool white rim light, tiny amber indicator lights only, high detail, sharp focus, centered composition, subject as large as possible while fully inside the frame, full object visible with eight percent margins, wide horizontal framing, completely blank unmarked hull, no text, no labels, no watermark, no logo. color palette: almost-black navy #070d15, brushed titanium, warm amber indicator lights, off-white highlights.",
+      "negative": "beige background, brown background, gray background, cream background, white background, blue background, blue haze, neon, colorful lighting, landscape, sky, sunset, sunrise, clouds, horizon, ground line, text, letters, numbers, words, typography, lettering, labels, decals, markings, insignia, flags, badges, signage, screens, displays, callouts, annotations, captions, titles, diagrams, schematic lines, blueprint grid, UI, HUD, watermark, signature, logo, people, hands, blurry, low contrast, cluttered background, distorted geometry, duplicate objects, cropped subject, frame border",
+      "file": "art/assets/rocket_heavy.png",
+      "status": "done"
+    },
+    {
+      "id": "rocket_superheavy",
+      "kind": "rocket",
+      "name": "Разгонный блок «Сверхтяжёлый»",
+      "point": null,
+      "prompt": "a super-heavy orbital launch vehicle with a completely unmarked hull, full rocket visible from nose cone to engine bells, standing vertically on a compact launch mount with a service tower, clean cutaway showing fuel tanks, engine bells and stage separation, 30 tonnes to low Earth orbit, three-quarter view. unlit almost-black navy studio void, #070d15, subtle soft pool of light on the subject, background falls into deep shadow, seamless backdrop, no visible floor line, no grid, no horizon, no landscape, no sky, no stars, no blue glow, not beige, not brown, not gray. semi-realistic cinematic 3D product render, photorealistic PBR materials, realistic industrial spacecraft hardware, intricate panel lines, subtle wear, soft neutral studio key light, cool white rim light, tiny amber indicator lights only, high detail, sharp focus, centered composition, subject as large as possible while fully inside the frame, full object visible with eight percent margins, wide horizontal framing, completely blank unmarked hull, no text, no labels, no watermark, no logo. color palette: almost-black navy #070d15, brushed titanium, warm amber indicator lights, off-white highlights.",
+      "negative": "beige background, brown background, gray background, cream background, white background, blue background, blue haze, neon, colorful lighting, landscape, sky, sunset, sunrise, clouds, horizon, ground line, text, letters, numbers, words, typography, lettering, labels, decals, markings, insignia, flags, badges, signage, screens, displays, callouts, annotations, captions, titles, diagrams, schematic lines, blueprint grid, UI, HUD, watermark, signature, logo, people, hands, blurry, low contrast, cluttered background, distorted geometry, duplicate objects, cropped subject, frame border",
+      "file": "art/assets/rocket_superheavy.png",
+      "status": "done"
+    },
+    {
+      "id": "rocket_exp",
+      "kind": "rocket",
+      "name": "Разгонный блок «Экспериментальный»",
+      "point": null,
+      "prompt": "an experimental orbital launch vehicle with a completely unmarked hull, full rocket visible from nose cone to engine bells, standing vertically on a compact launch mount with a service tower, clean cutaway showing fuel tanks, engine bells and stage separation, 12 tonnes to low Earth orbit, three-quarter view. unlit almost-black navy studio void, #070d15, subtle soft pool of light on the subject, background falls into deep shadow, seamless backdrop, no visible floor line, no grid, no horizon, no landscape, no sky, no stars, no blue glow, not beige, not brown, not gray. semi-realistic cinematic 3D product render, photorealistic PBR materials, realistic industrial spacecraft hardware, intricate panel lines, subtle wear, soft neutral studio key light, cool white rim light, tiny amber indicator lights only, high detail, sharp focus, centered composition, subject as large as possible while fully inside the frame, full object visible with eight percent margins, wide horizontal framing, completely blank unmarked hull, no text, no labels, no watermark, no logo. color palette: almost-black navy #070d15, brushed titanium, warm amber indicator lights, off-white highlights.",
+      "negative": "beige background, brown background, gray background, cream background, white background, blue background, blue haze, neon, colorful lighting, landscape, sky, sunset, sunrise, clouds, horizon, ground line, text, letters, numbers, words, typography, lettering, labels, decals, markings, insignia, flags, badges, signage, screens, displays, callouts, annotations, captions, titles, diagrams, schematic lines, blueprint grid, UI, HUD, watermark, signature, logo, people, hands, blurry, low contrast, cluttered background, distorted geometry, duplicate objects, cropped subject, frame border",
+      "file": "art/assets/rocket_exp.png",
+      "status": "done"
+    },
+    {
+      "id": "res_single",
+      "kind": "reservation",
+      "name": "Блок резервирования «Одинарный»",
+      "point": null,
+      "prompt": "a single-string redundancy avionics rack for a launch vehicle, wide rectangular form, two identical circuit boards in a shielded casing, clean cutaway, close-up product shot filling the frame. unlit almost-black navy studio void, #070d15, subtle soft pool of light on the subject, background falls into deep shadow, seamless backdrop, no visible floor line, no grid, no horizon, no landscape, no sky, no stars, no blue glow, not beige, not brown, not gray. semi-realistic cinematic 3D product render, photorealistic PBR materials, realistic industrial spacecraft hardware, intricate panel lines, subtle wear, soft neutral studio key light, cool white rim light, tiny amber indicator lights only, high detail, sharp focus, centered composition, subject as large as possible while fully inside the frame, full object visible with eight percent margins, wide horizontal framing, completely blank unmarked hull, no text, no labels, no watermark, no logo. color palette: almost-black navy #070d15, brushed titanium, warm amber indicator lights, off-white highlights.",
+      "negative": "beige background, brown background, gray background, cream background, white background, blue background, blue haze, neon, colorful lighting, landscape, sky, sunset, sunrise, clouds, horizon, ground line, text, letters, numbers, words, typography, lettering, labels, decals, markings, insignia, flags, badges, signage, screens, displays, callouts, annotations, captions, titles, diagrams, schematic lines, blueprint grid, UI, HUD, watermark, signature, logo, people, hands, blurry, low contrast, cluttered background, distorted geometry, duplicate objects, cropped subject, frame border",
+      "file": "art/assets/res_single.png",
+      "status": "done"
+    },
+    {
+      "id": "res_double",
+      "kind": "reservation",
+      "name": "Блок резервирования «Двойной»",
+      "point": null,
+      "prompt": "a dual-redundant redundancy avionics rack for a launch vehicle, wide rectangular form, two identical circuit boards in a shielded casing, clean cutaway, close-up product shot filling the frame. unlit almost-black navy studio void, #070d15, subtle soft pool of light on the subject, background falls into deep shadow, seamless backdrop, no visible floor line, no grid, no horizon, no landscape, no sky, no stars, no blue glow, not beige, not brown, not gray. semi-realistic cinematic 3D product render, photorealistic PBR materials, realistic industrial spacecraft hardware, intricate panel lines, subtle wear, soft neutral studio key light, cool white rim light, tiny amber indicator lights only, high detail, sharp focus, centered composition, subject as large as possible while fully inside the frame, full object visible with eight percent margins, wide horizontal framing, completely blank unmarked hull, no text, no labels, no watermark, no logo. color palette: almost-black navy #070d15, brushed titanium, warm amber indicator lights, off-white highlights.",
+      "negative": "beige background, brown background, gray background, cream background, white background, blue background, blue haze, neon, colorful lighting, landscape, sky, sunset, sunrise, clouds, horizon, ground line, text, letters, numbers, words, typography, lettering, labels, decals, markings, insignia, flags, badges, signage, screens, displays, callouts, annotations, captions, titles, diagrams, schematic lines, blueprint grid, UI, HUD, watermark, signature, logo, people, hands, blurry, low contrast, cluttered background, distorted geometry, duplicate objects, cropped subject, frame border",
+      "file": "art/assets/res_double.png",
+      "status": "done"
+    },
+    {
+      "id": "res_exp",
+      "kind": "reservation",
+      "name": "Блок резервирования «Экспериментальный»",
+      "point": null,
+      "prompt": "an experimental uprated redundancy avionics rack for a launch vehicle, wide rectangular form, two identical circuit boards in a shielded casing, clean cutaway, close-up product shot filling the frame. unlit almost-black navy studio void, #070d15, subtle soft pool of light on the subject, background falls into deep shadow, seamless backdrop, no visible floor line, no grid, no horizon, no landscape, no sky, no stars, no blue glow, not beige, not brown, not gray. semi-realistic cinematic 3D product render, photorealistic PBR materials, realistic industrial spacecraft hardware, intricate panel lines, subtle wear, soft neutral studio key light, cool white rim light, tiny amber indicator lights only, high detail, sharp focus, centered composition, subject as large as possible while fully inside the frame, full object visible with eight percent margins, wide horizontal framing, completely blank unmarked hull, no text, no labels, no watermark, no logo. color palette: almost-black navy #070d15, brushed titanium, warm amber indicator lights, off-white highlights.",
+      "negative": "beige background, brown background, gray background, cream background, white background, blue background, blue haze, neon, colorful lighting, landscape, sky, sunset, sunrise, clouds, horizon, ground line, text, letters, numbers, words, typography, lettering, labels, decals, markings, insignia, flags, badges, signage, screens, displays, callouts, annotations, captions, titles, diagrams, schematic lines, blueprint grid, UI, HUD, watermark, signature, logo, people, hands, blurry, low contrast, cluttered background, distorted geometry, duplicate objects, cropped subject, frame border",
+      "file": "art/assets/res_exp.png",
+      "status": "done"
+    },
+    {
+      "id": "ctrl_basic",
+      "kind": "control",
+      "name": "Система управления «Базовая»",
+      "point": null,
+      "prompt": "a rectangular spacecraft flight computer chassis, front three-quarter view, 3 instrument slots, redundant processing boards and connectors, clean cutaway, close-up product shot filling the frame. unlit almost-black navy studio void, #070d15, subtle soft pool of light on the subject, background falls into deep shadow, seamless backdrop, no visible floor line, no grid, no horizon, no landscape, no sky, no stars, no blue glow, not beige, not brown, not gray. semi-realistic cinematic 3D product render, photorealistic PBR materials, realistic industrial spacecraft hardware, intricate panel lines, subtle wear, soft neutral studio key light, cool white rim light, tiny amber indicator lights only, high detail, sharp focus, centered composition, subject as large as possible while fully inside the frame, full object visible with eight percent margins, wide horizontal framing, completely blank unmarked hull, no text, no labels, no watermark, no logo. color palette: almost-black navy #070d15, brushed titanium, warm amber indicator lights, off-white highlights.",
+      "negative": "beige background, brown background, gray background, cream background, white background, blue background, blue haze, neon, colorful lighting, landscape, sky, sunset, sunrise, clouds, horizon, ground line, text, letters, numbers, words, typography, lettering, labels, decals, markings, insignia, flags, badges, signage, screens, displays, callouts, annotations, captions, titles, diagrams, schematic lines, blueprint grid, UI, HUD, watermark, signature, logo, people, hands, blurry, low contrast, cluttered background, distorted geometry, duplicate objects, cropped subject, frame border",
+      "file": "art/assets/ctrl_basic.png",
+      "status": "done"
+    },
+    {
+      "id": "ctrl_advanced",
+      "kind": "control",
+      "name": "Система управления «Продвинутая»",
+      "point": null,
+      "prompt": "a rectangular spacecraft flight computer chassis, front three-quarter view, 5 instrument slots, redundant processing boards and connectors, clean cutaway, close-up product shot filling the frame. unlit almost-black navy studio void, #070d15, subtle soft pool of light on the subject, background falls into deep shadow, seamless backdrop, no visible floor line, no grid, no horizon, no landscape, no sky, no stars, no blue glow, not beige, not brown, not gray. semi-realistic cinematic 3D product render, photorealistic PBR materials, realistic industrial spacecraft hardware, intricate panel lines, subtle wear, soft neutral studio key light, cool white rim light, tiny amber indicator lights only, high detail, sharp focus, centered composition, subject as large as possible while fully inside the frame, full object visible with eight percent margins, wide horizontal framing, completely blank unmarked hull, no text, no labels, no watermark, no logo. color palette: almost-black navy #070d15, brushed titanium, warm amber indicator lights, off-white highlights.",
+      "negative": "beige background, brown background, gray background, cream background, white background, blue background, blue haze, neon, colorful lighting, landscape, sky, sunset, sunrise, clouds, horizon, ground line, text, letters, numbers, words, typography, lettering, labels, decals, markings, insignia, flags, badges, signage, screens, displays, callouts, annotations, captions, titles, diagrams, schematic lines, blueprint grid, UI, HUD, watermark, signature, logo, people, hands, blurry, low contrast, cluttered background, distorted geometry, duplicate objects, cropped subject, frame border",
+      "file": "art/assets/ctrl_advanced.png",
+      "status": "done"
+    },
+    {
+      "id": "ctrl_redundant",
+      "kind": "control",
+      "name": "Система управления «Дублирующая»",
+      "point": null,
+      "prompt": "a rectangular spacecraft flight computer chassis, front three-quarter view, 5 instrument slots, redundant processing boards and connectors, clean cutaway, close-up product shot filling the frame. unlit almost-black navy studio void, #070d15, subtle soft pool of light on the subject, background falls into deep shadow, seamless backdrop, no visible floor line, no grid, no horizon, no landscape, no sky, no stars, no blue glow, not beige, not brown, not gray. semi-realistic cinematic 3D product render, photorealistic PBR materials, realistic industrial spacecraft hardware, intricate panel lines, subtle wear, soft neutral studio key light, cool white rim light, tiny amber indicator lights only, high detail, sharp focus, centered composition, subject as large as possible while fully inside the frame, full object visible with eight percent margins, wide horizontal framing, completely blank unmarked hull, no text, no labels, no watermark, no logo. color palette: almost-black navy #070d15, brushed titanium, warm amber indicator lights, off-white highlights.",
+      "negative": "beige background, brown background, gray background, cream background, white background, blue background, blue haze, neon, colorful lighting, landscape, sky, sunset, sunrise, clouds, horizon, ground line, text, letters, numbers, words, typography, lettering, labels, decals, markings, insignia, flags, badges, signage, screens, displays, callouts, annotations, captions, titles, diagrams, schematic lines, blueprint grid, UI, HUD, watermark, signature, logo, people, hands, blurry, low contrast, cluttered background, distorted geometry, duplicate objects, cropped subject, frame border",
+      "file": "art/assets/ctrl_redundant.png",
+      "status": "done"
+    },
+    {
+      "id": "ctrl_exp",
+      "kind": "control",
+      "name": "Система управления «Экспериментальная»",
+      "point": null,
+      "prompt": "a rectangular spacecraft flight computer chassis, front three-quarter view, 6 instrument slots, redundant processing boards and connectors, clean cutaway, close-up product shot filling the frame. unlit almost-black navy studio void, #070d15, subtle soft pool of light on the subject, background falls into deep shadow, seamless backdrop, no visible floor line, no grid, no horizon, no landscape, no sky, no stars, no blue glow, not beige, not brown, not gray. semi-realistic cinematic 3D product render, photorealistic PBR materials, realistic industrial spacecraft hardware, intricate panel lines, subtle wear, soft neutral studio key light, cool white rim light, tiny amber indicator lights only, high detail, sharp focus, centered composition, subject as large as possible while fully inside the frame, full object visible with eight percent margins, wide horizontal framing, completely blank unmarked hull, no text, no labels, no watermark, no logo. color palette: almost-black navy #070d15, brushed titanium, warm amber indicator lights, off-white highlights.",
+      "negative": "beige background, brown background, gray background, cream background, white background, blue background, blue haze, neon, colorful lighting, landscape, sky, sunset, sunrise, clouds, horizon, ground line, text, letters, numbers, words, typography, lettering, labels, decals, markings, insignia, flags, badges, signage, screens, displays, callouts, annotations, captions, titles, diagrams, schematic lines, blueprint grid, UI, HUD, watermark, signature, logo, people, hands, blurry, low contrast, cluttered background, distorted geometry, duplicate objects, cropped subject, frame border",
+      "file": "art/assets/ctrl_exp.png",
+      "status": "done"
+    },
+    {
+      "id": "ins_camera",
+      "kind": "instrument",
+      "name": "Камера видео",
+      "point": null,
+      "prompt": "a high-resolution video camera for a space probe, clean cutaway showing optics, sensor array and data bus. unlit almost-black navy studio void, #070d15, subtle soft pool of light on the subject, background falls into deep shadow, seamless backdrop, no visible floor line, no grid, no horizon, no landscape, no sky, no stars, no blue glow, not beige, not brown, not gray. semi-realistic cinematic 3D product render, photorealistic PBR materials, realistic industrial spacecraft hardware, intricate panel lines, subtle wear, soft neutral studio key light, cool white rim light, tiny amber indicator lights only, high detail, sharp focus, centered composition, subject as large as possible while fully inside the frame, full object visible with eight percent margins, wide horizontal framing, completely blank unmarked hull, no text, no labels, no watermark, no logo. color palette: almost-black navy #070d15, brushed titanium, warm amber indicator lights, off-white highlights.",
+      "negative": "beige background, brown background, gray background, cream background, white background, blue background, blue haze, neon, colorful lighting, landscape, sky, sunset, sunrise, clouds, horizon, ground line, text, letters, numbers, words, typography, lettering, labels, decals, markings, insignia, flags, badges, signage, screens, displays, callouts, annotations, captions, titles, diagrams, schematic lines, blueprint grid, UI, HUD, watermark, signature, logo, people, hands, blurry, low contrast, cluttered background, distorted geometry, duplicate objects, cropped subject, frame border",
+      "file": "art/assets/ins_camera.png",
+      "status": "done"
+    },
+    {
+      "id": "ins_spectrometer",
+      "kind": "instrument",
+      "name": "Спектрометр",
+      "point": null,
+      "prompt": "an imaging spectrometer for a space probe, clean cutaway showing optics, sensor array and data bus. unlit almost-black navy studio void, #070d15, subtle soft pool of light on the subject, background falls into deep shadow, seamless backdrop, no visible floor line, no grid, no horizon, no landscape, no sky, no stars, no blue glow, not beige, not brown, not gray. semi-realistic cinematic 3D product render, photorealistic PBR materials, realistic industrial spacecraft hardware, intricate panel lines, subtle wear, soft neutral studio key light, cool white rim light, tiny amber indicator lights only, high detail, sharp focus, centered composition, subject as large as possible while fully inside the frame, full object visible with eight percent margins, wide horizontal framing, completely blank unmarked hull, no text, no labels, no watermark, no logo. color palette: almost-black navy #070d15, brushed titanium, warm amber indicator lights, off-white highlights.",
+      "negative": "beige background, brown background, gray background, cream background, white background, blue background, blue haze, neon, colorful lighting, landscape, sky, sunset, sunrise, clouds, horizon, ground line, text, letters, numbers, words, typography, lettering, labels, decals, markings, insignia, flags, badges, signage, screens, displays, callouts, annotations, captions, titles, diagrams, schematic lines, blueprint grid, UI, HUD, watermark, signature, logo, people, hands, blurry, low contrast, cluttered background, distorted geometry, duplicate objects, cropped subject, frame border",
+      "file": "art/assets/ins_spectrometer.png",
+      "status": "done"
+    },
+    {
+      "id": "ins_radiometer",
+      "kind": "instrument",
+      "name": "Радиометр",
+      "point": null,
+      "prompt": "a multispectral radiometer for a space probe, clean cutaway showing optics, sensor array and data bus. unlit almost-black navy studio void, #070d15, subtle soft pool of light on the subject, background falls into deep shadow, seamless backdrop, no visible floor line, no grid, no horizon, no landscape, no sky, no stars, no blue glow, not beige, not brown, not gray. semi-realistic cinematic 3D product render, photorealistic PBR materials, realistic industrial spacecraft hardware, intricate panel lines, subtle wear, soft neutral studio key light, cool white rim light, tiny amber indicator lights only, high detail, sharp focus, centered composition, subject as large as possible while fully inside the frame, full object visible with eight percent margins, wide horizontal framing, completely blank unmarked hull, no text, no labels, no watermark, no logo. color palette: almost-black navy #070d15, brushed titanium, warm amber indicator lights, off-white highlights.",
+      "negative": "beige background, brown background, gray background, cream background, white background, blue background, blue haze, neon, colorful lighting, landscape, sky, sunset, sunrise, clouds, horizon, ground line, text, letters, numbers, words, typography, lettering, labels, decals, markings, insignia, flags, badges, signage, screens, displays, callouts, annotations, captions, titles, diagrams, schematic lines, blueprint grid, UI, HUD, watermark, signature, logo, people, hands, blurry, low contrast, cluttered background, distorted geometry, duplicate objects, cropped subject, frame border",
+      "file": "art/assets/ins_radiometer.png",
+      "status": "done"
+    },
+    {
+      "id": "ins_magnetometer",
+      "kind": "instrument",
+      "name": "Магнитометр",
+      "point": null,
+      "prompt": "a tri-axial magnetometer for a space probe, clean cutaway showing optics, sensor array and data bus. unlit almost-black navy studio void, #070d15, subtle soft pool of light on the subject, background falls into deep shadow, seamless backdrop, no visible floor line, no grid, no horizon, no landscape, no sky, no stars, no blue glow, not beige, not brown, not gray. semi-realistic cinematic 3D product render, photorealistic PBR materials, realistic industrial spacecraft hardware, intricate panel lines, subtle wear, soft neutral studio key light, cool white rim light, tiny amber indicator lights only, high detail, sharp focus, centered composition, subject as large as possible while fully inside the frame, full object visible with eight percent margins, wide horizontal framing, completely blank unmarked hull, no text, no labels, no watermark, no logo. color palette: almost-black navy #070d15, brushed titanium, warm amber indicator lights, off-white highlights.",
+      "negative": "beige background, brown background, gray background, cream background, white background, blue background, blue haze, neon, colorful lighting, landscape, sky, sunset, sunrise, clouds, horizon, ground line, text, letters, numbers, words, typography, lettering, labels, decals, markings, insignia, flags, badges, signage, screens, displays, callouts, annotations, captions, titles, diagrams, schematic lines, blueprint grid, UI, HUD, watermark, signature, logo, people, hands, blurry, low contrast, cluttered background, distorted geometry, duplicate objects, cropped subject, frame border",
+      "file": "art/assets/ins_magnetometer.png",
+      "status": "done"
+    },
+    {
+      "id": "ins_exp",
+      "kind": "instrument",
+      "name": "Прибор «Экспериментальный»",
+      "point": null,
+      "prompt": "an experimental camera array for a space probe, clean cutaway showing optics, sensor array and data bus. unlit almost-black navy studio void, #070d15, subtle soft pool of light on the subject, background falls into deep shadow, seamless backdrop, no visible floor line, no grid, no horizon, no landscape, no sky, no stars, no blue glow, not beige, not brown, not gray. semi-realistic cinematic 3D product render, photorealistic PBR materials, realistic industrial spacecraft hardware, intricate panel lines, subtle wear, soft neutral studio key light, cool white rim light, tiny amber indicator lights only, high detail, sharp focus, centered composition, subject as large as possible while fully inside the frame, full object visible with eight percent margins, wide horizontal framing, completely blank unmarked hull, no text, no labels, no watermark, no logo. color palette: almost-black navy #070d15, brushed titanium, warm amber indicator lights, off-white highlights.",
+      "negative": "beige background, brown background, gray background, cream background, white background, blue background, blue haze, neon, colorful lighting, landscape, sky, sunset, sunrise, clouds, horizon, ground line, text, letters, numbers, words, typography, lettering, labels, decals, markings, insignia, flags, badges, signage, screens, displays, callouts, annotations, captions, titles, diagrams, schematic lines, blueprint grid, UI, HUD, watermark, signature, logo, people, hands, blurry, low contrast, cluttered background, distorted geometry, duplicate objects, cropped subject, frame border",
+      "file": "art/assets/ins_exp.png",
+      "status": "done"
+    },
+    {
+      "id": "ant_small",
+      "kind": "antenna",
+      "name": "Антенна «Малая»",
+      "point": null,
+      "prompt": "a small deep space communication dish, 5 megabits per second, gimbal mount and waveguide, clean cutaway. unlit almost-black navy studio void, #070d15, subtle soft pool of light on the subject, background falls into deep shadow, seamless backdrop, no visible floor line, no grid, no horizon, no landscape, no sky, no stars, no blue glow, not beige, not brown, not gray. semi-realistic cinematic 3D product render, photorealistic PBR materials, realistic industrial spacecraft hardware, intricate panel lines, subtle wear, soft neutral studio key light, cool white rim light, tiny amber indicator lights only, high detail, sharp focus, centered composition, subject as large as possible while fully inside the frame, full object visible with eight percent margins, wide horizontal framing, completely blank unmarked hull, no text, no labels, no watermark, no logo. color palette: almost-black navy #070d15, brushed titanium, warm amber indicator lights, off-white highlights.",
+      "negative": "beige background, brown background, gray background, cream background, white background, blue background, blue haze, neon, colorful lighting, landscape, sky, sunset, sunrise, clouds, horizon, ground line, text, letters, numbers, words, typography, lettering, labels, decals, markings, insignia, flags, badges, signage, screens, displays, callouts, annotations, captions, titles, diagrams, schematic lines, blueprint grid, UI, HUD, watermark, signature, logo, people, hands, blurry, low contrast, cluttered background, distorted geometry, duplicate objects, cropped subject, frame border",
+      "file": "art/assets/ant_small.png",
+      "status": "done"
+    },
+    {
+      "id": "ant_medium",
+      "kind": "antenna",
+      "name": "Антенна «Средняя»",
+      "point": null,
+      "prompt": "a medium deep space communication dish, 10 megabits per second, gimbal mount and waveguide, clean cutaway. unlit almost-black navy studio void, #070d15, subtle soft pool of light on the subject, background falls into deep shadow, seamless backdrop, no visible floor line, no grid, no horizon, no landscape, no sky, no stars, no blue glow, not beige, not brown, not gray. semi-realistic cinematic 3D product render, photorealistic PBR materials, realistic industrial spacecraft hardware, intricate panel lines, subtle wear, soft neutral studio key light, cool white rim light, tiny amber indicator lights only, high detail, sharp focus, centered composition, subject as large as possible while fully inside the frame, full object visible with eight percent margins, wide horizontal framing, completely blank unmarked hull, no text, no labels, no watermark, no logo. color palette: almost-black navy #070d15, brushed titanium, warm amber indicator lights, off-white highlights.",
+      "negative": "beige background, brown background, gray background, cream background, white background, blue background, blue haze, neon, colorful lighting, landscape, sky, sunset, sunrise, clouds, horizon, ground line, text, letters, numbers, words, typography, lettering, labels, decals, markings, insignia, flags, badges, signage, screens, displays, callouts, annotations, captions, titles, diagrams, schematic lines, blueprint grid, UI, HUD, watermark, signature, logo, people, hands, blurry, low contrast, cluttered background, distorted geometry, duplicate objects, cropped subject, frame border",
+      "file": "art/assets/ant_medium.png",
+      "status": "done"
+    },
+    {
+      "id": "ant_large",
+      "kind": "antenna",
+      "name": "Антенна «Большая»",
+      "point": null,
+      "prompt": "a large deep space communication dish, 25 megabits per second, gimbal mount and waveguide, clean cutaway. unlit almost-black navy studio void, #070d15, subtle soft pool of light on the subject, background falls into deep shadow, seamless backdrop, no visible floor line, no grid, no horizon, no landscape, no sky, no stars, no blue glow, not beige, not brown, not gray. semi-realistic cinematic 3D product render, photorealistic PBR materials, realistic industrial spacecraft hardware, intricate panel lines, subtle wear, soft neutral studio key light, cool white rim light, tiny amber indicator lights only, high detail, sharp focus, centered composition, subject as large as possible while fully inside the frame, full object visible with eight percent margins, wide horizontal framing, completely blank unmarked hull, no text, no labels, no watermark, no logo. color palette: almost-black navy #070d15, brushed titanium, warm amber indicator lights, off-white highlights.",
+      "negative": "beige background, brown background, gray background, cream background, white background, blue background, blue haze, neon, colorful lighting, landscape, sky, sunset, sunrise, clouds, horizon, ground line, text, letters, numbers, words, typography, lettering, labels, decals, markings, insignia, flags, badges, signage, screens, displays, callouts, annotations, captions, titles, diagrams, schematic lines, blueprint grid, UI, HUD, watermark, signature, logo, people, hands, blurry, low contrast, cluttered background, distorted geometry, duplicate objects, cropped subject, frame border",
+      "file": "art/assets/ant_large.png",
+      "status": "done"
+    },
+    {
+      "id": "ant_xl",
+      "kind": "antenna",
+      "name": "Антенна «Сверхбольшая»",
+      "point": null,
+      "prompt": "an extra-large deep space communication dish, 50 megabits per second, gimbal mount and waveguide, clean cutaway. unlit almost-black navy studio void, #070d15, subtle soft pool of light on the subject, background falls into deep shadow, seamless backdrop, no visible floor line, no grid, no horizon, no landscape, no sky, no stars, no blue glow, not beige, not brown, not gray. semi-realistic cinematic 3D product render, photorealistic PBR materials, realistic industrial spacecraft hardware, intricate panel lines, subtle wear, soft neutral studio key light, cool white rim light, tiny amber indicator lights only, high detail, sharp focus, centered composition, subject as large as possible while fully inside the frame, full object visible with eight percent margins, wide horizontal framing, completely blank unmarked hull, no text, no labels, no watermark, no logo. color palette: almost-black navy #070d15, brushed titanium, warm amber indicator lights, off-white highlights.",
+      "negative": "beige background, brown background, gray background, cream background, white background, blue background, blue haze, neon, colorful lighting, landscape, sky, sunset, sunrise, clouds, horizon, ground line, text, letters, numbers, words, typography, lettering, labels, decals, markings, insignia, flags, badges, signage, screens, displays, callouts, annotations, captions, titles, diagrams, schematic lines, blueprint grid, UI, HUD, watermark, signature, logo, people, hands, blurry, low contrast, cluttered background, distorted geometry, duplicate objects, cropped subject, frame border",
+      "file": "art/assets/ant_xl.png",
+      "status": "done"
+    },
+    {
+      "id": "ant_exp",
+      "kind": "antenna",
+      "name": "Антенна «Экспериментальная»",
+      "point": null,
+      "prompt": "an experimental deep space communication dish, 13 megabits per second, gimbal mount and waveguide, clean cutaway. unlit almost-black navy studio void, #070d15, subtle soft pool of light on the subject, background falls into deep shadow, seamless backdrop, no visible floor line, no grid, no horizon, no landscape, no sky, no stars, no blue glow, not beige, not brown, not gray. semi-realistic cinematic 3D product render, photorealistic PBR materials, realistic industrial spacecraft hardware, intricate panel lines, subtle wear, soft neutral studio key light, cool white rim light, tiny amber indicator lights only, high detail, sharp focus, centered composition, subject as large as possible while fully inside the frame, full object visible with eight percent margins, wide horizontal framing, completely blank unmarked hull, no text, no labels, no watermark, no logo. color palette: almost-black navy #070d15, brushed titanium, warm amber indicator lights, off-white highlights.",
+      "negative": "beige background, brown background, gray background, cream background, white background, blue background, blue haze, neon, colorful lighting, landscape, sky, sunset, sunrise, clouds, horizon, ground line, text, letters, numbers, words, typography, lettering, labels, decals, markings, insignia, flags, badges, signage, screens, displays, callouts, annotations, captions, titles, diagrams, schematic lines, blueprint grid, UI, HUD, watermark, signature, logo, people, hands, blurry, low contrast, cluttered background, distorted geometry, duplicate objects, cropped subject, frame border",
+      "file": "art/assets/ant_exp.png",
+      "status": "done"
+    },
+    {
+      "id": "ant_dup",
+      "kind": "antennaDup",
+      "name": "Модуль дублирования антенны",
+      "point": null,
+      "prompt": "duplicated antenna feed module with two redundant waveguides and a coaxial switch, clean cutaway. unlit almost-black navy studio void, #070d15, subtle soft pool of light on the subject, background falls into deep shadow, seamless backdrop, no visible floor line, no grid, no horizon, no landscape, no sky, no stars, no blue glow, not beige, not brown, not gray. semi-realistic cinematic 3D product render, photorealistic PBR materials, realistic industrial spacecraft hardware, intricate panel lines, subtle wear, soft neutral studio key light, cool white rim light, tiny amber indicator lights only, high detail, sharp focus, centered composition, subject as large as possible while fully inside the frame, full object visible with eight percent margins, wide horizontal framing, completely blank unmarked hull, no text, no labels, no watermark, no logo. color palette: almost-black navy #070d15, brushed titanium, warm amber indicator lights, off-white highlights.",
+      "negative": "beige background, brown background, gray background, cream background, white background, blue background, blue haze, neon, colorful lighting, landscape, sky, sunset, sunrise, clouds, horizon, ground line, text, letters, numbers, words, typography, lettering, labels, decals, markings, insignia, flags, badges, signage, screens, displays, callouts, annotations, captions, titles, diagrams, schematic lines, blueprint grid, UI, HUD, watermark, signature, logo, people, hands, blurry, low contrast, cluttered background, distorted geometry, duplicate objects, cropped subject, frame border",
+      "file": "art/assets/ant_dup.png",
+      "status": "done"
+    },
+    {
+      "id": "pwr_solar_small",
+      "kind": "power",
+      "name": "Солнечные панели «Малые»",
+      "point": null,
+      "prompt": "a small deployable solar array spacecraft power module, 160 watts, clean cutaway. unlit almost-black navy studio void, #070d15, subtle soft pool of light on the subject, background falls into deep shadow, seamless backdrop, no visible floor line, no grid, no horizon, no landscape, no sky, no stars, no blue glow, not beige, not brown, not gray. semi-realistic cinematic 3D product render, photorealistic PBR materials, realistic industrial spacecraft hardware, intricate panel lines, subtle wear, soft neutral studio key light, cool white rim light, tiny amber indicator lights only, high detail, sharp focus, centered composition, subject as large as possible while fully inside the frame, full object visible with eight percent margins, wide horizontal framing, completely blank unmarked hull, no text, no labels, no watermark, no logo. color palette: almost-black navy #070d15, brushed titanium, warm amber indicator lights, off-white highlights.",
+      "negative": "beige background, brown background, gray background, cream background, white background, blue background, blue haze, neon, colorful lighting, landscape, sky, sunset, sunrise, clouds, horizon, ground line, text, letters, numbers, words, typography, lettering, labels, decals, markings, insignia, flags, badges, signage, screens, displays, callouts, annotations, captions, titles, diagrams, schematic lines, blueprint grid, UI, HUD, watermark, signature, logo, people, hands, blurry, low contrast, cluttered background, distorted geometry, duplicate objects, cropped subject, frame border",
+      "file": "art/assets/pwr_solar_small.png",
+      "status": "done"
+    },
+    {
+      "id": "pwr_solar_medium",
+      "kind": "power",
+      "name": "Солнечные панели «Средние»",
+      "point": null,
+      "prompt": "a medium deployable solar array spacecraft power module, 320 watts, clean cutaway. unlit almost-black navy studio void, #070d15, subtle soft pool of light on the subject, background falls into deep shadow, seamless backdrop, no visible floor line, no grid, no horizon, no landscape, no sky, no stars, no blue glow, not beige, not brown, not gray. semi-realistic cinematic 3D product render, photorealistic PBR materials, realistic industrial spacecraft hardware, intricate panel lines, subtle wear, soft neutral studio key light, cool white rim light, tiny amber indicator lights only, high detail, sharp focus, centered composition, subject as large as possible while fully inside the frame, full object visible with eight percent margins, wide horizontal framing, completely blank unmarked hull, no text, no labels, no watermark, no logo. color palette: almost-black navy #070d15, brushed titanium, warm amber indicator lights, off-white highlights.",
+      "negative": "beige background, brown background, gray background, cream background, white background, blue background, blue haze, neon, colorful lighting, landscape, sky, sunset, sunrise, clouds, horizon, ground line, text, letters, numbers, words, typography, lettering, labels, decals, markings, insignia, flags, badges, signage, screens, displays, callouts, annotations, captions, titles, diagrams, schematic lines, blueprint grid, UI, HUD, watermark, signature, logo, people, hands, blurry, low contrast, cluttered background, distorted geometry, duplicate objects, cropped subject, frame border",
+      "file": "art/assets/pwr_solar_medium.png",
+      "status": "done"
+    },
+    {
+      "id": "pwr_solar_large",
+      "kind": "power",
+      "name": "Солнечные панели «Большие»",
+      "point": null,
+      "prompt": "a large deployable solar array spacecraft power module, 620 watts, clean cutaway. unlit almost-black navy studio void, #070d15, subtle soft pool of light on the subject, background falls into deep shadow, seamless backdrop, no visible floor line, no grid, no horizon, no landscape, no sky, no stars, no blue glow, not beige, not brown, not gray. semi-realistic cinematic 3D product render, photorealistic PBR materials, realistic industrial spacecraft hardware, intricate panel lines, subtle wear, soft neutral studio key light, cool white rim light, tiny amber indicator lights only, high detail, sharp focus, centered composition, subject as large as possible while fully inside the frame, full object visible with eight percent margins, wide horizontal framing, completely blank unmarked hull, no text, no labels, no watermark, no logo. color palette: almost-black navy #070d15, brushed titanium, warm amber indicator lights, off-white highlights.",
+      "negative": "beige background, brown background, gray background, cream background, white background, blue background, blue haze, neon, colorful lighting, landscape, sky, sunset, sunrise, clouds, horizon, ground line, text, letters, numbers, words, typography, lettering, labels, decals, markings, insignia, flags, badges, signage, screens, displays, callouts, annotations, captions, titles, diagrams, schematic lines, blueprint grid, UI, HUD, watermark, signature, logo, people, hands, blurry, low contrast, cluttered background, distorted geometry, duplicate objects, cropped subject, frame border",
+      "file": "art/assets/pwr_solar_large.png",
+      "status": "done"
+    },
+    {
+      "id": "pwr_reactor",
+      "kind": "power",
+      "name": "РИТЭГ / реактор",
+      "point": null,
+      "prompt": "a radioisotope thermoelectric spacecraft power module, 400 watts, clean cutaway. unlit almost-black navy studio void, #070d15, subtle soft pool of light on the subject, background falls into deep shadow, seamless backdrop, no visible floor line, no grid, no horizon, no landscape, no sky, no stars, no blue glow, not beige, not brown, not gray. semi-realistic cinematic 3D product render, photorealistic PBR materials, realistic industrial spacecraft hardware, intricate panel lines, subtle wear, soft neutral studio key light, cool white rim light, tiny amber indicator lights only, high detail, sharp focus, centered composition, subject as large as possible while fully inside the frame, full object visible with eight percent margins, wide horizontal framing, completely blank unmarked hull, no text, no labels, no watermark, no logo. color palette: almost-black navy #070d15, brushed titanium, warm amber indicator lights, off-white highlights.",
+      "negative": "beige background, brown background, gray background, cream background, white background, blue background, blue haze, neon, colorful lighting, landscape, sky, sunset, sunrise, clouds, horizon, ground line, text, letters, numbers, words, typography, lettering, labels, decals, markings, insignia, flags, badges, signage, screens, displays, callouts, annotations, captions, titles, diagrams, schematic lines, blueprint grid, UI, HUD, watermark, signature, logo, people, hands, blurry, low contrast, cluttered background, distorted geometry, duplicate objects, cropped subject, frame border",
+      "file": "art/assets/pwr_reactor.png",
+      "status": "done"
+    },
+    {
+      "id": "pwr_exp",
+      "kind": "power",
+      "name": "Источник питания «Экспериментальный»",
+      "point": null,
+      "prompt": "an experimental high-output spacecraft power module, 416 watts, clean cutaway. unlit almost-black navy studio void, #070d15, subtle soft pool of light on the subject, background falls into deep shadow, seamless backdrop, no visible floor line, no grid, no horizon, no landscape, no sky, no stars, no blue glow, not beige, not brown, not gray. semi-realistic cinematic 3D product render, photorealistic PBR materials, realistic industrial spacecraft hardware, intricate panel lines, subtle wear, soft neutral studio key light, cool white rim light, tiny amber indicator lights only, high detail, sharp focus, centered composition, subject as large as possible while fully inside the frame, full object visible with eight percent margins, wide horizontal framing, completely blank unmarked hull, no text, no labels, no watermark, no logo. color palette: almost-black navy #070d15, brushed titanium, warm amber indicator lights, off-white highlights.",
+      "negative": "beige background, brown background, gray background, cream background, white background, blue background, blue haze, neon, colorful lighting, landscape, sky, sunset, sunrise, clouds, horizon, ground line, text, letters, numbers, words, typography, lettering, labels, decals, markings, insignia, flags, badges, signage, screens, displays, callouts, annotations, captions, titles, diagrams, schematic lines, blueprint grid, UI, HUD, watermark, signature, logo, people, hands, blurry, low contrast, cluttered background, distorted geometry, duplicate objects, cropped subject, frame border",
+      "file": "art/assets/pwr_exp.png",
+      "status": "done"
+    },
+    {
+      "id": "buf_1",
+      "kind": "buffer",
+      "name": "Буфер 1 кВт·ч",
+      "point": null,
+      "prompt": "spacecraft battery buffer pack, 1 kilowatt-hour capacity, lithium cells in a pressure housing, clean cutaway. unlit almost-black navy studio void, #070d15, subtle soft pool of light on the subject, background falls into deep shadow, seamless backdrop, no visible floor line, no grid, no horizon, no landscape, no sky, no stars, no blue glow, not beige, not brown, not gray. semi-realistic cinematic 3D product render, photorealistic PBR materials, realistic industrial spacecraft hardware, intricate panel lines, subtle wear, soft neutral studio key light, cool white rim light, tiny amber indicator lights only, high detail, sharp focus, centered composition, subject as large as possible while fully inside the frame, full object visible with eight percent margins, wide horizontal framing, completely blank unmarked hull, no text, no labels, no watermark, no logo. color palette: almost-black navy #070d15, brushed titanium, warm amber indicator lights, off-white highlights.",
+      "negative": "beige background, brown background, gray background, cream background, white background, blue background, blue haze, neon, colorful lighting, landscape, sky, sunset, sunrise, clouds, horizon, ground line, text, letters, numbers, words, typography, lettering, labels, decals, markings, insignia, flags, badges, signage, screens, displays, callouts, annotations, captions, titles, diagrams, schematic lines, blueprint grid, UI, HUD, watermark, signature, logo, people, hands, blurry, low contrast, cluttered background, distorted geometry, duplicate objects, cropped subject, frame border",
+      "file": "art/assets/buf_1.png",
+      "status": "done"
+    },
+    {
+      "id": "buf_2",
+      "kind": "buffer",
+      "name": "Буфер 2 кВт·ч",
+      "point": null,
+      "prompt": "spacecraft battery buffer pack, 2 kilowatt-hour capacity, lithium cells in a pressure housing, clean cutaway. unlit almost-black navy studio void, #070d15, subtle soft pool of light on the subject, background falls into deep shadow, seamless backdrop, no visible floor line, no grid, no horizon, no landscape, no sky, no stars, no blue glow, not beige, not brown, not gray. semi-realistic cinematic 3D product render, photorealistic PBR materials, realistic industrial spacecraft hardware, intricate panel lines, subtle wear, soft neutral studio key light, cool white rim light, tiny amber indicator lights only, high detail, sharp focus, centered composition, subject as large as possible while fully inside the frame, full object visible with eight percent margins, wide horizontal framing, completely blank unmarked hull, no text, no labels, no watermark, no logo. color palette: almost-black navy #070d15, brushed titanium, warm amber indicator lights, off-white highlights.",
+      "negative": "beige background, brown background, gray background, cream background, white background, blue background, blue haze, neon, colorful lighting, landscape, sky, sunset, sunrise, clouds, horizon, ground line, text, letters, numbers, words, typography, lettering, labels, decals, markings, insignia, flags, badges, signage, screens, displays, callouts, annotations, captions, titles, diagrams, schematic lines, blueprint grid, UI, HUD, watermark, signature, logo, people, hands, blurry, low contrast, cluttered background, distorted geometry, duplicate objects, cropped subject, frame border",
+      "file": "art/assets/buf_2.png",
+      "status": "done"
+    },
+    {
+      "id": "buf_5",
+      "kind": "buffer",
+      "name": "Буфер 5 кВт·ч",
+      "point": null,
+      "prompt": "spacecraft battery buffer pack, 5 kilowatt-hour capacity, lithium cells in a pressure housing, clean cutaway. unlit almost-black navy studio void, #070d15, subtle soft pool of light on the subject, background falls into deep shadow, seamless backdrop, no visible floor line, no grid, no horizon, no landscape, no sky, no stars, no blue glow, not beige, not brown, not gray. semi-realistic cinematic 3D product render, photorealistic PBR materials, realistic industrial spacecraft hardware, intricate panel lines, subtle wear, soft neutral studio key light, cool white rim light, tiny amber indicator lights only, high detail, sharp focus, centered composition, subject as large as possible while fully inside the frame, full object visible with eight percent margins, wide horizontal framing, completely blank unmarked hull, no text, no labels, no watermark, no logo. color palette: almost-black navy #070d15, brushed titanium, warm amber indicator lights, off-white highlights.",
+      "negative": "beige background, brown background, gray background, cream background, white background, blue background, blue haze, neon, colorful lighting, landscape, sky, sunset, sunrise, clouds, horizon, ground line, text, letters, numbers, words, typography, lettering, labels, decals, markings, insignia, flags, badges, signage, screens, displays, callouts, annotations, captions, titles, diagrams, schematic lines, blueprint grid, UI, HUD, watermark, signature, logo, people, hands, blurry, low contrast, cluttered background, distorted geometry, duplicate objects, cropped subject, frame border",
+      "file": "art/assets/buf_5.png",
+      "status": "done"
+    },
+    {
+      "id": "buf_10",
+      "kind": "buffer",
+      "name": "Буфер 10 кВт·ч",
+      "point": null,
+      "prompt": "spacecraft battery buffer pack, 10 kilowatt-hour capacity, lithium cells in a pressure housing, clean cutaway. unlit almost-black navy studio void, #070d15, subtle soft pool of light on the subject, background falls into deep shadow, seamless backdrop, no visible floor line, no grid, no horizon, no landscape, no sky, no stars, no blue glow, not beige, not brown, not gray. semi-realistic cinematic 3D product render, photorealistic PBR materials, realistic industrial spacecraft hardware, intricate panel lines, subtle wear, soft neutral studio key light, cool white rim light, tiny amber indicator lights only, high detail, sharp focus, centered composition, subject as large as possible while fully inside the frame, full object visible with eight percent margins, wide horizontal framing, completely blank unmarked hull, no text, no labels, no watermark, no logo. color palette: almost-black navy #070d15, brushed titanium, warm amber indicator lights, off-white highlights.",
+      "negative": "beige background, brown background, gray background, cream background, white background, blue background, blue haze, neon, colorful lighting, landscape, sky, sunset, sunrise, clouds, horizon, ground line, text, letters, numbers, words, typography, lettering, labels, decals, markings, insignia, flags, badges, signage, screens, displays, callouts, annotations, captions, titles, diagrams, schematic lines, blueprint grid, UI, HUD, watermark, signature, logo, people, hands, blurry, low contrast, cluttered background, distorted geometry, duplicate objects, cropped subject, frame border",
+      "file": "art/assets/buf_10.png",
+      "status": "done"
+    },
+    {
+      "id": "phy_capsule",
+      "kind": "physical",
+      "name": "Возвращаемая капсула",
+      "point": null,
+      "prompt": "a sample return capsule, 60 kilograms, folded deployment mechanism, clean cutaway. unlit almost-black navy studio void, #070d15, subtle soft pool of light on the subject, background falls into deep shadow, seamless backdrop, no visible floor line, no grid, no horizon, no landscape, no sky, no stars, no blue glow, not beige, not brown, not gray. semi-realistic cinematic 3D product render, photorealistic PBR materials, realistic industrial spacecraft hardware, intricate panel lines, subtle wear, soft neutral studio key light, cool white rim light, tiny amber indicator lights only, high detail, sharp focus, centered composition, subject as large as possible while fully inside the frame, full object visible with eight percent margins, wide horizontal framing, completely blank unmarked hull, no text, no labels, no watermark, no logo. color palette: almost-black navy #070d15, brushed titanium, warm amber indicator lights, off-white highlights.",
+      "negative": "beige background, brown background, gray background, cream background, white background, blue background, blue haze, neon, colorful lighting, landscape, sky, sunset, sunrise, clouds, horizon, ground line, text, letters, numbers, words, typography, lettering, labels, decals, markings, insignia, flags, badges, signage, screens, displays, callouts, annotations, captions, titles, diagrams, schematic lines, blueprint grid, UI, HUD, watermark, signature, logo, people, hands, blurry, low contrast, cluttered background, distorted geometry, duplicate objects, cropped subject, frame border",
+      "file": "art/assets/phy_capsule.png",
+      "status": "done"
+    },
+    {
+      "id": "phy_lander",
+      "kind": "physical",
+      "name": "Спускаемый аппарат",
+      "point": null,
+      "prompt": "a soft-landing descent module, 120 kilograms, folded deployment mechanism, clean cutaway. unlit almost-black navy studio void, #070d15, subtle soft pool of light on the subject, background falls into deep shadow, seamless backdrop, no visible floor line, no grid, no horizon, no landscape, no sky, no stars, no blue glow, not beige, not brown, not gray. semi-realistic cinematic 3D product render, photorealistic PBR materials, realistic industrial spacecraft hardware, intricate panel lines, subtle wear, soft neutral studio key light, cool white rim light, tiny amber indicator lights only, high detail, sharp focus, centered composition, subject as large as possible while fully inside the frame, full object visible with eight percent margins, wide horizontal framing, completely blank unmarked hull, no text, no labels, no watermark, no logo. color palette: almost-black navy #070d15, brushed titanium, warm amber indicator lights, off-white highlights.",
+      "negative": "beige background, brown background, gray background, cream background, white background, blue background, blue haze, neon, colorful lighting, landscape, sky, sunset, sunrise, clouds, horizon, ground line, text, letters, numbers, words, typography, lettering, labels, decals, markings, insignia, flags, badges, signage, screens, displays, callouts, annotations, captions, titles, diagrams, schematic lines, blueprint grid, UI, HUD, watermark, signature, logo, people, hands, blurry, low contrast, cluttered background, distorted geometry, duplicate objects, cropped subject, frame border",
+      "file": "art/assets/phy_lander.png",
+      "status": "done"
+    },
+    {
+      "id": "phy_rover",
+      "kind": "physical",
+      "name": "Ровер / дрон",
+      "point": null,
+      "prompt": "a six-wheeled planetary rover, 80 kilograms, folded deployment mechanism, clean cutaway. unlit almost-black navy studio void, #070d15, subtle soft pool of light on the subject, background falls into deep shadow, seamless backdrop, no visible floor line, no grid, no horizon, no landscape, no sky, no stars, no blue glow, not beige, not brown, not gray. semi-realistic cinematic 3D product render, photorealistic PBR materials, realistic industrial spacecraft hardware, intricate panel lines, subtle wear, soft neutral studio key light, cool white rim light, tiny amber indicator lights only, high detail, sharp focus, centered composition, subject as large as possible while fully inside the frame, full object visible with eight percent margins, wide horizontal framing, completely blank unmarked hull, no text, no labels, no watermark, no logo. color palette: almost-black navy #070d15, brushed titanium, warm amber indicator lights, off-white highlights.",
+      "negative": "beige background, brown background, gray background, cream background, white background, blue background, blue haze, neon, colorful lighting, landscape, sky, sunset, sunrise, clouds, horizon, ground line, text, letters, numbers, words, typography, lettering, labels, decals, markings, insignia, flags, badges, signage, screens, displays, callouts, annotations, captions, titles, diagrams, schematic lines, blueprint grid, UI, HUD, watermark, signature, logo, people, hands, blurry, low contrast, cluttered background, distorted geometry, duplicate objects, cropped subject, frame border",
+      "file": "art/assets/phy_rover.png",
+      "status": "done"
+    },
+    {
+      "id": "phy_manipulator",
+      "kind": "physical",
+      "name": "Манипулятор забора",
+      "point": null,
+      "prompt": "a robotic sampling arm, 25 kilograms, folded deployment mechanism, clean cutaway. unlit almost-black navy studio void, #070d15, subtle soft pool of light on the subject, background falls into deep shadow, seamless backdrop, no visible floor line, no grid, no horizon, no landscape, no sky, no stars, no blue glow, not beige, not brown, not gray. semi-realistic cinematic 3D product render, photorealistic PBR materials, realistic industrial spacecraft hardware, intricate panel lines, subtle wear, soft neutral studio key light, cool white rim light, tiny amber indicator lights only, high detail, sharp focus, centered composition, subject as large as possible while fully inside the frame, full object visible with eight percent margins, wide horizontal framing, completely blank unmarked hull, no text, no labels, no watermark, no logo. color palette: almost-black navy #070d15, brushed titanium, warm amber indicator lights, off-white highlights.",
+      "negative": "beige background, brown background, gray background, cream background, white background, blue background, blue haze, neon, colorful lighting, landscape, sky, sunset, sunrise, clouds, horizon, ground line, text, letters, numbers, words, typography, lettering, labels, decals, markings, insignia, flags, badges, signage, screens, displays, callouts, annotations, captions, titles, diagrams, schematic lines, blueprint grid, UI, HUD, watermark, signature, logo, people, hands, blurry, low contrast, cluttered background, distorted geometry, duplicate objects, cropped subject, frame border",
+      "file": "art/assets/phy_manipulator.png",
+      "status": "done"
+    },
+    {
+      "id": "phy_relay",
+      "kind": "physical",
+      "name": "Ретранслятор",
+      "point": null,
+      "prompt": "a communications relay satellite, 150 kilograms, folded deployment mechanism, clean cutaway. unlit almost-black navy studio void, #070d15, subtle soft pool of light on the subject, background falls into deep shadow, seamless backdrop, no visible floor line, no grid, no horizon, no landscape, no sky, no stars, no blue glow, not beige, not brown, not gray. semi-realistic cinematic 3D product render, photorealistic PBR materials, realistic industrial spacecraft hardware, intricate panel lines, subtle wear, soft neutral studio key light, cool white rim light, tiny amber indicator lights only, high detail, sharp focus, centered composition, subject as large as possible while fully inside the frame, full object visible with eight percent margins, wide horizontal framing, completely blank unmarked hull, no text, no labels, no watermark, no logo. color palette: almost-black navy #070d15, brushed titanium, warm amber indicator lights, off-white highlights.",
+      "negative": "beige background, brown background, gray background, cream background, white background, blue background, blue haze, neon, colorful lighting, landscape, sky, sunset, sunrise, clouds, horizon, ground line, text, letters, numbers, words, typography, lettering, labels, decals, markings, insignia, flags, badges, signage, screens, displays, callouts, annotations, captions, titles, diagrams, schematic lines, blueprint grid, UI, HUD, watermark, signature, logo, people, hands, blurry, low contrast, cluttered background, distorted geometry, duplicate objects, cropped subject, frame border",
+      "file": "art/assets/phy_relay.png",
+      "status": "done"
+    },
+    {
+      "id": "fac_factory_0",
+      "kind": "facility",
+      "name": "Завод: пусто",
+      "point": null,
+      "prompt": "a modest assembly workshop aerospace facility, wide isometric 3D view of the assembly building, cranes and clean rooms. semi-realistic cinematic 3D scene, photorealistic PBR materials, realistic industrial and space hardware, intricate detail, dramatic but soft lighting, wide horizontal composition, clear focal subject, generous margins, completely blank unmarked surfaces, no text, no labels, no watermark, no logo. color palette: almost-black navy #070d15, brushed titanium, warm amber indicator lights, off-white highlights.",
+      "negative": "overexposed, oversaturated, neon, text, letters, numbers, words, typography, lettering, labels, decals, markings, insignia, flags, badges, signage, screens, displays, callouts, annotations, captions, titles, diagrams, schematic lines, blueprint grid, UI, HUD, watermark, signature, logo, people, hands, blurry, low contrast, cluttered background, distorted geometry, duplicate objects, cropped subject, frame border",
+      "file": "art/assets/fac_factory_0.png",
+      "status": "done"
+    },
+    {
+      "id": "fac_factory_1",
+      "kind": "facility",
+      "name": "Завод: сборочный цех",
+      "point": null,
+      "prompt": "an assembly hangar aerospace facility, wide isometric 3D view of the assembly building, cranes and clean rooms. semi-realistic cinematic 3D scene, photorealistic PBR materials, realistic industrial and space hardware, intricate detail, dramatic but soft lighting, wide horizontal composition, clear focal subject, generous margins, completely blank unmarked surfaces, no text, no labels, no watermark, no logo. color palette: almost-black navy #070d15, brushed titanium, warm amber indicator lights, off-white highlights.",
+      "negative": "overexposed, oversaturated, neon, text, letters, numbers, words, typography, lettering, labels, decals, markings, insignia, flags, badges, signage, screens, displays, callouts, annotations, captions, titles, diagrams, schematic lines, blueprint grid, UI, HUD, watermark, signature, logo, people, hands, blurry, low contrast, cluttered background, distorted geometry, duplicate objects, cropped subject, frame border",
+      "file": "art/assets/fac_factory_1.png",
+      "status": "done"
+    },
+    {
+      "id": "fac_factory_2",
+      "kind": "facility",
+      "name": "Завод: апгрейд",
+      "point": null,
+      "prompt": "an upgraded launch vehicle factory aerospace facility, wide isometric 3D view of the assembly building, cranes and clean rooms. semi-realistic cinematic 3D scene, photorealistic PBR materials, realistic industrial and space hardware, intricate detail, dramatic but soft lighting, wide horizontal composition, clear focal subject, generous margins, completely blank unmarked surfaces, no text, no labels, no watermark, no logo. color palette: almost-black navy #070d15, brushed titanium, warm amber indicator lights, off-white highlights.",
+      "negative": "overexposed, oversaturated, neon, text, letters, numbers, words, typography, lettering, labels, decals, markings, insignia, flags, badges, signage, screens, displays, callouts, annotations, captions, titles, diagrams, schematic lines, blueprint grid, UI, HUD, watermark, signature, logo, people, hands, blurry, low contrast, cluttered background, distorted geometry, duplicate objects, cropped subject, frame border",
+      "file": "art/assets/fac_factory_2.png",
+      "status": "done"
+    },
+    {
+      "id": "fac_factory_3",
+      "kind": "facility",
+      "name": "Завод: автоматизированная линия",
+      "point": null,
+      "prompt": "an automated production line aerospace facility, wide isometric 3D view of the assembly building, cranes and clean rooms. semi-realistic cinematic 3D scene, photorealistic PBR materials, realistic industrial and space hardware, intricate detail, dramatic but soft lighting, wide horizontal composition, clear focal subject, generous margins, completely blank unmarked surfaces, no text, no labels, no watermark, no logo. color palette: almost-black navy #070d15, brushed titanium, warm amber indicator lights, off-white highlights.",
+      "negative": "overexposed, oversaturated, neon, text, letters, numbers, words, typography, lettering, labels, decals, markings, insignia, flags, badges, signage, screens, displays, callouts, annotations, captions, titles, diagrams, schematic lines, blueprint grid, UI, HUD, watermark, signature, logo, people, hands, blurry, low contrast, cluttered background, distorted geometry, duplicate objects, cropped subject, frame border",
+      "file": "art/assets/fac_factory_3.png",
+      "status": "done"
+    },
+    {
+      "id": "fac_factory_4",
+      "kind": "facility",
+      "name": "Завод: орбитальная верфь",
+      "point": null,
+      "prompt": "an orbital shipyard aerospace facility, wide isometric 3D view of the assembly building, cranes and clean rooms. semi-realistic cinematic 3D scene, photorealistic PBR materials, realistic industrial and space hardware, intricate detail, dramatic but soft lighting, wide horizontal composition, clear focal subject, generous margins, completely blank unmarked surfaces, no text, no labels, no watermark, no logo. color palette: almost-black navy #070d15, brushed titanium, warm amber indicator lights, off-white highlights.",
+      "negative": "overexposed, oversaturated, neon, text, letters, numbers, words, typography, lettering, labels, decals, markings, insignia, flags, badges, signage, screens, displays, callouts, annotations, captions, titles, diagrams, schematic lines, blueprint grid, UI, HUD, watermark, signature, logo, people, hands, blurry, low contrast, cluttered background, distorted geometry, duplicate objects, cropped subject, frame border",
+      "file": "art/assets/fac_factory_4.png",
+      "status": "done"
+    },
+    {
+      "id": "fac_school_0",
+      "kind": "facility",
+      "name": "Школа: пусто",
+      "point": null,
+      "prompt": "a small research office aerospace facility, wide isometric 3D view of the assembly building, cranes and clean rooms. semi-realistic cinematic 3D scene, photorealistic PBR materials, realistic industrial and space hardware, intricate detail, dramatic but soft lighting, wide horizontal composition, clear focal subject, generous margins, completely blank unmarked surfaces, no text, no labels, no watermark, no logo. color palette: almost-black navy #070d15, brushed titanium, warm amber indicator lights, off-white highlights.",
+      "negative": "overexposed, oversaturated, neon, text, letters, numbers, words, typography, lettering, labels, decals, markings, insignia, flags, badges, signage, screens, displays, callouts, annotations, captions, titles, diagrams, schematic lines, blueprint grid, UI, HUD, watermark, signature, logo, people, hands, blurry, low contrast, cluttered background, distorted geometry, duplicate objects, cropped subject, frame border",
+      "file": "art/assets/fac_school_0.png",
+      "status": "done"
+    },
+    {
+      "id": "fac_school_1",
+      "kind": "facility",
+      "name": "Школа: институт",
+      "point": null,
+      "prompt": "a space research institute aerospace facility, wide isometric 3D view of the assembly building, cranes and clean rooms. semi-realistic cinematic 3D scene, photorealistic PBR materials, realistic industrial and space hardware, intricate detail, dramatic but soft lighting, wide horizontal composition, clear focal subject, generous margins, completely blank unmarked surfaces, no text, no labels, no watermark, no logo. color palette: almost-black navy #070d15, brushed titanium, warm amber indicator lights, off-white highlights.",
+      "negative": "overexposed, oversaturated, neon, text, letters, numbers, words, typography, lettering, labels, decals, markings, insignia, flags, badges, signage, screens, displays, callouts, annotations, captions, titles, diagrams, schematic lines, blueprint grid, UI, HUD, watermark, signature, logo, people, hands, blurry, low contrast, cluttered background, distorted geometry, duplicate objects, cropped subject, frame border",
+      "file": "art/assets/fac_school_1.png",
+      "status": "done"
+    },
+    {
+      "id": "fac_school_2",
+      "kind": "facility",
+      "name": "Школа: апгрейд",
+      "point": null,
+      "prompt": "an expanded research campus aerospace facility, wide isometric 3D view of the assembly building, cranes and clean rooms. semi-realistic cinematic 3D scene, photorealistic PBR materials, realistic industrial and space hardware, intricate detail, dramatic but soft lighting, wide horizontal composition, clear focal subject, generous margins, completely blank unmarked surfaces, no text, no labels, no watermark, no logo. color palette: almost-black navy #070d15, brushed titanium, warm amber indicator lights, off-white highlights.",
+      "negative": "overexposed, oversaturated, neon, text, letters, numbers, words, typography, lettering, labels, decals, markings, insignia, flags, badges, signage, screens, displays, callouts, annotations, captions, titles, diagrams, schematic lines, blueprint grid, UI, HUD, watermark, signature, logo, people, hands, blurry, low contrast, cluttered background, distorted geometry, duplicate objects, cropped subject, frame border",
+      "file": "art/assets/fac_school_2.png",
+      "status": "done"
+    },
+    {
+      "id": "fac_school_3",
+      "kind": "facility",
+      "name": "Школа: кампус с обсерваториями",
+      "point": null,
+      "prompt": "an observatory campus aerospace facility, wide isometric 3D view of the assembly building, cranes and clean rooms. semi-realistic cinematic 3D scene, photorealistic PBR materials, realistic industrial and space hardware, intricate detail, dramatic but soft lighting, wide horizontal composition, clear focal subject, generous margins, completely blank unmarked surfaces, no text, no labels, no watermark, no logo. color palette: almost-black navy #070d15, brushed titanium, warm amber indicator lights, off-white highlights.",
+      "negative": "overexposed, oversaturated, neon, text, letters, numbers, words, typography, lettering, labels, decals, markings, insignia, flags, badges, signage, screens, displays, callouts, annotations, captions, titles, diagrams, schematic lines, blueprint grid, UI, HUD, watermark, signature, logo, people, hands, blurry, low contrast, cluttered background, distorted geometry, duplicate objects, cropped subject, frame border",
+      "file": "art/assets/fac_school_3.png",
+      "status": "done"
+    },
+    {
+      "id": "fac_school_4",
+      "kind": "facility",
+      "name": "Школа: научный мегакомплекс",
+      "point": null,
+      "prompt": "a national science megacomplex aerospace facility, wide isometric 3D view of the assembly building, cranes and clean rooms. semi-realistic cinematic 3D scene, photorealistic PBR materials, realistic industrial and space hardware, intricate detail, dramatic but soft lighting, wide horizontal composition, clear focal subject, generous margins, completely blank unmarked surfaces, no text, no labels, no watermark, no logo. color palette: almost-black navy #070d15, brushed titanium, warm amber indicator lights, off-white highlights.",
+      "negative": "overexposed, oversaturated, neon, text, letters, numbers, words, typography, lettering, labels, decals, markings, insignia, flags, badges, signage, screens, displays, callouts, annotations, captions, titles, diagrams, schematic lines, blueprint grid, UI, HUD, watermark, signature, logo, people, hands, blurry, low contrast, cluttered background, distorted geometry, duplicate objects, cropped subject, frame border",
+      "file": "art/assets/fac_school_4.png",
+      "status": "done"
+    },
+    {
+      "id": "ev_popularity",
+      "kind": "event",
+      "name": "Популяризация",
+      "point": null,
+      "prompt": "cinematic 3D mission control room with blank holographic displays and orbital tracks, dark interior. semi-realistic cinematic 3D scene, photorealistic PBR materials, realistic industrial and space hardware, intricate detail, dramatic but soft lighting, wide horizontal composition, clear focal subject, generous margins, completely blank unmarked surfaces, no text, no labels, no watermark, no logo. color palette: almost-black navy #070d15, brushed titanium, warm amber indicator lights, off-white highlights.",
+      "negative": "overexposed, oversaturated, neon, text, letters, numbers, words, typography, lettering, labels, decals, markings, insignia, flags, badges, signage, screens, displays, callouts, annotations, captions, titles, diagrams, schematic lines, blueprint grid, UI, HUD, watermark, signature, logo, people, hands, blurry, low contrast, cluttered background, distorted geometry, duplicate objects, cropped subject, frame border",
+      "file": "art/assets/ev_popularity.png",
+      "status": "done"
+    },
+    {
+      "id": "ev_advertising",
+      "kind": "event",
+      "name": "Реклама",
+      "point": null,
+      "prompt": "cinematic 3D mission control room with blank holographic displays and orbital tracks, dark interior. semi-realistic cinematic 3D scene, photorealistic PBR materials, realistic industrial and space hardware, intricate detail, dramatic but soft lighting, wide horizontal composition, clear focal subject, generous margins, completely blank unmarked surfaces, no text, no labels, no watermark, no logo. color palette: almost-black navy #070d15, brushed titanium, warm amber indicator lights, off-white highlights.",
+      "negative": "overexposed, oversaturated, neon, text, letters, numbers, words, typography, lettering, labels, decals, markings, insignia, flags, badges, signage, screens, displays, callouts, annotations, captions, titles, diagrams, schematic lines, blueprint grid, UI, HUD, watermark, signature, logo, people, hands, blurry, low contrast, cluttered background, distorted geometry, duplicate objects, cropped subject, frame border",
+      "file": "art/assets/ev_advertising.png",
+      "status": "done"
+    },
+    {
+      "id": "ev_accident",
+      "kind": "event",
+      "name": "Авария производства",
+      "point": null,
+      "prompt": "cinematic 3D mission control room with blank holographic displays and orbital tracks, dark interior. semi-realistic cinematic 3D scene, photorealistic PBR materials, realistic industrial and space hardware, intricate detail, dramatic but soft lighting, wide horizontal composition, clear focal subject, generous margins, completely blank unmarked surfaces, no text, no labels, no watermark, no logo. color palette: almost-black navy #070d15, brushed titanium, warm amber indicator lights, off-white highlights.",
+      "negative": "overexposed, oversaturated, neon, text, letters, numbers, words, typography, lettering, labels, decals, markings, insignia, flags, badges, signage, screens, displays, callouts, annotations, captions, titles, diagrams, schematic lines, blueprint grid, UI, HUD, watermark, signature, logo, people, hands, blurry, low contrast, cluttered background, distorted geometry, duplicate objects, cropped subject, frame border",
+      "file": "art/assets/ev_accident.png",
+      "status": "done"
+    },
+    {
+      "id": "ev_breakthrough",
+      "kind": "event",
+      "name": "Научный прорыв",
+      "point": null,
+      "prompt": "cinematic 3D mission control room with blank holographic displays and orbital tracks, dark interior. semi-realistic cinematic 3D scene, photorealistic PBR materials, realistic industrial and space hardware, intricate detail, dramatic but soft lighting, wide horizontal composition, clear focal subject, generous margins, completely blank unmarked surfaces, no text, no labels, no watermark, no logo. color palette: almost-black navy #070d15, brushed titanium, warm amber indicator lights, off-white highlights.",
+      "negative": "overexposed, oversaturated, neon, text, letters, numbers, words, typography, lettering, labels, decals, markings, insignia, flags, badges, signage, screens, displays, callouts, annotations, captions, titles, diagrams, schematic lines, blueprint grid, UI, HUD, watermark, signature, logo, people, hands, blurry, low contrast, cluttered background, distorted geometry, duplicate objects, cropped subject, frame border",
+      "file": "art/assets/ev_breakthrough.png",
+      "status": "done"
+    },
+    {
+      "id": "ev_poach",
+      "kind": "event",
+      "name": "Специалиста переманили",
+      "point": null,
+      "prompt": "cinematic 3D mission control room with blank holographic displays and orbital tracks, dark interior. semi-realistic cinematic 3D scene, photorealistic PBR materials, realistic industrial and space hardware, intricate detail, dramatic but soft lighting, wide horizontal composition, clear focal subject, generous margins, completely blank unmarked surfaces, no text, no labels, no watermark, no logo. color palette: almost-black navy #070d15, brushed titanium, warm amber indicator lights, off-white highlights.",
+      "negative": "overexposed, oversaturated, neon, text, letters, numbers, words, typography, lettering, labels, decals, markings, insignia, flags, badges, signage, screens, displays, callouts, annotations, captions, titles, diagrams, schematic lines, blueprint grid, UI, HUD, watermark, signature, logo, people, hands, blurry, low contrast, cluttered background, distorted geometry, duplicate objects, cropped subject, frame border",
+      "file": "art/assets/ev_poach.png",
+      "status": "done"
+    },
+    {
+      "id": "ev_quit_rating",
+      "kind": "event",
+      "name": "Уход из-за падения РК",
+      "point": null,
+      "prompt": "cinematic 3D mission control room with blank holographic displays and orbital tracks, dark interior. semi-realistic cinematic 3D scene, photorealistic PBR materials, realistic industrial and space hardware, intricate detail, dramatic but soft lighting, wide horizontal composition, clear focal subject, generous margins, completely blank unmarked surfaces, no text, no labels, no watermark, no logo. color palette: almost-black navy #070d15, brushed titanium, warm amber indicator lights, off-white highlights.",
+      "negative": "overexposed, oversaturated, neon, text, letters, numbers, words, typography, lettering, labels, decals, markings, insignia, flags, badges, signage, screens, displays, callouts, annotations, captions, titles, diagrams, schematic lines, blueprint grid, UI, HUD, watermark, signature, logo, people, hands, blurry, low contrast, cluttered background, distorted geometry, duplicate objects, cropped subject, frame border",
+      "file": "art/assets/ev_quit_rating.png",
+      "status": "done"
+    },
+    {
+      "id": "ev_join_specialist",
+      "kind": "event",
+      "name": "Присоединение специалиста",
+      "point": null,
+      "prompt": "cinematic 3D mission control room with blank holographic displays and orbital tracks, dark interior. semi-realistic cinematic 3D scene, photorealistic PBR materials, realistic industrial and space hardware, intricate detail, dramatic but soft lighting, wide horizontal composition, clear focal subject, generous margins, completely blank unmarked surfaces, no text, no labels, no watermark, no logo. color palette: almost-black navy #070d15, brushed titanium, warm amber indicator lights, off-white highlights.",
+      "negative": "overexposed, oversaturated, neon, text, letters, numbers, words, typography, lettering, labels, decals, markings, insignia, flags, badges, signage, screens, displays, callouts, annotations, captions, titles, diagrams, schematic lines, blueprint grid, UI, HUD, watermark, signature, logo, people, hands, blurry, low contrast, cluttered background, distorted geometry, duplicate objects, cropped subject, frame border",
+      "file": "art/assets/ev_join_specialist.png",
+      "status": "done"
+    },
+    {
+      "id": "ev_join_novice",
+      "kind": "event",
+      "name": "Новичок-доброволец",
+      "point": null,
+      "prompt": "cinematic 3D mission control room with blank holographic displays and orbital tracks, dark interior. semi-realistic cinematic 3D scene, photorealistic PBR materials, realistic industrial and space hardware, intricate detail, dramatic but soft lighting, wide horizontal composition, clear focal subject, generous margins, completely blank unmarked surfaces, no text, no labels, no watermark, no logo. color palette: almost-black navy #070d15, brushed titanium, warm amber indicator lights, off-white highlights.",
+      "negative": "overexposed, oversaturated, neon, text, letters, numbers, words, typography, lettering, labels, decals, markings, insignia, flags, badges, signage, screens, displays, callouts, annotations, captions, titles, diagrams, schematic lines, blueprint grid, UI, HUD, watermark, signature, logo, people, hands, blurry, low contrast, cluttered background, distorted geometry, duplicate objects, cropped subject, frame border",
+      "file": "art/assets/ev_join_novice.png",
+      "status": "done"
+    },
+    {
+      "id": "ev_dream_team",
+      "kind": "event",
+      "name": "Команда мечты",
+      "point": null,
+      "prompt": "cinematic 3D mission control room with blank holographic displays and orbital tracks, dark interior. semi-realistic cinematic 3D scene, photorealistic PBR materials, realistic industrial and space hardware, intricate detail, dramatic but soft lighting, wide horizontal composition, clear focal subject, generous margins, completely blank unmarked surfaces, no text, no labels, no watermark, no logo. color palette: almost-black navy #070d15, brushed titanium, warm amber indicator lights, off-white highlights.",
+      "negative": "overexposed, oversaturated, neon, text, letters, numbers, words, typography, lettering, labels, decals, markings, insignia, flags, badges, signage, screens, displays, callouts, annotations, captions, titles, diagrams, schematic lines, blueprint grid, UI, HUD, watermark, signature, logo, people, hands, blurry, low contrast, cluttered background, distorted geometry, duplicate objects, cropped subject, frame border",
+      "file": "art/assets/ev_dream_team.png",
+      "status": "done"
+    },
+    {
+      "id": "ev_salary_delay",
+      "kind": "event",
+      "name": "Задержка зарплаты",
+      "point": null,
+      "prompt": "cinematic 3D mission control room with blank holographic displays and orbital tracks, dark interior. semi-realistic cinematic 3D scene, photorealistic PBR materials, realistic industrial and space hardware, intricate detail, dramatic but soft lighting, wide horizontal composition, clear focal subject, generous margins, completely blank unmarked surfaces, no text, no labels, no watermark, no logo. color palette: almost-black navy #070d15, brushed titanium, warm amber indicator lights, off-white highlights.",
+      "negative": "overexposed, oversaturated, neon, text, letters, numbers, words, typography, lettering, labels, decals, markings, insignia, flags, badges, signage, screens, displays, callouts, annotations, captions, titles, diagrams, schematic lines, blueprint grid, UI, HUD, watermark, signature, logo, people, hands, blurry, low contrast, cluttered background, distorted geometry, duplicate objects, cropped subject, frame border",
+      "file": "art/assets/ev_salary_delay.png",
+      "status": "done"
+    },
+    {
+      "id": "ev_flare",
+      "kind": "event",
+      "name": "Солнечная вспышка",
+      "point": null,
+      "prompt": "cinematic 3D mission control room with blank holographic displays and orbital tracks, dark interior. semi-realistic cinematic 3D scene, photorealistic PBR materials, realistic industrial and space hardware, intricate detail, dramatic but soft lighting, wide horizontal composition, clear focal subject, generous margins, completely blank unmarked surfaces, no text, no labels, no watermark, no logo. color palette: almost-black navy #070d15, brushed titanium, warm amber indicator lights, off-white highlights.",
+      "negative": "overexposed, oversaturated, neon, text, letters, numbers, words, typography, lettering, labels, decals, markings, insignia, flags, badges, signage, screens, displays, callouts, annotations, captions, titles, diagrams, schematic lines, blueprint grid, UI, HUD, watermark, signature, logo, people, hands, blurry, low contrast, cluttered background, distorted geometry, duplicate objects, cropped subject, frame border",
+      "file": "art/assets/ev_flare.png",
+      "status": "done"
+    },
+    {
+      "id": "ev_window",
+      "kind": "event",
+      "name": "Окно запуска закрывается",
+      "point": null,
+      "prompt": "cinematic 3D mission control room with blank holographic displays and orbital tracks, dark interior. semi-realistic cinematic 3D scene, photorealistic PBR materials, realistic industrial and space hardware, intricate detail, dramatic but soft lighting, wide horizontal composition, clear focal subject, generous margins, completely blank unmarked surfaces, no text, no labels, no watermark, no logo. color palette: almost-black navy #070d15, brushed titanium, warm amber indicator lights, off-white highlights.",
+      "negative": "overexposed, oversaturated, neon, text, letters, numbers, words, typography, lettering, labels, decals, markings, insignia, flags, badges, signage, screens, displays, callouts, annotations, captions, titles, diagrams, schematic lines, blueprint grid, UI, HUD, watermark, signature, logo, people, hands, blurry, low contrast, cluttered background, distorted geometry, duplicate objects, cropped subject, frame border",
+      "file": "art/assets/ev_window.png",
+      "status": "done"
+    },
+    {
+      "id": "ev_standard_offer",
+      "kind": "event",
+      "name": "Предложение стандартизации",
+      "point": null,
+      "prompt": "cinematic 3D mission control room with blank holographic displays and orbital tracks, dark interior. semi-realistic cinematic 3D scene, photorealistic PBR materials, realistic industrial and space hardware, intricate detail, dramatic but soft lighting, wide horizontal composition, clear focal subject, generous margins, completely blank unmarked surfaces, no text, no labels, no watermark, no logo. color palette: almost-black navy #070d15, brushed titanium, warm amber indicator lights, off-white highlights.",
+      "negative": "overexposed, oversaturated, neon, text, letters, numbers, words, typography, lettering, labels, decals, markings, insignia, flags, badges, signage, screens, displays, callouts, annotations, captions, titles, diagrams, schematic lines, blueprint grid, UI, HUD, watermark, signature, logo, people, hands, blurry, low contrast, cluttered background, distorted geometry, duplicate objects, cropped subject, frame border",
+      "file": "art/assets/ev_standard_offer.png",
+      "status": "done"
+    },
+    {
+      "id": "aux_fairing",
+      "kind": "auxiliary",
+      "name": "Обтекатель",
+      "point": null,
+      "prompt": "small spacecraft structural part, 3D product render, studio turntable shot. unlit almost-black navy studio void, #070d15, subtle soft pool of light on the subject, background falls into deep shadow, seamless backdrop, no visible floor line, no grid, no horizon, no landscape, no sky, no stars, no blue glow, not beige, not brown, not gray. semi-realistic cinematic 3D product render, photorealistic PBR materials, realistic industrial spacecraft hardware, intricate panel lines, subtle wear, soft neutral studio key light, cool white rim light, tiny amber indicator lights only, high detail, sharp focus, centered composition, subject as large as possible while fully inside the frame, full object visible with eight percent margins, wide horizontal framing, completely blank unmarked hull, no text, no labels, no watermark, no logo. color palette: almost-black navy #070d15, brushed titanium, warm amber indicator lights, off-white highlights.",
+      "negative": "beige background, brown background, gray background, cream background, white background, blue background, blue haze, neon, colorful lighting, landscape, sky, sunset, sunrise, clouds, horizon, ground line, text, letters, numbers, words, typography, lettering, labels, decals, markings, insignia, flags, badges, signage, screens, displays, callouts, annotations, captions, titles, diagrams, schematic lines, blueprint grid, UI, HUD, watermark, signature, logo, people, hands, blurry, low contrast, cluttered background, distorted geometry, duplicate objects, cropped subject, frame border",
+      "file": "art/assets/aux_fairing.png",
+      "status": "done"
+    },
+    {
+      "id": "aux_adapter",
+      "kind": "auxiliary",
+      "name": "Переходник",
+      "point": null,
+      "prompt": "small spacecraft structural part, 3D product render, studio turntable shot. unlit almost-black navy studio void, #070d15, subtle soft pool of light on the subject, background falls into deep shadow, seamless backdrop, no visible floor line, no grid, no horizon, no landscape, no sky, no stars, no blue glow, not beige, not brown, not gray. semi-realistic cinematic 3D product render, photorealistic PBR materials, realistic industrial spacecraft hardware, intricate panel lines, subtle wear, soft neutral studio key light, cool white rim light, tiny amber indicator lights only, high detail, sharp focus, centered composition, subject as large as possible while fully inside the frame, full object visible with eight percent margins, wide horizontal framing, completely blank unmarked hull, no text, no labels, no watermark, no logo. color palette: almost-black navy #070d15, brushed titanium, warm amber indicator lights, off-white highlights.",
+      "negative": "beige background, brown background, gray background, cream background, white background, blue background, blue haze, neon, colorful lighting, landscape, sky, sunset, sunrise, clouds, horizon, ground line, text, letters, numbers, words, typography, lettering, labels, decals, markings, insignia, flags, badges, signage, screens, displays, callouts, annotations, captions, titles, diagrams, schematic lines, blueprint grid, UI, HUD, watermark, signature, logo, people, hands, blurry, low contrast, cluttered background, distorted geometry, duplicate objects, cropped subject, frame border",
+      "file": "art/assets/aux_adapter.png",
+      "status": "done"
+    },
+    {
+      "id": "aux_truss",
+      "kind": "auxiliary",
+      "name": "Ферма",
+      "point": null,
+      "prompt": "small spacecraft structural part, 3D product render, studio turntable shot. unlit almost-black navy studio void, #070d15, subtle soft pool of light on the subject, background falls into deep shadow, seamless backdrop, no visible floor line, no grid, no horizon, no landscape, no sky, no stars, no blue glow, not beige, not brown, not gray. semi-realistic cinematic 3D product render, photorealistic PBR materials, realistic industrial spacecraft hardware, intricate panel lines, subtle wear, soft neutral studio key light, cool white rim light, tiny amber indicator lights only, high detail, sharp focus, centered composition, subject as large as possible while fully inside the frame, full object visible with eight percent margins, wide horizontal framing, completely blank unmarked hull, no text, no labels, no watermark, no logo. color palette: almost-black navy #070d15, brushed titanium, warm amber indicator lights, off-white highlights.",
+      "negative": "beige background, brown background, gray background, cream background, white background, blue background, blue haze, neon, colorful lighting, landscape, sky, sunset, sunrise, clouds, horizon, ground line, text, letters, numbers, words, typography, lettering, labels, decals, markings, insignia, flags, badges, signage, screens, displays, callouts, annotations, captions, titles, diagrams, schematic lines, blueprint grid, UI, HUD, watermark, signature, logo, people, hands, blurry, low contrast, cluttered background, distorted geometry, duplicate objects, cropped subject, frame border",
+      "file": "art/assets/aux_truss.png",
+      "status": "done"
+    },
+    {
+      "id": "aux_radiator",
+      "kind": "auxiliary",
+      "name": "Радиатор",
+      "point": null,
+      "prompt": "small spacecraft structural part, 3D product render, studio turntable shot. unlit almost-black navy studio void, #070d15, subtle soft pool of light on the subject, background falls into deep shadow, seamless backdrop, no visible floor line, no grid, no horizon, no landscape, no sky, no stars, no blue glow, not beige, not brown, not gray. semi-realistic cinematic 3D product render, photorealistic PBR materials, realistic industrial spacecraft hardware, intricate panel lines, subtle wear, soft neutral studio key light, cool white rim light, tiny amber indicator lights only, high detail, sharp focus, centered composition, subject as large as possible while fully inside the frame, full object visible with eight percent margins, wide horizontal framing, completely blank unmarked hull, no text, no labels, no watermark, no logo. color palette: almost-black navy #070d15, brushed titanium, warm amber indicator lights, off-white highlights.",
+      "negative": "beige background, brown background, gray background, cream background, white background, blue background, blue haze, neon, colorful lighting, landscape, sky, sunset, sunrise, clouds, horizon, ground line, text, letters, numbers, words, typography, lettering, labels, decals, markings, insignia, flags, badges, signage, screens, displays, callouts, annotations, captions, titles, diagrams, schematic lines, blueprint grid, UI, HUD, watermark, signature, logo, people, hands, blurry, low contrast, cluttered background, distorted geometry, duplicate objects, cropped subject, frame border",
+      "file": "art/assets/aux_radiator.png",
+      "status": "done"
+    },
+    {
+      "id": "aux_boom",
+      "kind": "auxiliary",
+      "name": "Выносная штанга",
+      "point": null,
+      "prompt": "small spacecraft structural part, 3D product render, studio turntable shot. unlit almost-black navy studio void, #070d15, subtle soft pool of light on the subject, background falls into deep shadow, seamless backdrop, no visible floor line, no grid, no horizon, no landscape, no sky, no stars, no blue glow, not beige, not brown, not gray. semi-realistic cinematic 3D product render, photorealistic PBR materials, realistic industrial spacecraft hardware, intricate panel lines, subtle wear, soft neutral studio key light, cool white rim light, tiny amber indicator lights only, high detail, sharp focus, centered composition, subject as large as possible while fully inside the frame, full object visible with eight percent margins, wide horizontal framing, completely blank unmarked hull, no text, no labels, no watermark, no logo. color palette: almost-black navy #070d15, brushed titanium, warm amber indicator lights, off-white highlights.",
+      "negative": "beige background, brown background, gray background, cream background, white background, blue background, blue haze, neon, colorful lighting, landscape, sky, sunset, sunrise, clouds, horizon, ground line, text, letters, numbers, words, typography, lettering, labels, decals, markings, insignia, flags, badges, signage, screens, displays, callouts, annotations, captions, titles, diagrams, schematic lines, blueprint grid, UI, HUD, watermark, signature, logo, people, hands, blurry, low contrast, cluttered background, distorted geometry, duplicate objects, cropped subject, frame border",
+      "file": "art/assets/aux_boom.png",
+      "status": "done"
+    },
+    {
+      "id": "aux_cover",
+      "kind": "auxiliary",
+      "name": "Теплозащитный экран",
+      "point": null,
+      "prompt": "small spacecraft structural part, 3D product render, studio turntable shot. unlit almost-black navy studio void, #070d15, subtle soft pool of light on the subject, background falls into deep shadow, seamless backdrop, no visible floor line, no grid, no horizon, no landscape, no sky, no stars, no blue glow, not beige, not brown, not gray. semi-realistic cinematic 3D product render, photorealistic PBR materials, realistic industrial spacecraft hardware, intricate panel lines, subtle wear, soft neutral studio key light, cool white rim light, tiny amber indicator lights only, high detail, sharp focus, centered composition, subject as large as possible while fully inside the frame, full object visible with eight percent margins, wide horizontal framing, completely blank unmarked hull, no text, no labels, no watermark, no logo. color palette: almost-black navy #070d15, brushed titanium, warm amber indicator lights, off-white highlights.",
+      "negative": "beige background, brown background, gray background, cream background, white background, blue background, blue haze, neon, colorful lighting, landscape, sky, sunset, sunrise, clouds, horizon, ground line, text, letters, numbers, words, typography, lettering, labels, decals, markings, insignia, flags, badges, signage, screens, displays, callouts, annotations, captions, titles, diagrams, schematic lines, blueprint grid, UI, HUD, watermark, signature, logo, people, hands, blurry, low contrast, cluttered background, distorted geometry, duplicate objects, cropped subject, frame border",
+      "file": "art/assets/aux_cover.png",
+      "status": "done"
+    },
+    {
+      "id": "aux_solar_drive",
+      "kind": "auxiliary",
+      "name": "Привод панелей",
+      "point": null,
+      "prompt": "small spacecraft structural part, 3D product render, studio turntable shot. unlit almost-black navy studio void, #070d15, subtle soft pool of light on the subject, background falls into deep shadow, seamless backdrop, no visible floor line, no grid, no horizon, no landscape, no sky, no stars, no blue glow, not beige, not brown, not gray. semi-realistic cinematic 3D product render, photorealistic PBR materials, realistic industrial spacecraft hardware, intricate panel lines, subtle wear, soft neutral studio key light, cool white rim light, tiny amber indicator lights only, high detail, sharp focus, centered composition, subject as large as possible while fully inside the frame, full object visible with eight percent margins, wide horizontal framing, completely blank unmarked hull, no text, no labels, no watermark, no logo. color palette: almost-black navy #070d15, brushed titanium, warm amber indicator lights, off-white highlights.",
+      "negative": "beige background, brown background, gray background, cream background, white background, blue background, blue haze, neon, colorful lighting, landscape, sky, sunset, sunrise, clouds, horizon, ground line, text, letters, numbers, words, typography, lettering, labels, decals, markings, insignia, flags, badges, signage, screens, displays, callouts, annotations, captions, titles, diagrams, schematic lines, blueprint grid, UI, HUD, watermark, signature, logo, people, hands, blurry, low contrast, cluttered background, distorted geometry, duplicate objects, cropped subject, frame border",
+      "file": "art/assets/aux_solar_drive.png",
+      "status": "done"
+    },
+    {
+      "id": "aux_flag",
+      "kind": "auxiliary",
+      "name": "Вымпел / эмблема",
+      "point": null,
+      "prompt": "small spacecraft structural part, 3D product render, studio turntable shot. unlit almost-black navy studio void, #070d15, subtle soft pool of light on the subject, background falls into deep shadow, seamless backdrop, no visible floor line, no grid, no horizon, no landscape, no sky, no stars, no blue glow, not beige, not brown, not gray. semi-realistic cinematic 3D product render, photorealistic PBR materials, realistic industrial spacecraft hardware, intricate panel lines, subtle wear, soft neutral studio key light, cool white rim light, tiny amber indicator lights only, high detail, sharp focus, centered composition, subject as large as possible while fully inside the frame, full object visible with eight percent margins, wide horizontal framing, completely blank unmarked hull, no text, no labels, no watermark, no logo. color palette: almost-black navy #070d15, brushed titanium, warm amber indicator lights, off-white highlights.",
+      "negative": "beige background, brown background, gray background, cream background, white background, blue background, blue haze, neon, colorful lighting, landscape, sky, sunset, sunrise, clouds, horizon, ground line, text, letters, numbers, words, typography, lettering, labels, decals, markings, insignia, flags, badges, signage, screens, displays, callouts, annotations, captions, titles, diagrams, schematic lines, blueprint grid, UI, HUD, watermark, signature, logo, people, hands, blurry, low contrast, cluttered background, distorted geometry, duplicate objects, cropped subject, frame border",
+      "file": "art/assets/aux_flag.png",
+      "status": "done"
+    },
+    {
+      "id": "m_luna3",
+      "kind": "mission",
+      "name": "Луна-3",
+      "point": "moon",
+      "prompt": "Soviet space mission to the Moon, year 1959, spacecraft on a trajectory arc, destination body in the background, cinematic 3D scene. lunar surface with craters and a lander silhouette, Earth rising. semi-realistic cinematic 3D scene, photorealistic PBR materials, realistic industrial and space hardware, intricate detail, dramatic but soft lighting, wide horizontal composition, clear focal subject, generous margins, completely blank unmarked surfaces, no text, no labels, no watermark, no logo. color palette: almost-black navy #070d15, brushed titanium, warm amber indicator lights, off-white highlights.",
+      "negative": "overexposed, oversaturated, neon, text, letters, numbers, words, typography, lettering, labels, decals, markings, insignia, flags, badges, signage, screens, displays, callouts, annotations, captions, titles, diagrams, schematic lines, blueprint grid, UI, HUD, watermark, signature, logo, people, hands, blurry, low contrast, cluttered background, distorted geometry, duplicate objects, cropped subject, frame border",
+      "file": "art/assets/m_luna3.png",
+      "status": "done"
+    },
+    {
+      "id": "m_luna9",
+      "kind": "mission",
+      "name": "Луна-9",
+      "point": "moon",
+      "prompt": "Soviet space mission to the Moon, year 1966, spacecraft on a trajectory arc, destination body in the background, cinematic 3D scene. lunar surface with craters and a lander silhouette, Earth rising. semi-realistic cinematic 3D scene, photorealistic PBR materials, realistic industrial and space hardware, intricate detail, dramatic but soft lighting, wide horizontal composition, clear focal subject, generous margins, completely blank unmarked surfaces, no text, no labels, no watermark, no logo. color palette: almost-black navy #070d15, brushed titanium, warm amber indicator lights, off-white highlights.",
+      "negative": "overexposed, oversaturated, neon, text, letters, numbers, words, typography, lettering, labels, decals, markings, insignia, flags, badges, signage, screens, displays, callouts, annotations, captions, titles, diagrams, schematic lines, blueprint grid, UI, HUD, watermark, signature, logo, people, hands, blurry, low contrast, cluttered background, distorted geometry, duplicate objects, cropped subject, frame border",
+      "file": "art/assets/m_luna9.png",
+      "status": "done"
+    },
+    {
+      "id": "m_luna16",
+      "kind": "mission",
+      "name": "Луна-16",
+      "point": "moon",
+      "prompt": "Soviet space mission to the Moon, year 1970, spacecraft on a trajectory arc, destination body in the background, cinematic 3D scene. lunar surface with craters and a lander silhouette, Earth rising. semi-realistic cinematic 3D scene, photorealistic PBR materials, realistic industrial and space hardware, intricate detail, dramatic but soft lighting, wide horizontal composition, clear focal subject, generous margins, completely blank unmarked surfaces, no text, no labels, no watermark, no logo. color palette: almost-black navy #070d15, brushed titanium, warm amber indicator lights, off-white highlights.",
+      "negative": "overexposed, oversaturated, neon, text, letters, numbers, words, typography, lettering, labels, decals, markings, insignia, flags, badges, signage, screens, displays, callouts, annotations, captions, titles, diagrams, schematic lines, blueprint grid, UI, HUD, watermark, signature, logo, people, hands, blurry, low contrast, cluttered background, distorted geometry, duplicate objects, cropped subject, frame border",
+      "file": "art/assets/m_luna16.png",
+      "status": "done"
+    },
+    {
+      "id": "m_apollo11",
+      "kind": "mission",
+      "name": "Аполлон-11",
+      "point": "moon",
+      "prompt": "American space mission to the Moon, year 1969, spacecraft on a trajectory arc, destination body in the background, cinematic 3D scene. lunar surface with craters and a lander silhouette, Earth rising. semi-realistic cinematic 3D scene, photorealistic PBR materials, realistic industrial and space hardware, intricate detail, dramatic but soft lighting, wide horizontal composition, clear focal subject, generous margins, completely blank unmarked surfaces, no text, no labels, no watermark, no logo. color palette: almost-black navy #070d15, brushed titanium, warm amber indicator lights, off-white highlights.",
+      "negative": "overexposed, oversaturated, neon, text, letters, numbers, words, typography, lettering, labels, decals, markings, insignia, flags, badges, signage, screens, displays, callouts, annotations, captions, titles, diagrams, schematic lines, blueprint grid, UI, HUD, watermark, signature, logo, people, hands, blurry, low contrast, cluttered background, distorted geometry, duplicate objects, cropped subject, frame border",
+      "file": "art/assets/m_apollo11.png",
+      "status": "done"
+    },
+    {
+      "id": "m_change4",
+      "kind": "mission",
+      "name": "Чанъэ-4",
+      "point": "moon",
+      "prompt": "Chinese space mission to the Moon, year 2018, spacecraft on a trajectory arc, destination body in the background, cinematic 3D scene. lunar surface with craters and a lander silhouette, Earth rising. semi-realistic cinematic 3D scene, photorealistic PBR materials, realistic industrial and space hardware, intricate detail, dramatic but soft lighting, wide horizontal composition, clear focal subject, generous margins, completely blank unmarked surfaces, no text, no labels, no watermark, no logo. color palette: almost-black navy #070d15, brushed titanium, warm amber indicator lights, off-white highlights.",
+      "negative": "overexposed, oversaturated, neon, text, letters, numbers, words, typography, lettering, labels, decals, markings, insignia, flags, badges, signage, screens, displays, callouts, annotations, captions, titles, diagrams, schematic lines, blueprint grid, UI, HUD, watermark, signature, logo, people, hands, blurry, low contrast, cluttered background, distorted geometry, duplicate objects, cropped subject, frame border",
+      "file": "art/assets/m_change4.png",
+      "status": "done"
+    },
+    {
+      "id": "m_change5",
+      "kind": "mission",
+      "name": "Чанъэ-5",
+      "point": "moon",
+      "prompt": "Chinese space mission to the Moon, year 2020, spacecraft on a trajectory arc, destination body in the background, cinematic 3D scene. lunar surface with craters and a lander silhouette, Earth rising. semi-realistic cinematic 3D scene, photorealistic PBR materials, realistic industrial and space hardware, intricate detail, dramatic but soft lighting, wide horizontal composition, clear focal subject, generous margins, completely blank unmarked surfaces, no text, no labels, no watermark, no logo. color palette: almost-black navy #070d15, brushed titanium, warm amber indicator lights, off-white highlights.",
+      "negative": "overexposed, oversaturated, neon, text, letters, numbers, words, typography, lettering, labels, decals, markings, insignia, flags, badges, signage, screens, displays, callouts, annotations, captions, titles, diagrams, schematic lines, blueprint grid, UI, HUD, watermark, signature, logo, people, hands, blurry, low contrast, cluttered background, distorted geometry, duplicate objects, cropped subject, frame border",
+      "file": "art/assets/m_change5.png",
+      "status": "done"
+    },
+    {
+      "id": "m_hubble",
+      "kind": "mission",
+      "name": "Хаббл",
+      "point": "leo",
+      "prompt": "NASA-ESA space mission to low Earth orbit, year 1990, spacecraft on a trajectory arc, destination body in the background, cinematic 3D scene. low Earth orbit with the blue limb of Earth and a satellite constellation. semi-realistic cinematic 3D scene, photorealistic PBR materials, realistic industrial and space hardware, intricate detail, dramatic but soft lighting, wide horizontal composition, clear focal subject, generous margins, completely blank unmarked surfaces, no text, no labels, no watermark, no logo. color palette: almost-black navy #070d15, brushed titanium, warm amber indicator lights, off-white highlights.",
+      "negative": "overexposed, oversaturated, neon, text, letters, numbers, words, typography, lettering, labels, decals, markings, insignia, flags, badges, signage, screens, displays, callouts, annotations, captions, titles, diagrams, schematic lines, blueprint grid, UI, HUD, watermark, signature, logo, people, hands, blurry, low contrast, cluttered background, distorted geometry, duplicate objects, cropped subject, frame border",
+      "file": "art/assets/m_hubble.png",
+      "status": "done"
+    },
+    {
+      "id": "m_grace",
+      "kind": "mission",
+      "name": "GRACE",
+      "point": "leo",
+      "prompt": "NASA-German space mission to low Earth orbit, year 2002, spacecraft on a trajectory arc, destination body in the background, cinematic 3D scene. low Earth orbit with the blue limb of Earth and a satellite constellation. semi-realistic cinematic 3D scene, photorealistic PBR materials, realistic industrial and space hardware, intricate detail, dramatic but soft lighting, wide horizontal composition, clear focal subject, generous margins, completely blank unmarked surfaces, no text, no labels, no watermark, no logo. color palette: almost-black navy #070d15, brushed titanium, warm amber indicator lights, off-white highlights.",
+      "negative": "overexposed, oversaturated, neon, text, letters, numbers, words, typography, lettering, labels, decals, markings, insignia, flags, badges, signage, screens, displays, callouts, annotations, captions, titles, diagrams, schematic lines, blueprint grid, UI, HUD, watermark, signature, logo, people, hands, blurry, low contrast, cluttered background, distorted geometry, duplicate objects, cropped subject, frame border",
+      "file": "art/assets/m_grace.png",
+      "status": "done"
+    },
+    {
+      "id": "m_goes",
+      "kind": "mission",
+      "name": "GOES-R",
+      "point": "geo",
+      "prompt": "American space mission to geostationary orbit, year 2016, spacecraft on a trajectory arc, destination body in the background, cinematic 3D scene. geostationary orbit high above Earth, full disk of the planet below. semi-realistic cinematic 3D scene, photorealistic PBR materials, realistic industrial and space hardware, intricate detail, dramatic but soft lighting, wide horizontal composition, clear focal subject, generous margins, completely blank unmarked surfaces, no text, no labels, no watermark, no logo. color palette: almost-black navy #070d15, brushed titanium, warm amber indicator lights, off-white highlights.",
+      "negative": "overexposed, oversaturated, neon, text, letters, numbers, words, typography, lettering, labels, decals, markings, insignia, flags, badges, signage, screens, displays, callouts, annotations, captions, titles, diagrams, schematic lines, blueprint grid, UI, HUD, watermark, signature, logo, people, hands, blurry, low contrast, cluttered background, distorted geometry, duplicate objects, cropped subject, frame border",
+      "file": "art/assets/m_goes.png",
+      "status": "done"
+    },
+    {
+      "id": "m_mars3",
+      "kind": "mission",
+      "name": "Марс-3",
+      "point": "mars",
+      "prompt": "Soviet space mission to Mars, year 1971, spacecraft on a trajectory arc, destination body in the background, cinematic 3D scene. rust-red Martian landscape with rocks and dust, distant hills. semi-realistic cinematic 3D scene, photorealistic PBR materials, realistic industrial and space hardware, intricate detail, dramatic but soft lighting, wide horizontal composition, clear focal subject, generous margins, completely blank unmarked surfaces, no text, no labels, no watermark, no logo. color palette: almost-black navy #070d15, brushed titanium, warm amber indicator lights, off-white highlights.",
+      "negative": "overexposed, oversaturated, neon, text, letters, numbers, words, typography, lettering, labels, decals, markings, insignia, flags, badges, signage, screens, displays, callouts, annotations, captions, titles, diagrams, schematic lines, blueprint grid, UI, HUD, watermark, signature, logo, people, hands, blurry, low contrast, cluttered background, distorted geometry, duplicate objects, cropped subject, frame border",
+      "file": "art/assets/m_mars3.png",
+      "status": "done"
+    },
+    {
+      "id": "m_viking1",
+      "kind": "mission",
+      "name": "Викинг-1",
+      "point": "mars",
+      "prompt": "American space mission to Mars, year 1976, spacecraft on a trajectory arc, destination body in the background, cinematic 3D scene. rust-red Martian landscape with rocks and dust, distant hills. semi-realistic cinematic 3D scene, photorealistic PBR materials, realistic industrial and space hardware, intricate detail, dramatic but soft lighting, wide horizontal composition, clear focal subject, generous margins, completely blank unmarked surfaces, no text, no labels, no watermark, no logo. color palette: almost-black navy #070d15, brushed titanium, warm amber indicator lights, off-white highlights.",
+      "negative": "overexposed, oversaturated, neon, text, letters, numbers, words, typography, lettering, labels, decals, markings, insignia, flags, badges, signage, screens, displays, callouts, annotations, captions, titles, diagrams, schematic lines, blueprint grid, UI, HUD, watermark, signature, logo, people, hands, blurry, low contrast, cluttered background, distorted geometry, duplicate objects, cropped subject, frame border",
+      "file": "art/assets/m_viking1.png",
+      "status": "done"
+    },
+    {
+      "id": "m_mgs",
+      "kind": "mission",
+      "name": "Mars Global Surveyor",
+      "point": "mars",
+      "prompt": "American space mission to Mars, year 1996, spacecraft on a trajectory arc, destination body in the background, cinematic 3D scene. rust-red Martian landscape with rocks and dust, distant hills. semi-realistic cinematic 3D scene, photorealistic PBR materials, realistic industrial and space hardware, intricate detail, dramatic but soft lighting, wide horizontal composition, clear focal subject, generous margins, completely blank unmarked surfaces, no text, no labels, no watermark, no logo. color palette: almost-black navy #070d15, brushed titanium, warm amber indicator lights, off-white highlights.",
+      "negative": "overexposed, oversaturated, neon, text, letters, numbers, words, typography, lettering, labels, decals, markings, insignia, flags, badges, signage, screens, displays, callouts, annotations, captions, titles, diagrams, schematic lines, blueprint grid, UI, HUD, watermark, signature, logo, people, hands, blurry, low contrast, cluttered background, distorted geometry, duplicate objects, cropped subject, frame border",
+      "file": "art/assets/m_mgs.png",
+      "status": "done"
+    },
+    {
+      "id": "m_pathfinder",
+      "kind": "mission",
+      "name": "Mars Pathfinder",
+      "point": "mars",
+      "prompt": "American space mission to Mars, year 1997, spacecraft on a trajectory arc, destination body in the background, cinematic 3D scene. rust-red Martian landscape with rocks and dust, distant hills. semi-realistic cinematic 3D scene, photorealistic PBR materials, realistic industrial and space hardware, intricate detail, dramatic but soft lighting, wide horizontal composition, clear focal subject, generous margins, completely blank unmarked surfaces, no text, no labels, no watermark, no logo. color palette: almost-black navy #070d15, brushed titanium, warm amber indicator lights, off-white highlights.",
+      "negative": "overexposed, oversaturated, neon, text, letters, numbers, words, typography, lettering, labels, decals, markings, insignia, flags, badges, signage, screens, displays, callouts, annotations, captions, titles, diagrams, schematic lines, blueprint grid, UI, HUD, watermark, signature, logo, people, hands, blurry, low contrast, cluttered background, distorted geometry, duplicate objects, cropped subject, frame border",
+      "file": "art/assets/m_pathfinder.png",
+      "status": "done"
+    },
+    {
+      "id": "m_beagle2",
+      "kind": "mission",
+      "name": "Бигль-2",
+      "point": "mars",
+      "prompt": "European space mission to Mars, year 2003, spacecraft on a trajectory arc, destination body in the background, cinematic 3D scene. rust-red Martian landscape with rocks and dust, distant hills. semi-realistic cinematic 3D scene, photorealistic PBR materials, realistic industrial and space hardware, intricate detail, dramatic but soft lighting, wide horizontal composition, clear focal subject, generous margins, completely blank unmarked surfaces, no text, no labels, no watermark, no logo. color palette: almost-black navy #070d15, brushed titanium, warm amber indicator lights, off-white highlights.",
+      "negative": "overexposed, oversaturated, neon, text, letters, numbers, words, typography, lettering, labels, decals, markings, insignia, flags, badges, signage, screens, displays, callouts, annotations, captions, titles, diagrams, schematic lines, blueprint grid, UI, HUD, watermark, signature, logo, people, hands, blurry, low contrast, cluttered background, distorted geometry, duplicate objects, cropped subject, frame border",
+      "file": "art/assets/m_beagle2.png",
+      "status": "done"
+    },
+    {
+      "id": "m_insight",
+      "kind": "mission",
+      "name": "InSight",
+      "point": "mars",
+      "prompt": "American space mission to Mars, year 2018, spacecraft on a trajectory arc, destination body in the background, cinematic 3D scene. rust-red Martian landscape with rocks and dust, distant hills. semi-realistic cinematic 3D scene, photorealistic PBR materials, realistic industrial and space hardware, intricate detail, dramatic but soft lighting, wide horizontal composition, clear focal subject, generous margins, completely blank unmarked surfaces, no text, no labels, no watermark, no logo. color palette: almost-black navy #070d15, brushed titanium, warm amber indicator lights, off-white highlights.",
+      "negative": "overexposed, oversaturated, neon, text, letters, numbers, words, typography, lettering, labels, decals, markings, insignia, flags, badges, signage, screens, displays, callouts, annotations, captions, titles, diagrams, schematic lines, blueprint grid, UI, HUD, watermark, signature, logo, people, hands, blurry, low contrast, cluttered background, distorted geometry, duplicate objects, cropped subject, frame border",
+      "file": "art/assets/m_insight.png",
+      "status": "done"
+    },
+    {
+      "id": "m_perseverance",
+      "kind": "mission",
+      "name": "Perseverance + Ingenuity",
+      "point": "mars",
+      "prompt": "American space mission to Mars, year 2021, spacecraft on a trajectory arc, destination body in the background, cinematic 3D scene. rust-red Martian landscape with rocks and dust, distant hills. semi-realistic cinematic 3D scene, photorealistic PBR materials, realistic industrial and space hardware, intricate detail, dramatic but soft lighting, wide horizontal composition, clear focal subject, generous margins, completely blank unmarked surfaces, no text, no labels, no watermark, no logo. color palette: almost-black navy #070d15, brushed titanium, warm amber indicator lights, off-white highlights.",
+      "negative": "overexposed, oversaturated, neon, text, letters, numbers, words, typography, lettering, labels, decals, markings, insignia, flags, badges, signage, screens, displays, callouts, annotations, captions, titles, diagrams, schematic lines, blueprint grid, UI, HUD, watermark, signature, logo, people, hands, blurry, low contrast, cluttered background, distorted geometry, duplicate objects, cropped subject, frame border",
+      "file": "art/assets/m_perseverance.png",
+      "status": "done"
+    },
+    {
+      "id": "m_phobos_grunt",
+      "kind": "mission",
+      "name": "Фобос-Грунт",
+      "point": "mars",
+      "prompt": "Russian space mission to Mars, year 2011, spacecraft on a trajectory arc, destination body in the background, cinematic 3D scene. rust-red Martian landscape with rocks and dust, distant hills. semi-realistic cinematic 3D scene, photorealistic PBR materials, realistic industrial and space hardware, intricate detail, dramatic but soft lighting, wide horizontal composition, clear focal subject, generous margins, completely blank unmarked surfaces, no text, no labels, no watermark, no logo. color palette: almost-black navy #070d15, brushed titanium, warm amber indicator lights, off-white highlights.",
+      "negative": "overexposed, oversaturated, neon, text, letters, numbers, words, typography, lettering, labels, decals, markings, insignia, flags, badges, signage, screens, displays, callouts, annotations, captions, titles, diagrams, schematic lines, blueprint grid, UI, HUD, watermark, signature, logo, people, hands, blurry, low contrast, cluttered background, distorted geometry, duplicate objects, cropped subject, frame border",
+      "file": "art/assets/m_phobos_grunt.png",
+      "status": "done"
+    },
+    {
+      "id": "m_mars96",
+      "kind": "mission",
+      "name": "Марс-96",
+      "point": "mars",
+      "prompt": "Russian space mission to Mars, year 1996, spacecraft on a trajectory arc, destination body in the background, cinematic 3D scene. rust-red Martian landscape with rocks and dust, distant hills. semi-realistic cinematic 3D scene, photorealistic PBR materials, realistic industrial and space hardware, intricate detail, dramatic but soft lighting, wide horizontal composition, clear focal subject, generous margins, completely blank unmarked surfaces, no text, no labels, no watermark, no logo. color palette: almost-black navy #070d15, brushed titanium, warm amber indicator lights, off-white highlights.",
+      "negative": "overexposed, oversaturated, neon, text, letters, numbers, words, typography, lettering, labels, decals, markings, insignia, flags, badges, signage, screens, displays, callouts, annotations, captions, titles, diagrams, schematic lines, blueprint grid, UI, HUD, watermark, signature, logo, people, hands, blurry, low contrast, cluttered background, distorted geometry, duplicate objects, cropped subject, frame border",
+      "file": "art/assets/m_mars96.png",
+      "status": "done"
+    },
+    {
+      "id": "m_hayabusa2",
+      "kind": "mission",
+      "name": "Хаябуса-2",
+      "point": "belt",
+      "prompt": "Japanese space mission to the asteroid belt, year 2014, spacecraft on a trajectory arc, destination body in the background, cinematic 3D scene. asteroid belt with irregular rocks and a small probe maneuvering. semi-realistic cinematic 3D scene, photorealistic PBR materials, realistic industrial and space hardware, intricate detail, dramatic but soft lighting, wide horizontal composition, clear focal subject, generous margins, completely blank unmarked surfaces, no text, no labels, no watermark, no logo. color palette: almost-black navy #070d15, brushed titanium, warm amber indicator lights, off-white highlights.",
+      "negative": "overexposed, oversaturated, neon, text, letters, numbers, words, typography, lettering, labels, decals, markings, insignia, flags, badges, signage, screens, displays, callouts, annotations, captions, titles, diagrams, schematic lines, blueprint grid, UI, HUD, watermark, signature, logo, people, hands, blurry, low contrast, cluttered background, distorted geometry, duplicate objects, cropped subject, frame border",
+      "file": "art/assets/m_hayabusa2.png",
+      "status": "done"
+    },
+    {
+      "id": "m_osirisrex",
+      "kind": "mission",
+      "name": "OSIRIS-REx",
+      "point": "belt",
+      "prompt": "American space mission to the asteroid belt, year 2016, spacecraft on a trajectory arc, destination body in the background, cinematic 3D scene. asteroid belt with irregular rocks and a small probe maneuvering. semi-realistic cinematic 3D scene, photorealistic PBR materials, realistic industrial and space hardware, intricate detail, dramatic but soft lighting, wide horizontal composition, clear focal subject, generous margins, completely blank unmarked surfaces, no text, no labels, no watermark, no logo. color palette: almost-black navy #070d15, brushed titanium, warm amber indicator lights, off-white highlights.",
+      "negative": "overexposed, oversaturated, neon, text, letters, numbers, words, typography, lettering, labels, decals, markings, insignia, flags, badges, signage, screens, displays, callouts, annotations, captions, titles, diagrams, schematic lines, blueprint grid, UI, HUD, watermark, signature, logo, people, hands, blurry, low contrast, cluttered background, distorted geometry, duplicate objects, cropped subject, frame border",
+      "file": "art/assets/m_osirisrex.png",
+      "status": "done"
+    },
+    {
+      "id": "m_newhorizons",
+      "kind": "mission",
+      "name": "Новые горизонты",
+      "point": "deep",
+      "prompt": "American space mission to deep space, year 2006, spacecraft on a trajectory arc, destination body in the background, cinematic 3D scene. deep space with a gas giant and stars, long antenna pointing home. semi-realistic cinematic 3D scene, photorealistic PBR materials, realistic industrial and space hardware, intricate detail, dramatic but soft lighting, wide horizontal composition, clear focal subject, generous margins, completely blank unmarked surfaces, no text, no labels, no watermark, no logo. color palette: almost-black navy #070d15, brushed titanium, warm amber indicator lights, off-white highlights.",
+      "negative": "overexposed, oversaturated, neon, text, letters, numbers, words, typography, lettering, labels, decals, markings, insignia, flags, badges, signage, screens, displays, callouts, annotations, captions, titles, diagrams, schematic lines, blueprint grid, UI, HUD, watermark, signature, logo, people, hands, blurry, low contrast, cluttered background, distorted geometry, duplicate objects, cropped subject, frame border",
+      "file": "art/assets/m_newhorizons.png",
+      "status": "done"
+    },
+    {
+      "id": "m_voyager2",
+      "kind": "mission",
+      "name": "Вояджер-2",
+      "point": "deep",
+      "prompt": "American space mission to deep space, year 1977, spacecraft on a trajectory arc, destination body in the background, cinematic 3D scene. deep space with a gas giant and stars, long antenna pointing home. semi-realistic cinematic 3D scene, photorealistic PBR materials, realistic industrial and space hardware, intricate detail, dramatic but soft lighting, wide horizontal composition, clear focal subject, generous margins, completely blank unmarked surfaces, no text, no labels, no watermark, no logo. color palette: almost-black navy #070d15, brushed titanium, warm amber indicator lights, off-white highlights.",
+      "negative": "overexposed, oversaturated, neon, text, letters, numbers, words, typography, lettering, labels, decals, markings, insignia, flags, badges, signage, screens, displays, callouts, annotations, captions, titles, diagrams, schematic lines, blueprint grid, UI, HUD, watermark, signature, logo, people, hands, blurry, low contrast, cluttered background, distorted geometry, duplicate objects, cropped subject, frame border",
+      "file": "art/assets/m_voyager2.png",
+      "status": "done"
+    },
+    {
+      "id": "m_galileo",
+      "kind": "mission",
+      "name": "Галилео",
+      "point": "deep",
+      "prompt": "American space mission to deep space, year 1989, spacecraft on a trajectory arc, destination body in the background, cinematic 3D scene. deep space with a gas giant and stars, long antenna pointing home. semi-realistic cinematic 3D scene, photorealistic PBR materials, realistic industrial and space hardware, intricate detail, dramatic but soft lighting, wide horizontal composition, clear focal subject, generous margins, completely blank unmarked surfaces, no text, no labels, no watermark, no logo. color palette: almost-black navy #070d15, brushed titanium, warm amber indicator lights, off-white highlights.",
+      "negative": "overexposed, oversaturated, neon, text, letters, numbers, words, typography, lettering, labels, decals, markings, insignia, flags, badges, signage, screens, displays, callouts, annotations, captions, titles, diagrams, schematic lines, blueprint grid, UI, HUD, watermark, signature, logo, people, hands, blurry, low contrast, cluttered background, distorted geometry, duplicate objects, cropped subject, frame border",
+      "file": "art/assets/m_galileo.png",
+      "status": "done"
+    },
+    {
+      "id": "m_cassini",
+      "kind": "mission",
+      "name": "Кассини-Гюйгенс",
+      "point": "deep",
+      "prompt": "NASA-ESA space mission to deep space, year 1997, spacecraft on a trajectory arc, destination body in the background, cinematic 3D scene. deep space with a gas giant and stars, long antenna pointing home. semi-realistic cinematic 3D scene, photorealistic PBR materials, realistic industrial and space hardware, intricate detail, dramatic but soft lighting, wide horizontal composition, clear focal subject, generous margins, completely blank unmarked surfaces, no text, no labels, no watermark, no logo. color palette: almost-black navy #070d15, brushed titanium, warm amber indicator lights, off-white highlights.",
+      "negative": "overexposed, oversaturated, neon, text, letters, numbers, words, typography, lettering, labels, decals, markings, insignia, flags, badges, signage, screens, displays, callouts, annotations, captions, titles, diagrams, schematic lines, blueprint grid, UI, HUD, watermark, signature, logo, people, hands, blurry, low contrast, cluttered background, distorted geometry, duplicate objects, cropped subject, frame border",
+      "file": "art/assets/m_cassini.png",
+      "status": "done"
+    },
+    {
+      "id": "m_jwst",
+      "kind": "mission",
+      "name": "Джеймс Уэбб",
+      "point": "deep",
+      "prompt": "NASA-ESA-Canadian space mission to deep space, year 2021, spacecraft on a trajectory arc, destination body in the background, cinematic 3D scene. deep space with a gas giant and stars, long antenna pointing home. semi-realistic cinematic 3D scene, photorealistic PBR materials, realistic industrial and space hardware, intricate detail, dramatic but soft lighting, wide horizontal composition, clear focal subject, generous margins, completely blank unmarked surfaces, no text, no labels, no watermark, no logo. color palette: almost-black navy #070d15, brushed titanium, warm amber indicator lights, off-white highlights.",
+      "negative": "overexposed, oversaturated, neon, text, letters, numbers, words, typography, lettering, labels, decals, markings, insignia, flags, badges, signage, screens, displays, callouts, annotations, captions, titles, diagrams, schematic lines, blueprint grid, UI, HUD, watermark, signature, logo, people, hands, blurry, low contrast, cluttered background, distorted geometry, duplicate objects, cropped subject, frame border",
+      "file": "art/assets/m_jwst.png",
+      "status": "done"
+    },
+    {
+      "id": "m_spektr_rg",
+      "kind": "mission",
+      "name": "Спектр-РГ",
+      "point": "deep",
+      "prompt": "Russian-German space mission to deep space, year 2019, spacecraft on a trajectory arc, destination body in the background, cinematic 3D scene. deep space with a gas giant and stars, long antenna pointing home. semi-realistic cinematic 3D scene, photorealistic PBR materials, realistic industrial and space hardware, intricate detail, dramatic but soft lighting, wide horizontal composition, clear focal subject, generous margins, completely blank unmarked surfaces, no text, no labels, no watermark, no logo. color palette: almost-black navy #070d15, brushed titanium, warm amber indicator lights, off-white highlights.",
+      "negative": "overexposed, oversaturated, neon, text, letters, numbers, words, typography, lettering, labels, decals, markings, insignia, flags, badges, signage, screens, displays, callouts, annotations, captions, titles, diagrams, schematic lines, blueprint grid, UI, HUD, watermark, signature, logo, people, hands, blurry, low contrast, cluttered background, distorted geometry, duplicate objects, cropped subject, frame border",
+      "file": "art/assets/m_spektr_rg.png",
+      "status": "done"
+    },
+    {
+      "id": "m_bepicolombo",
+      "kind": "mission",
+      "name": "BepiColombo",
+      "point": "deep",
+      "prompt": "European-Japanese space mission to deep space, year 2018, spacecraft on a trajectory arc, destination body in the background, cinematic 3D scene. deep space with a gas giant and stars, long antenna pointing home. semi-realistic cinematic 3D scene, photorealistic PBR materials, realistic industrial and space hardware, intricate detail, dramatic but soft lighting, wide horizontal composition, clear focal subject, generous margins, completely blank unmarked surfaces, no text, no labels, no watermark, no logo. color palette: almost-black navy #070d15, brushed titanium, warm amber indicator lights, off-white highlights.",
+      "negative": "overexposed, oversaturated, neon, text, letters, numbers, words, typography, lettering, labels, decals, markings, insignia, flags, badges, signage, screens, displays, callouts, annotations, captions, titles, diagrams, schematic lines, blueprint grid, UI, HUD, watermark, signature, logo, people, hands, blurry, low contrast, cluttered background, distorted geometry, duplicate objects, cropped subject, frame border",
+      "file": "art/assets/m_bepicolombo.png",
+      "status": "done"
+    },
+    {
+      "id": "s_leo",
+      "kind": "salvage",
+      "name": "Спасение: Земля-орбита",
+      "point": "leo",
+      "prompt": "space salvage and recovery mission, destination: low Earth orbit, a recovery spacecraft approaching an abandoned satellite, cinematic 3D scene. low Earth orbit with the blue limb of Earth and a satellite constellation. semi-realistic cinematic 3D scene, photorealistic PBR materials, realistic industrial and space hardware, intricate detail, dramatic but soft lighting, wide horizontal composition, clear focal subject, generous margins, completely blank unmarked surfaces, no text, no labels, no watermark, no logo. color palette: almost-black navy #070d15, brushed titanium, warm amber indicator lights, off-white highlights.",
+      "negative": "overexposed, oversaturated, neon, text, letters, numbers, words, typography, lettering, labels, decals, markings, insignia, flags, badges, signage, screens, displays, callouts, annotations, captions, titles, diagrams, schematic lines, blueprint grid, UI, HUD, watermark, signature, logo, people, hands, blurry, low contrast, cluttered background, distorted geometry, duplicate objects, cropped subject, frame border",
+      "file": "art/assets/s_leo.png",
+      "status": "done"
+    },
+    {
+      "id": "s_moon",
+      "kind": "salvage",
+      "name": "Спасение: Луна",
+      "point": "moon",
+      "prompt": "space salvage and recovery mission, destination: the Moon, a recovery spacecraft approaching an abandoned satellite, cinematic 3D scene. lunar surface with craters and a lander silhouette, Earth rising. semi-realistic cinematic 3D scene, photorealistic PBR materials, realistic industrial and space hardware, intricate detail, dramatic but soft lighting, wide horizontal composition, clear focal subject, generous margins, completely blank unmarked surfaces, no text, no labels, no watermark, no logo. color palette: almost-black navy #070d15, brushed titanium, warm amber indicator lights, off-white highlights.",
+      "negative": "overexposed, oversaturated, neon, text, letters, numbers, words, typography, lettering, labels, decals, markings, insignia, flags, badges, signage, screens, displays, callouts, annotations, captions, titles, diagrams, schematic lines, blueprint grid, UI, HUD, watermark, signature, logo, people, hands, blurry, low contrast, cluttered background, distorted geometry, duplicate objects, cropped subject, frame border",
+      "file": "art/assets/s_moon.png",
+      "status": "done"
+    },
+    {
+      "id": "s_mars",
+      "kind": "salvage",
+      "name": "Спасение: Марс",
+      "point": "mars",
+      "prompt": "space salvage and recovery mission, destination: Mars, a recovery spacecraft approaching an abandoned satellite, cinematic 3D scene. rust-red Martian landscape with rocks and dust, distant hills. semi-realistic cinematic 3D scene, photorealistic PBR materials, realistic industrial and space hardware, intricate detail, dramatic but soft lighting, wide horizontal composition, clear focal subject, generous margins, completely blank unmarked surfaces, no text, no labels, no watermark, no logo. color palette: almost-black navy #070d15, brushed titanium, warm amber indicator lights, off-white highlights.",
+      "negative": "overexposed, oversaturated, neon, text, letters, numbers, words, typography, lettering, labels, decals, markings, insignia, flags, badges, signage, screens, displays, callouts, annotations, captions, titles, diagrams, schematic lines, blueprint grid, UI, HUD, watermark, signature, logo, people, hands, blurry, low contrast, cluttered background, distorted geometry, duplicate objects, cropped subject, frame border",
+      "file": "art/assets/s_mars.png",
+      "status": "done"
+    },
+    {
+      "id": "s_deep",
+      "kind": "salvage",
+      "name": "Спасение: дальний космос",
+      "point": "deep",
+      "prompt": "space salvage and recovery mission, destination: deep space, a recovery spacecraft approaching an abandoned satellite, cinematic 3D scene. deep space with a gas giant and stars, long antenna pointing home. semi-realistic cinematic 3D scene, photorealistic PBR materials, realistic industrial and space hardware, intricate detail, dramatic but soft lighting, wide horizontal composition, clear focal subject, generous margins, completely blank unmarked surfaces, no text, no labels, no watermark, no logo. color palette: almost-black navy #070d15, brushed titanium, warm amber indicator lights, off-white highlights.",
+      "negative": "overexposed, oversaturated, neon, text, letters, numbers, words, typography, lettering, labels, decals, markings, insignia, flags, badges, signage, screens, displays, callouts, annotations, captions, titles, diagrams, schematic lines, blueprint grid, UI, HUD, watermark, signature, logo, people, hands, blurry, low contrast, cluttered background, distorted geometry, duplicate objects, cropped subject, frame border",
+      "file": "art/assets/s_deep.png",
+      "status": "done"
+    }
+  ]
+}

@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<title>Space Mission Design — campaign v1.5</title>
+<style>
+  :root{
+    --bg:#0a1220; --panel:#101c2e; --panel2:#16263c; --line:#1f3b5c;
+    --cyan:#4fd1e0; --cyan2:#2a9db0; --amber:#f2b544; --red:#e8695b; --green:#5dd39e;
+    --text:#dce8f5; --muted:#8aa4bf;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:
+      radial-gradient(1200px 600px at 15% -10%, #14304d 0%, transparent 60%),
+      radial-gradient(900px 500px at 110% 10%, #12283f 0%, transparent 55%),
+      var(--bg);
+    color:var(--text);font:14px/1.45 "Segoe UI",Roboto,Arial,sans-serif;min-height:100vh}
+  header{display:flex;align-items:baseline;gap:14px;padding:16px 22px;border-bottom:1px solid var(--line);
+    background:linear-gradient(90deg,rgba(20,48,77,.75),rgba(10,18,32,.2));flex-wrap:wrap}
+  h1{font-size:19px;margin:0;letter-spacing:.5px}
+  h1 span{color:var(--cyan)}
+  a{color:var(--cyan)}
+  .tag{font-size:11px;color:var(--muted);border:1px solid var(--line);border-radius:10px;padding:2px 8px;text-decoration:none}
+  main{display:grid;grid-template-columns:minmax(420px,1.15fr) minmax(380px,.85fr);gap:16px;padding:16px 22px 40px;max-width:1500px;margin:0 auto}
+  section{background:linear-gradient(180deg,rgba(22,38,60,.9),rgba(16,28,46,.9));border:1px solid var(--line);
+    border-radius:12px;padding:14px 16px;box-shadow:0 10px 30px rgba(0,0,0,.25);margin-bottom:14px}
+  section h2{font-size:13px;text-transform:uppercase;letter-spacing:1.4px;color:var(--cyan);margin:0 0 10px}
+  label{display:block;font-size:12px;color:var(--muted);margin:8px 0 3px}
+  select,input[type=number]{background:#0c1726;color:var(--text);border:1px solid var(--line);
+    border-radius:8px;padding:7px 9px;font-size:13px}
+  input[type=number]{width:84px}
+  button{background:linear-gradient(180deg,#1c3a59,#14283e);color:var(--text);border:1px solid var(--line);
+    border-radius:9px;padding:7px 11px;font-size:12.5px;cursor:pointer}
+  button:hover{border-color:var(--cyan);color:#fff}
+  button.primary{background:linear-gradient(180deg,#1f6f7d,#155a68);border-color:var(--cyan2)}
+  button:disabled{opacity:.4;cursor:not-allowed}
+  .kpi{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+  .kpi div{background:#0c1726;border:1px solid var(--line);border-radius:9px;padding:7px 9px}
+  .kpi b{display:block;font-size:16px;color:var(--cyan)}
+  .kpi small{color:var(--muted);font-size:10.5px;text-transform:uppercase;letter-spacing:.7px}
+  .row{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+  .muted{color:var(--muted)}
+  .small{font-size:11.5px}
+  .ok{color:var(--green)} .mid{color:var(--amber)} .bad{color:var(--red)}
+  table{width:100%;border-collapse:collapse;font-size:12.5px}
+  th,td{text-align:left;padding:5px 6px;border-bottom:1px solid rgba(31,59,92,.6)}
+  th{color:var(--muted);font-weight:500;font-size:11px;text-transform:uppercase;letter-spacing:.6px}
+  td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
+  .offer{border:1px solid var(--line);border-radius:10px;padding:9px 11px;margin:8px 0;background:#0c1726}
+  .offer b{font-size:13px}
+  .offer .line{font-size:11.5px;color:var(--muted);margin:3px 0}
+  .offer .line b{color:var(--text);font-size:11.5px}
+  .pill{display:inline-block;border-radius:999px;padding:1px 7px;font-size:10.5px;margin-left:6px;
+    border:1px solid var(--line);color:var(--muted)}
+  .pill.ok{color:var(--green);border-color:rgba(93,211,158,.4)}
+  .pill.bad{color:var(--red);border-color:rgba(232,105,91,.4)}
+  .pill.mid{color:var(--amber);border-color:rgba(242,181,68,.4)}
+  .scroll{max-height:300px;overflow:auto}
+  .log{font-size:11.5px;line-height:1.5;color:#b9d3e8;max-height:300px;overflow:auto}
+  .log div{border-bottom:1px dotted rgba(31,59,92,.6);padding:2px 0}
+  .msg{min-height:18px;font-size:12px;margin-top:8px}
+  footer{padding:0 22px 30px;color:var(--muted);font-size:11.5px;max-width:1500px;margin:0 auto}
+  code{background:#0c1726;border:1px solid var(--line);border-radius:5px;padding:1px 5px;font-size:11.5px}
+  @media(max-width:1000px){main{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header>
+  <h1>Space Mission <span>Design</span> — campaign</h1>
+  <span class="tag" id="verTag">v1.5</span>
+  <span class="tag">MCC · R&D/CML · tests · production · flights</span>
+  <a class="tag" href="index.html">← build calculator</a>
+</header>
+
+<main>
+  <div>
+    <section>
+      <h2>1. Running the campaign</h2>
+      <div class="row">
+        <label for="seed" style="margin:0">seed</label>
+        <input type="number" id="seed" value="20260101">
+        <label for="campLength" style="margin:0">steps</label>
+        <select id="campLength">
+          <option value="12">12 · short</option>
+          <option value="15" selected>15 · standard</option>
+          <option value="18">18 · long</option>
+        </select>
+        <button class="primary" data-act="new">New campaign</button>
+        <button data-act="next" id="nextBtn">Next step</button>
+        <button data-act="finish" id="finishBtn">Finish and score</button>
+      </div>
+      <div class="kpi" id="kpis" style="margin-top:10px"></div>
+      <div class="small muted" id="stateLine" style="margin-top:8px"></div>
+      <div class="msg" id="msg"></div>
+    </section>
+
+    <section>
+      <h2>2. Mission showcase</h2>
+      <div id="offers"></div>
+    </section>
+
+    <section>
+      <h2>3. Production and launches</h2>
+      <div id="production"></div>
+      <div class="row" style="margin-top:8px">
+        <button data-act="launchAll">Launch all ready</button>
+        <span class="small muted" id="mcsCap"></span>
+      </div>
+    </section>
+
+    <section>
+      <h2>3b. Flight operations</h2>
+      <div class="small muted" id="opsLine"></div>
+      <div id="flights"></div>
+      <table style="margin-top:8px"><thead><tr><th>step</th><th class="num">flights</th>
+        <th class="num">channels</th><th class="num">overload</th></tr></thead>
+        <tbody id="loadRows"></tbody></table>
+    </section>
+  </div>
+
+  <div>
+    <section>
+      <h2>4. MCC preparation</h2>
+      <div class="row">
+        <span class="pill" id="actionsPill">actions: 0</span>
+        <button data-act="hire">Hire a manager</button>
+        <button data-act="factory">Upgrade the factory</button>
+        <button data-act="school">Upgrade the school</button>
+        <button data-act="mcs">Upgrade the MCC</button>
+        <button data-act="pr">PR (+VChK)</button>
+      </div>
+      <div class="small muted" id="prepLine" style="margin-top:8px"></div>
+      <table style="margin-top:8px"><tbody id="upgradeRows"></tbody></table>
+    </section>
+
+    <section>
+      <h2>4b. Ground contracts</h2>
+      <div class="row">
+        <label for="gcIpClass" style="margin:0">IP to an instrument</label>
+        <select id="gcIpClass"></select>
+        <span class="small muted">1 preparation action · does not count against the missions</span>
+      </div>
+      <div id="groundBox" style="margin-top:8px"></div>
+    </section>
+
+    <section>
+      <h2>5. Tests and standardisation</h2>
+      <div class="row">
+        <select id="standClass"></select>
+        <select id="standCard"></select>
+        <button data-act="testStand">Test stand ($50)</button>
+      </div>
+      <div class="row" style="margin-top:6px">
+        <select id="testRocket"></select>
+        <button data-act="testRocket">Launcher flight test</button>
+      </div>
+      <div class="row" style="margin-top:6px">
+        <select id="testRocket2"></select>
+        <select id="testInstrument"></select>
+        <button data-act="testInstrument">Instrument flight test</button>
+      </div>
+      <div id="standardizeBox" class="small" style="margin-top:8px"></div>
+    </section>
+
+    <section>
+      <h2>6. CML / IP tree</h2>
+      <div class="scroll"><table>
+        <thead><tr><th>Class</th><th class="num">CML</th><th class="num">IP</th><th>Next</th><th></th></tr></thead>
+        <tbody id="techRows"></tbody>
+      </table></div>
+    </section>
+
+    <section>
+      <h2>7. Final score</h2>
+      <div id="scoreBox" class="small muted">The campaign is still running.</div>
+      <div class="row" style="margin-top:10px">
+        <label for="campGames" style="margin:0">games</label>
+        <input type="number" id="campGames" value="20" min="5" max="60" step="5">
+        <button data-act="mc">Monte Carlo</button>
+        <span class="small muted" id="mcStatus"></span>
+      </div>
+      <table style="margin-top:8px"><tbody id="mcRows"></tbody></table>
+    </section>
+
+    <section>
+      <h2>8. Journal</h2>
+      <div class="log" id="log"></div>
+    </section>
+  </div>
+</main>
+
+<footer>
+  Every number comes from <code>data/config.js</code>, the mechanics from <code>data/engine.js</code>.
+  Rules and balance checks: <code>node tools/check.mjs 40</code>.
+</footer>
+
+<script src="../data/config.js"></script>
+<script src="../data/cards.js"></script>
+<script src="../data/missions.js"></script>
+<script src="../data/engine.js"></script>
+<script>
+const $ = (id) => document.getElementById(id);
+const esc = (s) => String(s == null ? '' : s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+const fmt = (x, d) => (x == null || isNaN(x)) ? '—' : Number(x).toFixed(d == null ? 2 : d);
+const pct = (x) => Math.round(x * 100) + '%';
+const byId = (list, id) => list.find((x) => x.id === id);
+const missionById = (id) => MISSIONS.find((m) => m.id === id);
+
+const U = { state: null, rnd: null, actionsLeft: 0, finished: false };
+
+function flash(text, cls) {
+  const el = $('msg');
+  el.textContent = text || '';
+  el.className = 'msg ' + (cls || 'muted');
+}
+
+function newCampaign() {
+  const seed = Number($('seed').value) || 20260101;
+  U.state = ENGINE.campaignSetup(seed);
+  U.state.maxSteps = Number($('campLength').value) || CONFIG.campaign.steps;
+  U.rnd = ENGINE.makeRng((seed * 2654435761) >>> 0 || 7);
+  U.actionsLeft = CONFIG.campaign.skipPrepActions;
+  U.finished = false;
+  populateControls();
+  flash('Campaign ' + seed + ' started.', 'ok');
+  render();
+}
+
+function canPrep() {
+  if (U.finished) { flash('The campaign is over — start a new one.', 'bad'); return false; }
+  if (U.actionsLeft <= 0) { flash('The preparation actions for this step are used up.', 'bad'); return false; }
+  return true;
+}
+
+function prep(label, fn) {
+  if (!canPrep()) return;
+  const res = fn();
+  if (res && res.ok) {
+    U.actionsLeft--;
+    flash(label + ': done.', 'ok');
+    render();
+  } else {
+    flash(label + ': ' + ((res && res.reason) || 'unavailable'), 'bad');
+  }
+}
+
+function testPrep(kind, opts, label) {
+  if (!canPrep()) return;
+  const res = ENGINE.testLaunch(U.state, kind, opts, U.rnd);
+  if (res.ok) {
+    U.actionsLeft--;
+    flash(label + ': ' + (res.success ? 'success' : 'failure') + ', +' + res.ip + ' IP' +
+      (res.refund ? ', refund ' + res.refund + ' $' : ''), res.success ? 'ok' : 'mid');
+    render();
+  } else {
+    flash(label + ': ' + res.reason, 'bad');
+  }
+}
+
+function populateControls() {
+  const classOpts = (kind) => Object.keys(U.state.tech[kind]).map((cls) =>
+    '<option value="' + cls + '">' + esc(CONFIG.tech.names[cls] || cls) + '</option>').join('');
+  const rockets = ENGINE.rocketPool(U.state);
+  const instruments = ENGINE.instrumentPool(U.state);
+  const cardOption = (c, kind, price) => {
+    const p = ENGINE.cardPFor(U.state, c, { kind: kind });
+    let extra = '';
+    if (ENGINE.isExpCard(c)) {
+      const risk = ENGINE.expRiskInfo(U.state, c);
+      extra = ' · risk −' + fmt(risk.penaltyPct, 0) + '% (' + risk.runs + '/' + risk.max + ')';
+    }
+    return '<option value="' + c.id + '">' + esc(c.name) + ' · p ' + fmt(p, 2) + extra +
+      (price ? ' · ' + c.price + ' $' : '') + '</option>';
+  };
+  $('standClass').innerHTML = classOpts('instrument');
+  $('standCard').innerHTML = '<option value="">— no card —</option>' + instruments
+    .filter((c) => ENGINE.isExpCard(c))
+    .map((c) => cardOption(c, 'instrument')).join('');
+  $('testRocket').innerHTML = rockets.map((c) => cardOption(c, 'rocket', true)).join('');
+  $('testRocket2').innerHTML = $('testRocket').innerHTML;
+  $('testInstrument').innerHTML = instruments.map((c) => cardOption(c, 'instrument', true)).join('');
+  $('gcIpClass').innerHTML = classOpts('instrument');
+  $('testRocket2').value = rockets[0].id;
+  $('testInstrument').value = instruments[0].id;
+}
+
+function renderState() {
+  const s = U.state;
+  const mcs = ENGINE.mcsFor(s);
+  const school = ENGINE.schoolFor(s);
+  $('kpis').innerHTML =
+    '<div><small>step</small><b>' + s.step + ' / ' + s.maxSteps + '</b></div>' +
+    '<div><small>cash</small><b>' + Math.round(s.money) + ' $</b></div>' +
+    '<div><small>fund</small><b>' + Math.round(s.groundFund) + ' $</b></div>' +
+    '<div><small>rating / VChK</small><b>' + fmt(s.rating, 0) + ' / ' + fmt(s.vchk, 0) + '</b></div>' +
+    '<div><small>NP</small><b>' + Math.round(s.np) + '</b></div>' +
+    '<div><small>free PM</small><b>' + ENGINE.pmAvailable(s) + ' / ' + ENGINE.pmLimit(s) + '</b></div>' +
+    '<div><small>MCC</small><b>' + s.mcsLevel + ' · ' + mcs.capacity + ' launches</b></div>' +
+    '<div><small>factory</small><b>' + s.factory + ' · +' + ENGINE.factoryPm(s) + ' PM</b></div>' +
+    '<div><small>school</small><b>' + school.level + ' · +' +
+    fmt(school.reliability * 100, 0) + '% p</b></div>';
+  $('stateLine').innerHTML =
+    'MCC efficiency ' + mcs.levelEff + ' (managers ' + s.managers + ', required ' + mcs.managersRequired + ')' +
+    ' · upkeep ' + mcs.upkeep + ' $/step · salaries ' + ENGINE.salaryDue(s) + ' $/step' +
+    ' · active PM ' + ENGINE.activePm(s) + ' · production ' + s.production.length + '/' + CONFIG.campaign.productionSlots +
+    (s.mcsPenalty ? ' · <span class="bad">MCC −1 for unpaid upkeep</span>' : '') +
+    (U.finished ? ' · <span class="ok">campaign finished</span>' : '');
+  $('actionsPill').textContent = 'actions: ' + U.actionsLeft;
+  $('actionsPill').className = 'pill ' + (U.actionsLeft > 0 && !U.finished ? 'ok' : 'bad');
+  $('mcsCap').textContent = 'MCC ' + s.mcsLevel + ': ' + mcs.capacity + ' launch(es)/step, +' +
+    fmt(mcs.pChannel, 2) + ' channel p, S ×' + fmt(mcs.sFactor, 2);
+  $('nextBtn').disabled = U.finished;
+  $('finishBtn').disabled = U.finished;
+  $('prepLine').innerHTML =
+    'Next MCC level: requires ' + ((CONFIG.mcs.managersRequired[(s.mcsLevel || 0) + 1] || 0)) + ' managers' +
+    ' · hire ' + CONFIG.campaign.hireManager.money + ' $ + ' + CONFIG.campaign.hireManager.np + ' NP' +
+    ' · PR ' + CONFIG.campaign.pr.money + ' $ → +' + CONFIG.campaign.pr.vchk + ' VChK' +
+    (s.testUsed ? ' · <span class="mid">a test has already happened this step</span>' : '');
+  $('log').innerHTML = s.log.slice(-80).reverse().map((l) =>
+    '<div>' + esc(l) + '</div>').join('') || '<div class="muted">the journal is empty</div>';
+}
+
+function renderOffers() {
+  const s = U.state;
+  const freePm = ENGINE.pmAvailable(s);
+  const slotsFree = s.production.length < CONFIG.campaign.productionSlots;
+  $('offers').innerHTML = s.offers.map((id) => {
+    const mission = missionById(id);
+    if (!mission) return '';
+    const choice = ENGINE.campaignBuild(s, mission);
+    if (!choice) {
+      return '<div class="offer"><b>' + esc(mission.name) + '</b>' +
+        '<span class="pill bad">no build within budget</span>' +
+        '<div class="line">' + esc(CONFIG.points[mission.point].name) + ' · ' + mission.year +
+        ' · complexity ' + mission.complexity + '</div></div>';
+    }
+    const c = choice.compute;
+    const reason = !slotsFree ? 'no free production slot'
+      : (choice.pmRate > freePm ? 'not enough PM (' + choice.pmRate + ' > ' + freePm + ')'
+        : (s.step + choice.prodTime > s.maxSteps ? 'does not finish before the end of the campaign' : ''));
+    const pCls = c.pSuccess >= 0.7 ? 'ok' : (c.pSuccess >= 0.55 ? 'mid' : 'bad');
+    return '<div class="offer">' +
+      '<div class="row"><b>' + esc(mission.name) + '</b>' +
+      '<span class="pill ' + pCls + '">P ' + pct(c.pSuccess) + '</span>' +
+      '<span class="pill">S ' + fmt(c.sDet, 1) + ' / ' + c.target + '</span>' +
+      '<span class="pill">' + esc(CONFIG.trajectories[choice.trajectoryId].name) + '</span></div>' +
+      '<div class="line">point <b>' + esc(CONFIG.points[mission.point].name) + '</b> · year ' + mission.year +
+      ' · advance <b>' + choice.advance + ' $</b> · price <b>' + c.price + ' $</b></div>' +
+      '<div class="line">production <b>' + choice.prodTime + '</b> step(s) · deadline <b>' + c.deadline +
+      '</b> · PM <b>' + choice.pmRate + '/step</b> · channel ' + fmt(c.pChannel, 3) + '</div>' +
+      '<div class="row" style="margin-top:6px">' +
+      '<button class="primary" data-act="accept" data-id="' + mission.id + '"' +
+      (reason ? ' disabled title="' + esc(reason) + '"' : '') + '>Accept</button>' +
+      (reason ? '<span class="small bad">' + esc(reason) + '</span>' : '') +
+      '</div></div>';
+  }).join('') || '<div class="muted small">the showcase is empty — close the step</div>';
+}
+
+function renderProduction() {
+  const s = U.state;
+  const rows = [];
+  s.production.forEach((p) => {
+    const mission = missionById(p.missionId);
+    const left = Math.max(0, p.readyStep - s.step);
+    rows.push('<div class="offer"><b>' + esc(mission ? mission.name : p.missionId) + '</b>' +
+      '<span class="pill mid">in production</span>' +
+      '<div class="line">ready in <b>' + left + '</b> step(s) · deadline in <b>' +
+      Math.max(0, p.deadlineStep - s.step) + '</b> · ' + p.pmRate + ' PM/step · price ' + p.price + ' $</div></div>');
+  });
+  s.ready.forEach((p) => {
+    const mission = missionById(p.missionId);
+    const c = p.compute;
+    rows.push('<div class="offer"><b>' + esc(mission ? mission.name : p.missionId) + '</b>' +
+      '<span class="pill ok">ready to launch</span>' +
+      '<div class="line">P <b>' + pct(c.pSuccess) + '</b> · S ' + fmt(c.sDet, 1) + ' / ' + c.target +
+      ' · deadline in ' + Math.max(0, p.deadlineStep - s.step) + ' step(s).</div>' +
+      '<div class="row" style="margin-top:6px"><button class="primary" data-act="launch" data-id="' +
+      p.missionId + '">Launch</button></div></div>');
+  });
+  $('production').innerHTML = rows.join('') || '<div class="muted small">no missions in production</div>';
+}
+
+function renderFlights() {
+  const s = U.state;
+  const ops = CONFIG.campaign.ops;
+  const ld = ENGINE.opsLoad(s);
+  const relief = ENGINE.opsIncidentRelief(s.school);
+  $('opsLine').innerHTML =
+    'MCC: <b>' + ld.load + ' / ' + ld.cap + '</b> channels' +
+    (ld.overload ? ' · <span class="bad">overload ' + ld.overload + '</span>' : '') +
+    ' · incident risk <b>' + pct(ENGINE.opsIncidentP(ld.overload, 0, s.school)) + '</b>' +
+    (relief > 0 ? ' <span class="muted">(school −' + Math.round(relief * 100) +
+      '% of the channel penalty)</span>' : '') +
+    ' · flight event <b>' + pct(ENGINE.opsEventChance(s)) + '</b>/step';
+  const rows = (s.flights || []).map((f) => {
+    const need = f.flight + (f.overtime || 0);
+    const done = (f.sessions || []).length;
+    const full = f.compute.sRaw * f.compute.data.ratio;
+    const share = full > 0 ? Math.min(1, f.accrued / full) : 0;
+    const ratio = f.compute.data.ratio * (ops.dataFloor + (1 - ops.dataFloor) * share);
+    const last = (f.sessions || [])[f.sessions.length - 1];
+    const lastNote = last && (last.note || last.incident || last.event) ? ' · ' +
+      esc([last.event, last.incident, last.note].filter(Boolean).join(' / ')) : '';
+    const canOt = !f.earlyEnd && (f.overtime || 0) < ops.overtime.max && s.money >= ops.overtime.money;
+    const canClose = done > 0 && !f.earlyEnd;
+    return '<div class="offer"><div class="row"><b>' + esc(f.name) + '</b>' +
+      '<span class="pill mid">flight ' + done + '/' + need + '</span>' +
+      '<span class="pill">channel ' + f.load + '</span>' +
+      '<span class="pill ' + (ratio >= f.compute.data.ratio ? 'ok' : 'mid') + '">data ' +
+      pct(ratio / (f.compute.data.ratio || 1)) + '</span>' +
+      '<span class="pill">acceptance ~step ' + f.endStep + '</span></div>' +
+      '<div class="line">S accrued <b>' + fmt(f.accrued, 1) + '</b> of ' +
+      fmt(f.compute.sRaw * f.compute.data.ratio, 1) +
+      ' · expected S ' + fmt(f.compute.sRaw * ratio * ops.accrualBonus *
+        (1 + ops.overtime.sBonusPerStep * (f.overtime || 0)), 1) +
+      ' / target ' + f.compute.target + ' · extensions ' + (f.overtime || 0) +
+      ' · events ' + (f.events || []).length + lastNote + '</div>' +
+      '<div class="row" style="margin-top:6px">' +
+      '<button data-act="overtime" data-id="' + f.missionId + '"' + (canOt ? '' : ' disabled') +
+      '>Extend acceptance (' + ops.overtime.money + ' $)</button>' +
+      '<button data-act="closeFlight" data-id="' + f.missionId + '"' + (canClose ? '' : ' disabled') +
+      '>Accept early (S ×' + fmt(ops.earlyEndSFactor, 2) + ')</button>' +
+      '</div></div>';
+  });
+  $('flights').innerHTML = rows.join('') ||
+    '<div class="muted small">no flights — launch a ready mission</div>';
+  $('loadRows').innerHTML = ENGINE.mcsLoadPlan(s, ops.loadPlanSteps).map((p) =>
+    '<tr><td>' + p.step + '</td><td class="num">' + p.flights + '</td><td class="num">' + p.load + ' / ' + p.cap +
+    '</td><td class="num ' + (p.overload ? 'bad' : 'ok') + '">' + p.overload + '</td></tr>').join('');
+}
+
+function renderPrep() {
+  const s = U.state;
+  const factoryCost = CONFIG.campaign.factoryUpgrades[s.factory] || null;
+  const mcsCost = CONFIG.mcs.upgradeCost[(s.mcsLevel || 0) + 1] || null;
+  const schoolCost = ENGINE.schoolUpgradeCost((s.school || 0) + 1);
+  const rows = [];
+  rows.push('<tr><td>Factory ' + s.factory + ' → ' + (s.factory + 1) + '</td><td class="num">' +
+    (factoryCost ? factoryCost.money + ' $ · ' + factoryCost.pm + ' PM · rating ' + factoryCost.rating
+      : 'maximum') + '</td></tr>');
+  rows.push('<tr><td>School ' + (s.school || 0) + ' → ' + ((s.school || 0) + 1) + '</td><td class="num">' +
+    (schoolCost ? schoolCost.money + ' $ · ' + schoolCost.pm + ' PM · ' + schoolCost.np + ' NP · rating ' +
+      schoolCost.rating : 'maximum') + '</td></tr>');
+  rows.push('<tr><td>MCC ' + s.mcsLevel + ' → ' + (s.mcsLevel + 1) + '</td><td class="num">' +
+    (mcsCost ? mcsCost.money + ' $ · ' + mcsCost.pm + ' PM · ' + mcsCost.np + ' NP · rating ' +
+      mcsCost.rating + ' · mgr. ' + CONFIG.mcs.managersRequired[s.mcsLevel + 1]
+      : 'maximum') + '</td></tr>');
+  $('upgradeRows').innerHTML = rows.join('');
+}
+
+function renderGround() {
+  $('groundBox').innerHTML = (CARDS.groundContracts || []).map((card) => {
+    const bits = ['+' + card.fund + ' $ fund'];
+    if (card.npDelta) bits.push((card.npDelta > 0 ? '+' : '') + card.npDelta + ' NP');
+    if (card.vchkDelta) bits.push('+' + card.vchkDelta + ' VChK');
+    if (card.ipDelta) bits.push('+' + card.ipDelta + ' IP');
+    const blocked = card.npDelta < 0 && U.state.np < -card.npDelta;
+    return '<div class="row" style="margin:4px 0;justify-content:space-between">' +
+      '<span class="small">' + esc(card.name) + ' <span class="muted">· ' + esc(bits.join(' · ')) + '</span></span>' +
+      '<button data-act="ground" data-id="' + card.id + '"' + (blocked ? ' disabled' : '') + '>Take</button></div>';
+  }).join('');
+}
+
+function renderTech() {
+  const s = U.state;
+  const rows = [];
+  ['rocket', 'instrument'].forEach((kind) => {
+    Object.keys(s.tech[kind]).forEach((cls) => {
+      const lvl = ENGINE.techLevel(s, kind, cls);
+      const ip = ENGINE.ipFor(s, kind, cls);
+      const target = lvl + 1;
+      let next = 'CML 4 reached';
+      let btn = '';
+      if (target <= CONFIG.tech.maxLevel) {
+        const need = CONFIG.tech.ipThresholds[target] || 0;
+        const cost = ENGINE.techUpgradeCost(target);
+        next = 'IP ' + ip + '/' + need + ' · ' + cost.money + ' $ · ' + cost.np + ' NP · ' + cost.pm + ' PM';
+        btn = '<button data-act="tech" data-kind="' + kind + '" data-cls="' + cls + '">R&D</button>';
+      }
+      rows.push('<tr><td>' + esc(CONFIG.tech.names[cls] || cls) +
+        '<div class="small muted">' + (kind === 'rocket' ? 'launcher' : 'instrument') + '</div></td>' +
+        '<td class="num">' + lvl + '</td><td class="num">' + ip + '</td>' +
+        '<td class="small">' + next + '</td><td class="num">' + btn + '</td></tr>');
+    });
+  });
+  $('techRows').innerHTML = rows.join('');
+}
+
+function renderStandardize() {
+  const s = U.state;
+  const school = ENGINE.schoolFor(s);
+  const price = Math.round(CONFIG.tech.standardizeCost.money * (1 - school.standardizeDiscount));
+  const ids = Object.keys(s.expSeen || {}).filter((id) => {
+    const card = ENGINE.card(id);
+    return card && ENGINE.isCardAvailable(s, card) && !(s.standardized && s.standardized[id]);
+  });
+  if (!ids.length) {
+    $('standardizeBox').innerHTML = '<span class="muted">no experimental card has been seen yet</span>';
+    return;
+  }
+  $('standardizeBox').innerHTML = ids.map((id) => {
+    const card = ENGINE.card(id);
+    if (!card) return '';
+    const pNow = ENGINE.cardPFor(s, card, { kind: card.kind });
+    return '<div class="row" style="margin:3px 0"><span>' + esc(card.name) +
+      ' <span class="muted">· p ' + fmt(pNow, 2) + ' (base ' + fmt(card.p, 2) + ')</span></span>' +
+      '<button data-act="standardize" data-id="' + id + '">Standardise (' + price + ' $)</button></div>';
+  }).join('');
+}
+
+function renderScore() {
+  const s = U.state;
+  if (!s.score) {
+    $('scoreBox').innerHTML = '<span class="muted">The campaign is still running: step ' + s.step + ' / ' +
+      s.maxSteps + '. “Finish and score” wraps it up early.</span>';
+    return;
+  }
+  const sc = s.score;
+  $('scoreBox').innerHTML = '<div class="row"><b style="font-size:18px;color:var(--cyan)">' +
+    fmt(sc.total, 1) + ' points</b><span class="muted">campaign total</span></div>' +
+    '<table><tbody>' +
+    '<tr><td>rating</td><td class="num">' + fmt(sc.rating, 1) + '</td></tr>' +
+    '<tr><td>VChK × 0.5</td><td class="num">' + fmt(sc.vchkPart, 1) + '</td></tr>' +
+    '<tr><td>CML levels × ' + CONFIG.campaignScore.perTechLevel + '</td><td class="num">' +
+    fmt(sc.techLevels, 0) + ' → ' + fmt(sc.techPart, 1) + '</td></tr>' +
+    '<tr><td>Standardisations × ' + CONFIG.campaignScore.perStandardized + '</td><td class="num">' +
+    fmt(sc.standardized, 0) + ' → ' + fmt(sc.stdPart, 1) + '</td></tr>' +
+    '<tr><td>MCC × ' + CONFIG.campaignScore.perMcsLevel + '</td><td class="num">' +
+    fmt(sc.mcsPart, 1) + '</td></tr>' +
+    '<tr><td>School × ' + CONFIG.campaignScore.perSchoolLevel + '</td><td class="num">' +
+    fmt(sc.schoolLevel, 0) + ' → ' + fmt(sc.schoolPart, 1) + '</td></tr>' +
+    '<tr><td>Rescues × ' + CONFIG.campaignScore.perRescue + '</td><td class="num">' +
+    fmt(sc.rescuePart, 1) + '</td></tr>' +
+    '<tr><td>Failure streaks</td><td class="num bad">' + fmt(sc.penaltyPart, 1) + '</td></tr>' +
+    '</tbody></table>';
+}
+
+function render() {
+  renderState();
+  renderOffers();
+  renderProduction();
+  renderFlights();
+  renderPrep();
+  renderGround();
+  renderTech();
+  renderStandardize();
+  renderScore();
+}
+
+function accept(id) {
+  if (U.finished) return;
+  const res = ENGINE.acceptMission(U.state, id);
+  if (res.ok) {
+    U.state.tookMission = true;
+    flash('Mission accepted: ' + res.entry.price + ' $, ' + res.entry.pmRate + ' PM/step.', 'ok');
+    render();
+  } else {
+    flash('Accept: ' + res.reason, 'bad');
+  }
+}
+
+function launch(id) {
+  if (U.finished) return;
+  const before = (U.state.flights || []).map((f) => f.missionId);
+  const n = ENGINE.launchReady(U.state, id ? [id] : null, U.rnd);
+  const left = U.state.ready.length;
+  const fresh = (U.state.flights || []).filter((f) => before.indexOf(f.missionId) === -1)
+    .map((f) => f.name + ' → flight ' + f.flight + ' step(s), acceptance ~step ' + f.endStep +
+      ', channel ' + f.load).join('; ');
+  flash(n ? 'Missions launched: ' + n + (left ? ', still ready ' + left : '') +
+    (fresh ? '. ' + fresh : '') : 'No launches: the MCC limit is reached or nothing is ready.', n ? 'ok' : 'mid');
+  render();
+}
+
+function nextStep() {
+  const s = U.state;
+  if (U.finished) return;
+  if (s.step >= s.maxSteps) { finishCampaign(); return; }
+  s.hadMissionLast = s.tookMission;
+  ENGINE.launchReady(s, null, U.rnd);
+  const ops = ENGINE.stepFlights(s, U.rnd);
+  ENGINE.endStep(s, U.rnd, { skipExpire: false });
+  ENGINE.advanceProduction(s);
+  U.actionsLeft = s.hadMissionLast ? CONFIG.campaign.prepActions : CONFIG.campaign.skipPrepActions;
+  const recs = ops.filter((r) => r.reception).length;
+  flash('Step ' + s.step + ': preparation actions ' + U.actionsLeft + '.' +
+    (ops.length ? ' Events: ' + (ops.length - recs) + ', receptions: ' + recs + '.' : ''), 'muted');
+  render();
+}
+
+function finishCampaign() {
+  const s = U.state;
+  if (U.finished) return;
+  s.hadMissionLast = s.tookMission;
+  ENGINE.advanceProduction(s);
+  ENGINE.launchReady(s, null, U.rnd, true);
+  ENGINE.stepFlights(s, U.rnd);
+  ENGINE.finalizeFlights(s, U.rnd);
+  ENGINE.failRemaining(s, 'end of the campaign');
+  s.score = ENGINE.finalScore(s);
+  U.finished = true;
+  flash('Campaign finished: ' + fmt(s.score.total, 1) + ' points.', 'ok');
+  render();
+}
+
+function renderMC(mc) {
+  const row = (label, value, target, ok) =>
+    '<tr><td>' + label + '</td><td class="num">' + value + '</td><td class="num muted">' + target +
+    '</td><td class="num ' + (ok == null ? '' : (ok ? 'ok' : 'bad')) + '">' +
+    (ok == null ? '—' : (ok ? '✓' : '✗')) + '</td></tr>';
+  $('mcRows').innerHTML =
+    row('Games', mc.games, '—') +
+    row('Average score', mc.avgScore, '≥ 80', mc.avgScore >= 80) +
+    row('Missions per campaign', mc.avgMissions, '9–14', mc.avgMissions >= 9 && mc.avgMissions <= 14) +
+    row('Success / partial / failure', mc.successRate + '% / ' + mc.partialRate + '% / ' + mc.failRate + '%',
+      'failure 13–33%', mc.failRate >= 13 && mc.failRate <= 33) +
+    row('Expired', mc.expiredRate + '%', '—') +
+    row('rating / VChK', mc.avgRating + ' / ' + mc.avgVchk, '—') +
+    row('Cash left', mc.avgMoney + ' $', '±2500 $', Math.abs(mc.avgMoney) <= 2500) +
+    row('Ground segment fund', mc.avgFund + ' $', '—') +
+    row('MCC / factory / managers', mc.avgMcs + ' / ' + mc.avgFactory + ' / ' + mc.avgManagers, '—') +
+    row('CML levels / standardisations / tests',
+      mc.avgTech + ' / ' + mc.avgStandardized + ' / ' + mc.avgTests, '—') +
+    row('Average mission price / P', mc.avgPrice + ' $ / ' + mc.avgPSuccess, '—');
+}
+
+function runMC() {
+  const n = Math.max(5, Math.min(60, Number($('campGames').value) || 20));
+  const seed = Number($('seed').value) || 20260101;
+  $('mcStatus').textContent = 'running ' + n + ' games…';
+  $('mcRows').innerHTML = '<tr><td colspan="4" class="muted">running the simulation</td></tr>';
+  setTimeout(() => {
+    const t0 = performance.now();
+    const mc = ENGINE.runCampaignMonteCarlo(n, seed);
+    renderMC(mc);
+    $('mcStatus').textContent = 'done in ' + Math.round(performance.now() - t0) + ' ms';
+  }, 30);
+}
+
+document.addEventListener('click', (e) => {
+  const btn = e.target.closest('[data-act]');
+  if (!btn || btn.disabled) return;
+  const act = btn.dataset.act;
+  const id = btn.dataset.id;
+  if (act === 'new') return newCampaign();
+  if (act === 'next') return nextStep();
+  if (act === 'finish') return finishCampaign();
+  if (act === 'accept') return accept(id);
+  if (act === 'launch') return launch(id);
+  if (act === 'launchAll') return launch(null);
+  if (act === 'hire') return prep('Hire a manager', () => ENGINE.hireManager(U.state));
+  if (act === 'factory') return prep('Factory', () => ENGINE.upgradeFactory(U.state));
+  if (act === 'school') return prep('School', () => ENGINE.upgradeSchool(U.state));
+  if (act === 'mcs') return prep('MCC', () => ENGINE.mcsUpgrade(U.state));
+  if (act === 'pr') return prep('PR', () => ENGINE.prAction(U.state));
+  if (act === 'testStand') {
+    return testPrep('stand', {
+      ipKind: 'instrument', ipClass: $('standClass').value,
+      cardId: $('standCard').value || null
+    }, 'Test stand');
+  }
+  if (act === 'testRocket') {
+    return testPrep('flightRocket', { rocketId: $('testRocket').value }, 'Launcher flight test');
+  }
+  if (act === 'testInstrument') {
+    return testPrep('flightInstrument', {
+      rocketId: $('testRocket2').value, instrumentId: $('testInstrument').value
+    }, 'Instrument flight test');
+  }
+  if (act === 'closeFlight') {
+    const r = ENGINE.closeEarly(U.state, id, U.rnd);
+    flash(r.ok ? 'Early acceptance: ' + (r.report ? r.report.result.key : 'done') : r.reason,
+      r.ok ? 'mid' : 'bad');
+    render();
+    return;
+  }
+  if (act === 'overtime') {
+    const r = ENGINE.overtime(U.state, id);
+    flash(r.ok ? 'Acceptance extended (' + r.overtime + '/' + CONFIG.campaign.ops.overtime.max +
+      ', −' + r.cost + ' $)' : r.reason, r.ok ? 'ok' : 'bad');
+    render();
+    return;
+  }
+  if (act === 'ground') {
+    return prep('Ground contract', () => ENGINE.groundContract(U.state, id,
+      { ipKind: 'instrument', ipClass: $('gcIpClass').value }));
+  }
+  if (act === 'tech') {
+    return prep('R&D', () => ENGINE.upgradeTech(U.state, btn.dataset.kind, btn.dataset.cls));
+  }
+  if (act === 'standardize') {
+    prep('Standardisation', () => ENGINE.standardize(U.state, id));
+    populateControls();
+    return;
+  }
+  if (act === 'mc') return runMC();
+});
+
+$('verTag').textContent = CONFIG.version;
+newCampaign();
+</script>
+</body>
+</html>

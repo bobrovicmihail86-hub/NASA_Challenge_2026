@@ -1,0 +1,150 @@
+{
+ "version": "v1.4",
+ "seed": 777,
+ "maxSteps": 15,
+ "rng": 912284217,
+ "actionsLeft": 2,
+ "finished": false,
+ "journal": [],
+ "state": {
+  "seed": 777,
+  "step": 3,
+  "maxSteps": 15,
+  "money": 900,
+  "np": 30,
+  "vchk": 12,
+  "rating": 1,
+  "groundFund": 71,
+  "mcsLevel": 0,
+  "mcsPenalty": 0,
+  "managers": 2,
+  "factory": 0,
+  "school": 1,
+  "staff": {
+   "1": 4,
+   "2": 3,
+   "3": 1
+  },
+  "tech": {
+   "rocket": {
+    "light": 1,
+    "medium": 1,
+    "heavy": 1,
+    "superheavy": 1,
+    "exp": 1
+   },
+   "instrument": {
+    "camera": 1,
+    "spectrometer": 1,
+    "radiometer": 1,
+    "magnetometer": 1,
+    "exp": 1
+   }
+  },
+  "ip": {
+   "rocket": {
+    "light": 0,
+    "medium": 0,
+    "heavy": 0,
+    "superheavy": 0,
+    "exp": 0
+   },
+   "instrument": {
+    "camera": 0,
+    "spectrometer": 0,
+    "radiometer": 0,
+    "magnetometer": 0,
+    "exp": 0
+   }
+  },
+  "visited": {
+   "deep": true
+  },
+  "standardized": {},
+  "expSeen": {},
+  "offers": [
+   "m_insight",
+   "m_osirisrex",
+   "m_viking1"
+  ],
+  "production": [],
+  "ready": [
+   {
+    "missionId": "m_newhorizons",
+    "sel": {
+     "rocketId": "rocket_medium",
+     "reservationId": "res_double",
+     "controlId": "ctrl_redundant",
+     "antennaId": "ant_large",
+     "powerId": "pwr_reactor",
+     "bufferId": "buf_2",
+     "instruments": [
+      {
+       "id": "ins_camera",
+       "count": 2
+      }
+     ],
+     "physical": [],
+     "antennaDup": false,
+     "moduleBuild": false
+    },
+    "trajectoryId": "direct",
+    "unique": 1.5,
+    "cap": 1633.5,
+    "advance": 1210,
+    "price": 1340,
+    "pmRate": 11,
+    "prodTime": 2,
+    "startedStep": 1,
+    "readyStep": 3,
+    "deadlineStep": 9,
+    "pmEndStep": 9
+   }
+  ],
+  "pmPrepUsed": 0,
+  "testUsed": false,
+  "tookMission": false,
+  "stats": {
+   "accepted": 1,
+   "missions": 0,
+   "success": 0,
+   "partial": 0,
+   "fail": 0,
+   "launches": 0,
+   "expired": 0,
+   "rescues": 0,
+   "testLaunches": 0,
+   "cmlUps": 0,
+   "mcsUps": 0,
+   "factoryUps": 0,
+   "schoolUps": 1,
+   "managersHired": 0,
+   "prepSteps": 0,
+   "prActions": 1,
+   "standardized": 0,
+   "groundContracts": 0,
+   "failStreak": 0,
+   "maxFailStreak": 0,
+   "failStreakPenalties": 0,
+   "advances": 1210,
+   "bonuses": 0,
+   "spent": 1340,
+   "salaries": 70,
+   "upkeep": 0,
+   "mcsSpent": 0,
+   "factorySpent": 0,
+   "schoolSpent": 200,
+   "techSpent": 0,
+   "testSpent": 0,
+   "pSum": 0,
+   "priceSum": 0,
+   "launchesByMcs": 0
+  },
+  "log": [
+   "шаг 1: принята Новые горизонты (1210 $, 11 ПМ/шаг, 2 шаг.)",
+   "шаг 1: PR (+2 ВЧК)",
+   "шаг 2: школа → 1 (200 $, 25 ПМ)"
+  ],
+  "hadMissionLast": false
+ }
+}

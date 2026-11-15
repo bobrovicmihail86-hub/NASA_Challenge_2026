@@ -1,0 +1,32 @@
+# dependencies
+node_modules/
+
+# generated/runtime files
+*.log
+*.pid
+*.tmp
+*.bak
+
+# local env/secrets
+.env
+.env.*
+secrets.*
+*.key
+
+# model weights and generated art (not part of the repository)
+*.safetensors
+*.ckpt
+*.pt
+art/emblem/*.png
+art/emblem/preview/
+
+# local room-server state
+server/data/
+server/data-*/
+
+# OS / IDE
+Thumbs.db
+Desktop.ini
+.DS_Store
+.vscode/
+.idea/

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Space Mission Design — program HQ</title>
+<link rel="stylesheet" href="app.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">
+    <div class="brand-mark">SMD</div>
+    <div>
+      <h1>Space Mission <span>Design</span></h1>
+      <div class="brand-sub">program HQ · roles · manual assembly</div>
+    </div>
+  </div>
+
+  <div class="camp-meta">
+    <label class="compact-field">seed
+      <input id="seedInput" type="number" value="20260101" min="1" step="1">
+    </label>
+    <label class="compact-field">length
+      <select id="lengthSelect">
+        <option value="12">12</option>
+        <option value="15" selected>15</option>
+        <option value="18">18</option>
+      </select>
+    </label>
+    <button class="btn ghost" data-act="new-campaign" title="Start over">New</button>
+    <button class="btn ghost" data-act="export" title="Download the save">Export</button>
+    <label class="btn ghost file-btn" title="Load a save">Import
+      <input id="importFile" type="file" accept="application/json">
+    </label>
+  </div>
+
+  <div class="resources" id="resources"></div>
+  <nav class="role-nav" id="roleNav" aria-label="Roles">
+    <button data-role="manager">Manager</button>
+    <button data-role="engineer">Engineer</button>
+    <button data-role="scientist">Scientist</button>
+    <button data-role="ops">MCC</button>
+    <button data-panel="consultant">Consultant</button>
+    <button data-panel="chat">Chat <span class="chat-count" id="chatCount"></span></button>
+  </nav>
+</header>
+
+<div class="stepbar-wrap">
+  <div class="stepbar-head">
+    <div class="step-title">Campaign timeline</div>
+    <div class="step-legend">
+      <span><i class="lg lg-prod"></i>production</span>
+      <span><i class="lg lg-flight"></i>flight</span>
+      <span><i class="lg lg-deadline"></i>deadline</span>
+    </div>
+  </div>
+  <div class="stepbar" id="stepbar"></div>
+</div>
+
+<main class="main-grid">
+  <section class="screen" id="screen" aria-live="polite"></section>
+  <aside class="side" id="side">
+    <section class="panel consultant-panel" id="consultantPanel">
+      <div class="panel-head">
+        <h2>Consultant</h2>
+        <button class="icon-btn" data-panel="consultant" title="Collapse">×</button>
+      </div>
+      <div id="consultant"></div>
+    </section>
+    <section class="panel log-panel">
+      <div class="panel-head">
+        <h2>Decision log</h2>
+        <span class="hint">step <b id="logStep">1</b></span>
+      </div>
+      <div class="log" id="log"></div>
+    </section>
+  </aside>
+</main>
+
+<aside class="chat-dock" id="chatDock" aria-label="Chat">
+  <div class="panel-head">
+    <h2>HQ chat</h2>
+    <div class="row">
+      <span class="hint" id="chatHint">local role log</span>
+      <button class="icon-btn" data-panel="chat" title="Close">×</button>
+    </div>
+  </div>
+  <div class="chat-log" id="chatLog"></div>
+  <div class="chat-quick" id="chatQuick">
+    <button data-quick="We need another launcher: the mass does not fit.">mass</button>
+    <button data-quick="Power is short — we need an RTG or more panels.">power</button>
+    <button data-quick="Check the mission modules and the data type.">data</button>
+    <button data-quick="The build is ready, it can be accepted.">ready</button>
+  </div>
+  <form class="chat-form" id="chatForm">
+    <input id="chatInput" maxlength="500" placeholder="Message a role…" autocomplete="off">
+    <button class="btn primary" type="submit">Send</button>
+  </form>
+</aside>
+
+<div class="toast" id="toast" role="status"></div>
+<div class="modal-backdrop" id="modalBackdrop" hidden>
+  <div class="modal" id="modal" role="dialog" aria-modal="true"></div>
+</div>
+
+<footer class="footer">
+  Every number comes from <code>data/engine.js</code>. Manual mode uses
+  <code>campaignManual</code> and <code>acceptMission</code>; the rules are not re-implemented here.
+</footer>
+
+<script src="../data/config.js"></script>
+<script src="../data/cards.js"></script>
+<script src="../data/missions.js"></script>
+<script src="../data/engine.js"></script>
+<script src="core.js"></script>
+<script src="ui.js"></script>
+<script src="cards-ui.js"></script>
+<script src="manager.js"></script>
+<script src="main.js"></script>
+</body>
+</html>
