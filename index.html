@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Space Mission Design Game — NASA Space Apps Challenge 2026</title>
+<style>
+  :root { --bg:#070f1a; --panel:#0d1c2e; --line:#1d3552; }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; padding: 32px 20px 56px;
+    background: radial-gradient(1200px 600px at 20% -10%, #10304d 0%, #070f1a 60%), #070f1a;
+    color: #dbe9f7; font: 15px/1.55 "Segoe UI", system-ui, -apple-system, sans-serif;
+  }
+  .wrap { max-width: 1040px; margin: 0 auto; }
+  .kicker { margin: 0 0 6px; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; color: #4fd1e0; }
+  h1 { margin: 0 0 10px; font-size: 34px; line-height: 1.15; color: #fff; }
+  .lead { margin: 0 0 26px; max-width: 760px; color: #9fb6cd; }
+  h2 { margin: 30px 0 12px; font-size: 15px; letter-spacing: 1.2px; text-transform: uppercase; color: #7f9ab5; }
+  .grid { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+  a.tile {
+    display: block; padding: 16px 18px; border: 1px solid #1d3552; border-radius: 14px;
+    background: linear-gradient(180deg, #0e2036, #0a1727); color: inherit; text-decoration: none;
+    transition: transform .12s ease, border-color .12s ease;
+  }
+  a.tile:hover, a.tile:focus-visible { transform: translateY(-2px); border-color: #4fd1e0; }
+  a.tile strong { display: block; margin-bottom: 5px; font-size: 16px; color: #fff; }
+  a.tile span { display: block; font-size: 13px; color: #93a9bf; }
+  code { padding: 1px 5px; border-radius: 5px; background: #0b1a2b; border: 1px solid #1d3552; font-size: 12.5px; }
+  .note { margin: 26px 0 0; padding: 14px 16px; border: 1px dashed #24425f; border-radius: 12px; font-size: 13.5px; color: #9fb6cd; }
+  footer { margin: 30px 0 0; font-size: 12.5px; color: #6d859d; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <p class="kicker">NASA Space Apps Challenge 2026</p>
+  <h1>Space Mission Design Game</h1>
+  <p class="lead">Design a mission, build the spacecraft, choose the launcher and the target point, launch
+  and fly it step by step — and live with every trade-off between mass, power, science, data and budget.</p>
+
+  <h2>Digital edition</h2>
+  <div class="grid">
+    <a class="tile" href="app/index.html"><strong>Role HQ</strong>
+      <span>Manager, engineer, scientist and MCC: build graphs, consultant, journal, approvals</span></a>
+    <a class="tile" href="calc/index.html"><strong>Build calculator</strong>
+      <span>Mission → trajectory → build → checks → P, S, Δrating, Monte Carlo validator</span></a>
+    <a class="tile" href="calc/campaign.html"><strong>Campaign v1.5</strong>
+      <span>15 steps: MCC, factory, science school, R&amp;D/CML, tests, flights, final score</span></a>
+  </div>
+
+  <h2>Tabletop edition (print and play)</h2>
+  <div class="grid">
+    <a class="tile" href="print/cards.html"><strong>Cards</strong>
+      <span>63×88 mm sheets: launchers, instruments, events, missions — pick a deck and print</span></a>
+    <a class="tile" href="print/board.html"><strong>Team board A3</strong>
+      <span>Calculator rows, journal and mission slots for the table</span></a>
+    <a class="tile" href="print/tokens.html"><strong>Tokens</strong>
+      <span>Money, marks and status tokens</span></a>
+  </div>
+
+  <h2>Documentation</h2>
+  <div class="grid">
+    <a class="tile" href="https://github.com/bobrovicmihail86-hub/NASA_Challenge_2026/blob/main/docs/RULES_V15.md">
+      <strong>Rulebook v1.5</strong><span>The complete rules, formulas and appendices</span></a>
+    <a class="tile" href="https://github.com/bobrovicmihail86-hub/NASA_Challenge_2026/blob/main/docs/CHALLENGE.md">
+      <strong>Challenge brief</strong><span>The Space Apps brief and how the game answers it</span></a>
+    <a class="tile" href="https://github.com/bobrovicmihail86-hub/NASA_Challenge_2026#readme">
+      <strong>README</strong><span>Structure, commands, calibration and limitations</span></a>
+  </div>
+
+  <p class="note">Network mode (a team room over HTTP + SSE) needs the Node server:
+  <code>node server/index.mjs --port 8080 --data server/data</code>, then open <code>app/lobby.html</code>
+  on the same host. Everything else runs directly in the browser — no build step, no npm packages.</p>
+
+  <footer>Two editions of one game: a browser implementation and a print-and-play card game.</footer>
+</div>
+</body>
+</html>

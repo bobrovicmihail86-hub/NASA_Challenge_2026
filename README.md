@@ -80,6 +80,10 @@ every decision reshapes the rest of the mission. The full brief we worked from i
 | **Digital** | Browser game: build calculator, 15-step campaign, role HQ for four roles, network team game | `calc/`, `app/`, `server/`, `data/` |
 | **Tabletop** | Print-and-play card game: 63×88 mm cards, A3 team board, tokens, full rulebook | `print/`, `docs/RULES_V15.md` |
 
+A hosted copy of the digital edition runs on GitHub Pages:
+<https://bobrovicmihail86-hub.github.io/NASA_Challenge_2026/> — the same files as in the repository, with
+the root `index.html` acting only as a landing page.
+
 ## Quick start
 
 | What | Where |
@@ -197,6 +201,7 @@ A contact sheet of all variants: `python tools/emblem-sheet.py` → `art/emblem/
 
 ```
 space-mission-design/
+├── index.html         landing page for the hosted copy (GitHub Pages)
 ├── data/
 │   ├── config.js      CONFIG v1.5: points, trajectories, buses, criteria, contract, campaign (incl. ops), print runs
 │   ├── cards.js       90 cards: launchers, reservations, FCS, instruments, antennas, power, modules,
