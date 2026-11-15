@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Space Mission Design Game — demo deck (7 slides)</title>
+<style>
+  :root {
+    --ink: #e8f2fb;
+    --dim: #9fb3c8;
+    --cyan: #5fd4ea;
+    --amber: #ffc46b;
+    --line: rgba(232, 242, 251, .18);
+    --bg: #05090f;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; background: var(--bg); color: var(--ink); }
+  body { font: 16px/1.45 "Segoe UI", system-ui, -apple-system, Arial, sans-serif; }
+
+  .hint {
+    max-width: 1280px; margin: 0 auto; padding: 16px 8px 0;
+    font-size: 13px; color: var(--dim);
+  }
+  .hint b { color: var(--ink); }
+
+  .slide {
+    position: relative;
+    width: 1280px; height: 720px;
+    margin: 16px auto 24px;
+    overflow: hidden;
+    background: #0a1420;
+  }
+  .slide img.bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .slide .shade {
+    position: absolute; inset: 0;
+    background: linear-gradient(90deg,
+      rgba(5, 9, 15, .97) 0%, rgba(5, 9, 15, .92) 42%, rgba(5, 9, 15, .55) 68%, rgba(5, 9, 15, .82) 100%);
+  }
+  .body { position: relative; display: flex; flex-direction: column; height: 100%; padding: 52px 64px 64px; }
+
+  .kicker {
+    font-size: 13px; letter-spacing: .2em; text-transform: uppercase;
+    color: var(--cyan); margin-bottom: 18px;
+  }
+  h1 { font-size: 62px; line-height: 1.04; margin: 0 0 20px; font-weight: 650; letter-spacing: -.01em; }
+  h2 { font-size: 40px; line-height: 1.1; margin: 0 0 26px; font-weight: 650; }
+  h3 { font-size: 20px; margin: 0 0 8px; color: var(--cyan); letter-spacing: .04em; text-transform: uppercase; }
+  p { margin: 0 0 16px; font-size: 21px; color: #d6e4f2; max-width: 780px; }
+  ul { margin: 0; padding: 0; list-style: none; max-width: 760px; }
+  li { position: relative; padding-left: 26px; margin-bottom: 16px; font-size: 21px; color: #d6e4f2; }
+  li::before {
+    content: ""; position: absolute; left: 0; top: 12px;
+    width: 10px; height: 10px; border-radius: 2px;
+    background: var(--cyan); transform: rotate(45deg);
+  }
+  li b, p b { color: #fff; font-weight: 600; }
+  .muted { color: var(--dim); font-size: 17px; }
+
+  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 24px 40px; max-width: 920px; }
+  .card {
+    border: 1px solid var(--line); border-radius: 12px;
+    padding: 20px 22px; background: rgba(9, 20, 32, .62);
+  }
+  .card ul { max-width: none; }
+  .card li { font-size: 17px; margin-bottom: 10px; }
+  .card li::before { width: 8px; height: 8px; top: 10px; background: var(--amber); }
+
+  .roles { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; max-width: 980px; margin: 6px 0 26px; }
+  .role { border-top: 2px solid var(--cyan); padding-top: 12px; }
+  .role b { display: block; font-size: 19px; margin-bottom: 4px; }
+  .role span { font-size: 15px; color: var(--dim); }
+
+  .links { margin-top: auto; display: grid; gap: 10px; max-width: 900px; }
+  .links div { display: grid; grid-template-columns: 250px 1fr; gap: 14px; font-size: 17px; }
+  .links span { color: var(--dim); }
+  a { color: var(--cyan); text-decoration: none; border-bottom: 1px solid rgba(95, 212, 234, .35); }
+
+  table { border-collapse: collapse; font-size: 18px; margin: 4px 0 18px; }
+  th, td { text-align: left; padding: 7px 26px 7px 0; border-bottom: 1px solid var(--line); }
+  th { font-size: 13px; letter-spacing: .12em; text-transform: uppercase; color: var(--dim); font-weight: 500; }
+  td.num { color: var(--amber); font-variant-numeric: tabular-nums; }
+  tr:last-child td, tr:last-child th { border-bottom: 0; }
+
+  .num {
+    position: absolute; left: 64px; bottom: 22px;
+    font-size: 13px; letter-spacing: .16em; color: rgba(232, 242, 251, .5);
+  }
+  .si {
+    position: absolute; right: 20px; bottom: 18px;
+    font-size: 11px; letter-spacing: .1em; text-transform: uppercase;
+    color: rgba(232, 242, 251, .68);
+    border: 1px solid rgba(232, 242, 251, .28); border-radius: 999px;
+    padding: 3px 10px; background: rgba(5, 9, 15, .55);
+  }
+
+  @page { size: 338.67mm 190.5mm; margin: 0; }
+  @media print {
+    body { background: var(--bg); -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .hint { display: none; }
+    .slide { margin: 0; break-after: page; page-break-after: always; }
+    .slide:last-of-type { break-after: auto; page-break-after: auto; }
+  }
+</style>
+</head>
+<body>
+<p class="hint"><b>Draft deck.</b> Print → Save as PDF, layout landscape, margins <b>none</b>, background graphics on:
+one 16:9 slide per page (7 pages). On screen it is a plain scroll; the backgrounds are AI-generated
+(<a href="prompts.json">prompts.json</a>, <code>node tools/gen-slides.mjs</code>) and every slide carries the SI mark.</p>
+<section class="slide" id="s1">
+  <img class="bg" src="art/01_title.png" alt="AI-generated background: a launch vehicle on a floodlit pad at night">
+  <div class="shade"></div>
+  <div class="body">
+    <div class="kicker">NASA Space Apps Challenge 2026 &middot; Space Mission Design Game</div>
+    <h1>Design the mission.<br>Then live with the trade-offs.</h1>
+    <p>You get an objective, a budget and fifteen steps. The launcher, the spacecraft, the instruments and
+      the flight operations are yours &mdash; and so is every consequence.</p>
+    <p class="muted">Project Bobr &middot; digital edition in the browser + printable tabletop edition
+      &middot; one rulebook, one engine</p>
+    <div class="links">
+      <div><span>Play</span><span><a href="../app/index.html">app/index.html</a> &middot;
+        <a href="../calc/campaign.html">calc/campaign.html</a> &middot;
+        <a href="../calc/index.html">calc/index.html</a></span></div>
+      <div><span>Read</span><span><a href="../docs/RULES_V15.md">docs/RULES_V15.md</a> &middot;
+        <a href="../README.md">README.md</a></span></div>
+      <div><span>Source</span><span>github.com/bobrovicmihail86-hub/NASA_Challenge_2026</span></div>
+    </div>
+    <div class="num">1 / 7</div>
+    <div class="si">AI-generated background</div>
+  </div>
+</section>
+
+<section class="slide" id="s2">
+  <img class="bg" src="art/02_problem.png" alt="AI-generated background: an engineering desk with blueprints and a spacecraft model">
+  <div class="shade"></div>
+  <div class="body">
+    <div class="kicker">01 &middot; The problem</div>
+    <h2>A mission is one chain. It is taught as separate links.</h2>
+    <ul>
+      <li><b>Objective &rarr; orbit &rarr; launcher &rarr; spacecraft &rarr; payload &rarr; communications
+        &rarr; operations &rarr; treasury.</b> Every link constrains the next one.</li>
+      <li>Courses and spreadsheets each own one link. The seams &mdash; where the real engineering happens &mdash;
+        stay invisible to a student.</li>
+      <li>Mass, power, data, money and time fight over the same margins. A textbook shows the winner;
+        a game can show the fight.</li>
+      <li>The brief asks for a game that goes <b>from an objective to a realistic mission design</b>,
+        where <b>every decision has a consequence</b> and there is <b>no single perfect solution</b>.</li>
+    </ul>
+    <div class="num">2 / 7</div>
+    <div class="si">AI-generated background</div>
+  </div>
+</section>
+
+<section class="slide" id="s3">
+  <img class="bg" src="art/03_solution.png" alt="AI-generated background: a laptop with a mission interface next to printed cards">
+  <div class="shade"></div>
+  <div class="body">
+    <div class="kicker">02 &middot; The solution</div>
+    <h2>Two editions, one rulebook</h2>
+    <div class="grid2">
+      <div class="card">
+        <h3>Digital &mdash; browser, no install</h3>
+        <ul>
+          <li><b>Role HQ</b> (<code>app/</code>): four roles with separate signatures, SVG build graphs, consultant, chat</li>
+          <li><b>Calculator</b> (<code>calc/index.html</code>): mission &rarr; trajectory &rarr; build &rarr; checks &rarr; P_success, science, &Delta;rating</li>
+          <li><b>Campaign v1.5</b> (<code>calc/campaign.html</code>): 15 steps, flights, MCC channels, R&amp;D/CML, school, tests, contracts</li>
+          <li><b>Team room</b> (<code>server/</code> + <code>app/lobby.html</code>): up to four players, live updates, archive, leaderboard</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Tabletop &mdash; printed and played</h3>
+        <ul>
+          <li>90 cards at 63&times;88 mm, an A3 board, tokens and printable A4 sheets (<code>print/</code>)</li>
+          <li>The printed numbers come from the same <code>data/cards.js</code> &mdash; no second rulebook</li>
+          <li>Works in a classroom with no computers, no accounts and no network</li>
+          <li>A facilitator runs a room from the chat-GM tool (<code>tools/session.mjs</code>)</li>
+        </ul>
+      </div>
+    </div>
+    <p style="margin-top:22px"><b>One engine</b> &mdash; <code>data/engine.js</code> &mdash; is the single source of truth
+      for every screen and for the balance report.</p>
+    <div class="num">3 / 7</div>
+    <div class="si">AI-generated background</div>
+  </div>
+</section>
+
+<section class="slide" id="s4">
+  <img class="bg" src="art/04_roles.png" alt="AI-generated background: four chairs around a mission planning table">
+  <div class="shade"></div>
+  <div class="body">
+    <div class="kicker">03 &middot; How it plays</div>
+    <h2>Four roles, fifteen steps, one roll you cannot reroll</h2>
+    <div class="roles">
+      <div class="role"><b>Manager</b><span>treasury, contracts, hiring, facilities</span></div>
+      <div class="role"><b>Engineer</b><span>mass, power, launcher, redundancy</span></div>
+      <div class="role"><b>Scientist</b><span>instruments, science S, data budget</span></div>
+      <div class="role"><b>MCC</b><span>channels, sessions, flight events</span></div>
+    </div>
+    <ul>
+      <li><b>One card, one recalculation:</b> mass, power, data, money, P_success, science, points and rating.</li>
+      <li><b>A flight is a phase, not a roll:</b> Moon 2 steps, Mars and the belt 3, deep space 4 &mdash;
+        each step is a communication session with science.</li>
+      <li><b>The acceptance roll happens once.</b> Sessions never reroll it; they cost time and recover data,
+        with a 75% floor from the onboard recorder.</li>
+      <li><b>Events are checked against the build, not chosen by the player:</b> the buffer answers a flare,
+        a duplicated attitude-control unit answers a micrometeorite.</li>
+    </ul>
+    <div class="num">4 / 7</div>
+    <div class="si">AI-generated background</div>
+  </div>
+</section>
+
+<section class="slide" id="s5">
+  <img class="bg" src="art/05_demo.png" alt="AI-generated background: a spacecraft in low Earth orbit">
+  <div class="shade"></div>
+  <div class="body">
+    <div class="kicker">04 &middot; Live demo &mdash; two minutes for a judge</div>
+    <h2>Four screens, no build step</h2>
+    <div class="links" style="margin-top:4px">
+      <div><span>1 &middot; Role HQ</span><span><a href="../app/index.html">app/index.html</a> &mdash;
+        pick a role, watch the build graph and the consultant name the blockers</span></div>
+      <div><span>2 &middot; Calculator</span><span><a href="../calc/index.html">calc/index.html</a> &mdash;
+        mission and trajectory in, P_success, science and &Delta;rating out</span></div>
+      <div><span>3 &middot; Campaign</span><span><a href="../calc/campaign.html">calc/campaign.html</a> &mdash;
+        15 steps: contracts, tests, flights, acceptance, final score</span></div>
+      <div><span>4 &middot; Print shop</span><span><a href="../print/cards.html">print/cards.html</a> &mdash;
+        the tabletop deck as sheets; the board and tokens are next to it</span></div>
+    </div>
+    <p style="margin-top:26px" class="muted">Everything runs from <code>file://</code>. The network team room starts with
+      <code>node server/index.mjs</code> &mdash; Node 24, no dependencies, no keys.</p>
+    <div class="num">5 / 7</div>
+    <div class="si">AI-generated background</div>
+  </div>
+</section>
+
+<section class="slide" id="s6">
+  <img class="bg" src="art/06_validation.png" alt="AI-generated background: an abstract scatter plot visualisation">
+  <div class="shade"></div>
+  <div class="body">
+    <div class="kicker">05 &middot; Evidence</div>
+    <h2>Balanced by simulation, not by feeling</h2>
+    <table>
+      <tr><th>Metric</th><th>Target</th><th>Actual</th></tr>
+      <tr><td>Average rating</td><td>&gt; 40</td><td class="num">81.4</td></tr>
+      <tr><td>Failure share</td><td>15&ndash;35%</td><td class="num">32.6%</td></tr>
+      <tr><td>Launcher / attitude-control duplication</td><td>&lt; 40%</td><td class="num">30.1% / 30.1%</td></tr>
+      <tr><td>Average P_success</td><td>0.68&ndash;0.72</td><td class="num">0.687</td></tr>
+      <tr><td>Missions skipped / per game</td><td>&lt; 10% / &ge; 9.5</td><td class="num">0.5% / 10.0</td></tr>
+    </table>
+    <p class="muted">150 games &times; 10 missions from <code>node tools/check.mjs 150</code>.
+      The six reference builds of &sect;12 land exactly on 0.681 / 0.763 / 0.504 / 0.770 / 0.843 / 0.449,
+      so a rule change cannot hide behind a lucky average.</p>
+    <div class="num">6 / 7</div>
+    <div class="si">AI-generated background</div>
+  </div>
+</section>
+
+<section class="slide" id="s7">
+  <img class="bg" src="art/07_data_impact.png" alt="AI-generated background: a classroom table with printed game sheets">
+  <div class="shade"></div>
+  <div class="body">
+    <div class="kicker">06 &middot; Data, stack, disclosure</div>
+    <h2>Real mission records, an open stack, honest labels</h2>
+    <div class="grid2" style="grid-template-columns:repeat(3,1fr);max-width:1120px;gap:24px">
+      <div class="card">
+        <h3>NASA data</h3>
+        <ul>
+          <li>27 mission cards &mdash; launch year, agency, target point and instrument requirements &mdash;
+            built from the public NASA mission records</li>
+          <li>Objectives, constraints and the resource chain from the challenge brief</li>
+          <li>No NASA imagery or logos are redistributed, as the rules require</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Stack</h3>
+        <ul>
+          <li>HTML, CSS, vanilla JavaScript &mdash; no framework, no runtime dependencies</li>
+          <li>Node 24 for the server, the validators and the Monte Carlo</li>
+          <li>Server-sent events for the team room</li>
+          <li>ComfyUI + Z-Image for the art</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>AI disclosure</h3>
+        <ul>
+          <li>Every card image and every slide background is AI-generated and carries a visible mark</li>
+          <li>Code, rulebook, card texts and this deck were written by the team</li>
+          <li>No AI is used at run time: the game is deterministic given the seed</li>
+        </ul>
+      </div>
+    </div>
+    <div class="links" style="margin-top:20px">
+      <div><span>Repository</span><span>github.com/bobrovicmihail86-hub/NASA_Challenge_2026</span></div>
+      <div><span>Live</span><span><a href="../app/index.html">Role HQ</a> &middot;
+        <a href="../calc/campaign.html">Campaign</a> &middot;
+        <a href="../docs/RULES_V15.md">Rulebook v1.5</a></span></div>
+    </div>
+    <div class="num">7 / 7</div>
+    <div class="si">AI-generated background</div>
+  </div>
+</section>
+
+</body>
+</html>
