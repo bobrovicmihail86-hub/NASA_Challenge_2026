@@ -122,10 +122,17 @@ parameters: `app/index.html?seed=777&steps=15`.
 ## Network mode (`server/` + `app/lobby.html` + `app/play.html`)
 
 A team game over the network: a lobby, team rooms and a shared mission screen. This part is in English.
+The full walkthrough — invite links, the roster rules, LAN play, error codes — is in
+[`docs/NETWORK.md`](docs/NETWORK.md).
 
-1. `node server/index.mjs --port 8080 --data server/data` — HTTP + SSE, the state lives in `--data`.
-2. `app/lobby.html` — e-mail sign-in, team creation (the captain sets the seed and the campaign length), participant roles.
-3. `app/play.html?team=<id>` — the team room: mission showcase, build, MCC, programme, archive, final.
+1. `node server/index.mjs --port 8080 --data server/data` — HTTP + SSE, the state lives in `--data`; on start
+   the server prints the lobby address.
+2. `http://localhost:8080/app/lobby.html` — e-mail sign-in, team creation (the captain sets the seed and the
+   campaign length), participant roles. Opening the page from disk does not work: the client calls `/api/…`.
+3. `http://localhost:8080/app/play.html?team=<id>` — the team room: mission showcase, build, MCC, programme,
+   archive, final.
+
+GitHub Pages hosts the static part only, so the lobby and the room always need a local server.
 
 The client sends `POST /api/teams/:id/action` with `{type, role, payload}`, the server answers with a snapshot
 (`snapshot` + `analysis`) and an SSE stream (`hello` / `snapshot` / `presence` / `history` / `finished`).
@@ -155,8 +162,6 @@ node tools/gen-art.mjs --dry-run --only rocket_ --limit 2
 node tools/gen-art.mjs --only rocket_light,ant_large  # quick style test
 node tools/gen-art.mjs --write-manifest --with-aux    # manifest only: 99 cards
 node tools/gen-art.mjs --with-aux --skip-existing     # generate into art/assets via ComfyUI
-node tools/gen-slides.mjs --dry-run  # deck backgrounds: workflow + prompt, no render
-node tools/gen-slides.mjs            # 7 backgrounds → demo/art/ for demo/slides.html
 node server/index.mjs --port 8080 --data server/data  # room server (HTTP + SSE)
 node tools/server-smoke.mjs      # network API: sign-in, team, roles, signatures, final, archive, table
 node tools/play-smoke.mjs        # the whole play.js client: snapshot → actions → final, ids and CSS classes
@@ -171,11 +176,6 @@ By default it generates at `1024×528` (`1.94:1`) for the `58.2×30 mm` card art
 the background is a dark blue gradient without a grid or captions.
 It needs a running ComfyUI at `http://127.0.0.1:8000` (or set `COMFY_URL` / `--url`)
 with those models. Without `--with-aux` the manifest holds 91 cards, with decor — all 99.
-
-`gen-slides.mjs` generates the backgrounds of the demo deck: the same Z-Image stack, but the workflow is
-assembled directly in the API format, so no ComfyUI workflow file is needed. The prompts live in
-`demo/prompts.json`, the PNGs land in `demo/art/` at `1280×720`, and `demo/slides.html` puts the text over
-them; every slide carries a visible AI mark.
 
 ## Structure
 
@@ -198,15 +198,14 @@ space-mission-design/
 ├── server/            network: index.mjs (HTTP + SSE), room.mjs, history.mjs, results.mjs, store,
 │                     data in server/data-* (created on start)
 ├── print/             cards.html, board.html, tokens.html
-├── demo/              slides.html (seven 16:9 slides, print to PDF), prompts.json, art/ backgrounds
 ├── art/
 │   ├── prompts.json   style, negative, templates by card kind
 │   ├── manifest.json  99 prompts with decor (generated)
 │   └── assets/        card PNGs (appear after generation)
-├── docs/              RULES_V15.md (the full rulebook), CHALLENGE.md, CARDS.md, PLAYTEST.md, SUBMISSION.md
+├── docs/              RULES_V15.md (the full rulebook), CHALLENGE.md, CARDS.md, PLAYTEST.md, NETWORK.md
 ├── playtest/          chat-GM states (session-<seed>.json) and .md/.csv reports
 └── tools/             check.mjs, dom-check.mjs, app-smoke.mjs, server-smoke.mjs, play-smoke.mjs,
-                        session.mjs, tune.mjs, gen-art.mjs, gen-slides.mjs
+                        session.mjs, tune.mjs, gen-art.mjs
 ```
 
 ## Key v1.5 decisions

@@ -3,6 +3,13 @@
 A single-page app on top of `../data/engine.js`: no build step, no dependencies, works over `file://`.
 Open `index.html` (or `index.html?seed=777&steps=15`).
 
+## Network mode
+
+`index.html` is the solo app. The team game is a second client pair — `lobby.html` (sign-in, teams, roster,
+roles) and `play.html?team=<id>` (the shared room), driven by `lobby.js` and `play.js` — and it needs the Node
+server: `node server/index.mjs --port 8080 --data server/data`, then `http://localhost:8080/app/lobby.html`.
+Roster rules, permissions, LAN setup and the error codes are in [`../docs/NETWORK.md`](../docs/NETWORK.md).
+
 ## Screens
 
 | Role | What it does | Key actions |
