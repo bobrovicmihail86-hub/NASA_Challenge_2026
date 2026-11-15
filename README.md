@@ -94,8 +94,10 @@ every decision reshapes the rest of the mission. The full brief we worked from i
 | Campaign chat-GM (step by step, you decide) | `node tools/session.mjs new --seed 777 --steps 15` |
 | Deck composition | `docs/CARDS.md` |
 | Playtest protocol | `docs/PLAYTEST.md` |
+| Challenge brief and the mapping to the game | `docs/CHALLENGE.md` |
 
 Everything runs over `file://` — no server needed, the pages load `data/*.js` with plain tags.
+The tools, the chat-GM and the room server need Node.js 24; there are no npm packages and no build step.
 
 ## Role HQ (`app/`)
 
@@ -132,13 +134,15 @@ thin name/text shim); the server error codes are translated in the client.
 
 Both screens share the same tooltip mechanism: any element with a `data-tip` attribute shows a bubble on hover
 and on keyboard focus (styles — in `lobby.css`, the `tooltips` section). For inputs and `select`s the bubble is
-attached to the `label` wrapper, because pseudo-elements do not render inside form controls; on touch devices
+attached to the `label` wrapper, because pseudo-elements do not render inside form controls; on touch
+devices (`@media (hover: none)`) the bubble is not drawn at all, so nothing covers the underlying text.
 
 ## Commands
 
 ```powershell
 node tools/check.mjs 150        # data + reference builds §12 + Monte Carlo over 150 games
 node tools/dom-check.mjs        # runs the inline scripts of every page in a DOM stub
+node tools/lang-check.mjs       # language guard: no Cyrillic in code, data or docs
 node tools/app-smoke.mjs        # role HQ: build → signatures → acceptMission → steps → finish
                                 # + experiment approval: test, launch, save/load, cleanup
 node tools/session.mjs selftest  # campaign chat-GM: determinism of two runs
@@ -215,7 +219,7 @@ space-mission-design/
 │   ├── assets/        card PNGs (appear after generation)
 │   ├── workflows/emblem_sdxl.api.json  emblem SDXL graph (NoobAI-XL + LoRA lozhkin)
 │   └── emblem/        prompts.json + generated PNG variants (git-ignored)
-├── docs/              RULES_V15.md (the full rulebook), CARDS.md, PLAYTEST.md
+├── docs/              RULES_V15.md (the full rulebook), CHALLENGE.md, CARDS.md, PLAYTEST.md
 ├── playtest/          chat-GM states (session-<seed>.json) and .md/.csv reports
 └── tools/             check.mjs, dom-check.mjs, app-smoke.mjs, server-smoke.mjs, play-smoke.mjs, session.mjs, tune.mjs, gen-art.mjs, gen-emblem.mjs, emblem-sheet.py
 ```
@@ -294,14 +298,16 @@ space-mission-design/
 
 | Metric | Target | Actual |
 |---------|------|------|
-| Average rating | > 40 | **82.0** |
+| Average rating | > 40 | **81.4** |
 | Failure share | 15–35% | **32.6%** |
 | Launcher / FCS duplication | < 40% | **30.1% / 30.1%** |
-| Experimental builds (launcher/instrument) | < 20% | **3.5%** |
-| Experimental subsystems | reference | **43.2%** |
-| Average P_success | 0.68–0.72 | **0.686** |
-| Missions skipped | < 10% | **0.4%** |
+| Experimental builds (launcher/instrument) | < 20% | **1.5%** |
+| Experimental subsystems | reference | **43.1%** |
+| Average P_success | 0.68–0.72 | **0.687** |
+| Missions skipped | < 10% | **0.5%** |
 | Missions per game | ≥ 9.5 | **10.0** |
+
+The values above are the output of `node tools/check.mjs 150` on this revision.
 
 The §12 reference builds reproduce exactly: 0.681 / 0.763 / 0.504 / 0.770 / 0.843 / 0.449.
 The open questions and the proposed fixes are in `docs/RULES_V15.md`, Appendix D.
