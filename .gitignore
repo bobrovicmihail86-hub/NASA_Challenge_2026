@@ -17,8 +17,6 @@ secrets.*
 *.safetensors
 *.ckpt
 *.pt
-art/emblem/*.png
-art/emblem/preview/
 
 # local room-server state
 server/data/

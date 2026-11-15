@@ -11,10 +11,7 @@ can be printed and played at a table.
 Everything in one place: card data → one calculation engine → the interactive calculator →
 the Monte Carlo validator → printable sheets → art generation through ComfyUI.
 
-The single rulebook is `docs/RULES_V15.md`; it replaces the earlier layered addenda. The formalised
-programme rules the game grew from (v1.1 `rul.txt`, v1.2 `15.txt`) and the ComfyUI workflow used for the
-art are not part of this repository — see
-[What is not in the repository](#what-is-not-in-the-repository).
+The single rulebook is `docs/RULES_V15.md`.
 
 ## The game in one paragraph
 
@@ -158,44 +155,20 @@ node tools/gen-art.mjs --dry-run --only rocket_ --limit 2
 node tools/gen-art.mjs --only rocket_light,ant_large  # quick style test
 node tools/gen-art.mjs --write-manifest --with-aux    # manifest only: 99 cards
 node tools/gen-art.mjs --with-aux --skip-existing     # generate into art/assets via ComfyUI
-node tools/gen-emblem.mjs --dry-run                   # check the emblem SDXL graph without generating
-node tools/gen-emblem.mjs --seeds 103 --lora-strength 0.9 --tag s09   # emblem: LoRA lozhkin
 node server/index.mjs --port 8080 --data server/data  # room server (HTTP + SSE)
 node tools/server-smoke.mjs      # network API: sign-in, team, roles, signatures, final, archive, table
 node tools/play-smoke.mjs        # the whole play.js client: snapshot → actions → final, ids and CSS classes
 ```
 
 `gen-art.mjs` takes a ComfyUI workflow in the UI format (`--workflow <path>`, by default a
-`comui.json` next to the repository — not shipped, see below) with Z-Image (`z_image_bf16` +
-`qwen_3_4b` + `ae.safetensors`, KSampler 30 steps, cfg 5, `res_multistep`, shift 3),
+`comui.json` next to the repository — the workflow file and the models are not shipped) with Z-Image
+(`z_image_bf16` + `qwen_3_4b` + `ae.safetensors`, KSampler 30 steps, cfg 5, `res_multistep`, shift 3),
 converts the UI format into the API format, substitutes the card prompt and stores PNGs in `art/assets/`.
 By default it generates at `1024×528` (`1.94:1`) for the `58.2×30 mm` card art window;
 `--width` / `--height` override the size. The style is a semi-realistic 3D render,
 the background is a dark blue gradient without a grid or captions.
 It needs a running ComfyUI at `http://127.0.0.1:8000` (or set `COMFY_URL` / `--url`)
 with those models. Without `--with-aux` the manifest holds 91 cards, with decor — all 99.
-
-## Mission emblem (`gen-emblem.mjs`)
-
-A separate pipeline in the style of Vasya Lozhkin: the SDXL graph `art/workflows/emblem_sdxl.api.json`
-(`NoobAI-XL-v1.1` → `Lozhkin_style_Illustrious` LoRA, tag `lozhkin`, `dpmpp_2m/karras`,
-28 steps, cfg 5, 1024×1024), the prompts — `art/emblem/prompts.json` (variants `emblem`,
-`patch`, `poster`), the output — `art/emblem/<variant>_<tag>_<seed>.png`.
-
-```powershell
-node tools/gen-emblem.mjs --seeds 401,402,403,404 --lora-strength 0.9 --tag b09
-node tools/gen-emblem.mjs --variant patch --seeds 301 --lora-strength 1.2
-node tools/gen-emblem.mjs --prompt "lozhkin, ..." --negative "..." --seeds 777
-```
-
-Flags: `--seeds a,b,c`, `--variant`, `--tag` (a file-name suffix so a seed is not overwritten),
-`--lora-strength` (0.8–1.5), `--steps`, `--cfg`, `--width/--height`, `--sampler`,
-`--scheduler`, `--checkpoint`, `--lora`, `--prompt`, `--negative`, `--timeout`, `--dry-run`.
-The script checks that ComfyUI can see the checkpoint and the LoRA (`/object_info`) and fails with a hint
-when it cannot. Cyrillic inside the image itself is not guaranteed by SDXL — the “TO SPACE!” lettering
-is laid over the clean badge by hand or by an external script.
-A contact sheet of all variants: `python tools/emblem-sheet.py` → `art/emblem/preview/contact_sheet.png`
-(generated output is git-ignored; only `art/emblem/prompts.json` and the graph are tracked).
 
 ## Structure
 
@@ -221,56 +194,12 @@ space-mission-design/
 ├── art/
 │   ├── prompts.json   style, negative, templates by card kind
 │   ├── manifest.json  99 prompts with decor (generated)
-│   ├── assets/        card PNGs (appear after generation)
-│   ├── workflows/emblem_sdxl.api.json  emblem SDXL graph (NoobAI-XL + LoRA lozhkin)
-│   └── emblem/        prompts.json + generated PNG variants (git-ignored)
+│   └── assets/        card PNGs (appear after generation)
 ├── docs/              RULES_V15.md (the full rulebook), CHALLENGE.md, CARDS.md, PLAYTEST.md
 ├── playtest/          chat-GM states (session-<seed>.json) and .md/.csv reports
-└── tools/             check.mjs, dom-check.mjs, app-smoke.mjs, server-smoke.mjs, play-smoke.mjs, session.mjs, tune.mjs, gen-art.mjs, gen-emblem.mjs, emblem-sheet.py
+└── tools/             check.mjs, dom-check.mjs, app-smoke.mjs, server-smoke.mjs, play-smoke.mjs,
+                        session.mjs, tune.mjs, gen-art.mjs
 ```
-
-## What is not in the repository
-
-* **Model weights and the ComfyUI workflow for the card art** — `comui.json` plus `*.safetensors`
-  (85–218 MB per file) are not shipped. `tools/gen-art.mjs` accepts `--workflow <path>` (or a
-  `comui.json` next to the repository) once ComfyUI with `z_image_bf16`, `qwen_3_4b` and
-  `ae.safetensors` is running; the emblem pipeline additionally needs `NoobAI-XL-v1.1` and the
-  `Lozhkin_style_Illustrious` LoRA. The cards print anyway, with blueprint placeholders.
-* **The earlier rule specifications** (`rul.txt` v1.1, `15.txt` v1.2) and the raw mission research notes
-  stay outside the repository: `docs/RULES_V15.md` is the normative, self-contained rulebook.
-* **Runtime state** — `server/data*/`, `*.log`, `*.pid` and the generated emblem PNGs are git-ignored.
-
-## Key v1.3 decisions
-
-1. **Payload to the target** (variant B):
-   `G_point = G_LEO / (k_point · k_trajectory)`, where k = 1.0 (LEO), 2.0 (GEO), 6.0 (Moon),
-   8.0 (deep space), 12.0 (Mars), 20.0 (asteroid belt). The trajectory adds a multiplier
-   0.85–1.15, a deadline and module requirements. Choosing a point is now a choice of mass and money,
-   not a line in the description.
-2. **`D_ratio` moved out of probability into science.** §5 and §15.1.4 contradicted each other:
-   the probability `min(1, D_sent/D_gen)·p_channel` does not give 0.68. In v1.3
-   `P_success = p_launch·p_build·p_channel`, and the data volume affects `S_det`, while
-   `D_ratio < 0.5` is a **soft** check: it forbids only a "full success", success and
-   partial success stay possible.
-3. **Duplication is a property of the FCS, not of the instruments.** Platform duplication gives 0.77 instead of
-   0.88 for three cameras; a modular build `min(p)·0.95^(n−1)` brings 0.88 back.
-   That is recorded as a deliberate choice, not as a bug.
-4. **The mission contract.** The original rules had no income, while ten missions cost $4000–9000.
-   The advance pays for the hardware, the bonus of 0.25 advance is the profit; the purchase cap is 1.35 advance.
-5. **Card copies as the balancer.** Launchers, reservations and FCS are consumed; the deck holds 3 "double"
-   reservations and 3 "duplicating" FCS, so duplication cannot dominate.
-
-## Key v1.4 decisions
-
-1. **The school is a full 0–4 facility.** Before it lived only in the data and in the single
-   calculator; in the campaign it sat at 0. Now: +3…6% to the instrument p, a 5…20% discount
-   on the mission PM, instrument standardisation from stage 1 (from stage 3 — 20% off the price), +1 FCS slot
-   at stage 4. Each level is one preparation action and 5 points in the final score.
-2. **The school is an alternative, not a dominator.** The Monte Carlo bot buys 4–5 MCC levels
-   when the school is untouched, and 0–1 MCC levels when it invests in the school: the score barely changes
-   (≈200), but the risk profile does. Failures drop from 18% to 17%.
-3. **Instrument standardisation does not require CML 3** when the school is 1+; launchers do.
-   That makes the school a cheap entry into "standards" for instrument teams.
 
 ## Key v1.5 decisions
 
@@ -316,18 +245,6 @@ The values above are the output of `node tools/check.mjs 150` on this revision.
 
 The §12 reference builds reproduce exactly: 0.681 / 0.763 / 0.504 / 0.770 / 0.843 / 0.449.
 The open questions and the proposed fixes are in `docs/RULES_V15.md`, Appendix D.
-
-## What next
-
-1. A playtest per `docs/PLAYTEST.md` (3 teams, 10 missions) — collect live metrics.
-2. After the playtest, tune `data/config.js` (`ratingPerS`, `contractReward`, `deckCopies`,
-   `campaign.ops`) and the point prices of the cards in `data/cards.js` (experimental `ins_exp`,
-   `res_exp`, `ctrl_exp`); do not change the engine formulas without a fresh `node tools/check.mjs 150`.
-3. A flight playtest: check that overtime for $50 feels like a choice rather than
-   a mandatory tax, and that an MCC overload punishes greed, not interesting play.
-4. Generate the art in priority order: launchers → instruments → antennas → FCS → facilities →
-   events → missions (`node tools/gen-art.mjs --skip-existing`).
-5. Assemble the hackathon report: `docs/RULES_V15.md` §1–§13 + a CSV from the calculator.
 
 ## Limitations
 
